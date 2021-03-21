@@ -1,0 +1,47 @@
+Associative Arrays (Maps, Dictionary)
+
+Arrays index by keys
+Dictionty holds only unique keys and if try to put the same it trows Exception
+Keeps the keys in their order of addition
+
+The best type of key is string is string because of its range of storing variables
+
+Dictionary<string, double> dict
+
+dict["bannana"] = 1,20;
+
+SortedDictionary stores elements by keys
+Uses a balanced search tree to sorted and it happens fast
+
+Build-In Methods
+- Add(key, value)
+- Remove(key)
+- ContainsKey(key) - its okay to use when you need to check a couple of values, but when we have alot of elements
+
+- TryGetValue is better when you have more elements
+-ContainsValue(value) - is kind of useless, cuzz the idea of dictionary is to catch the unique Key
+-Clear() - Empty the whole
+TryAdd(TKey, TValue)
+
+KeyValuePair is generic type in C#
+
+Multi-Dictionaries 
+DictionarY holds list as a Value
+
+It could be arr, or everything else as type, however usually we put List, because we don't know the capacity and numbers 
+
+Nested Dictionary
+
+Sets 
+HashSet and SortedSet
+A set keeps only unique elements
+Allows add/remove/search elements
+Very fast performance
+
+Keeps a set of elements in hash-table
+elements are in no particular order so we din;t hae guarantee that their are ordered
+
+Hash tables works with key value table with string key and value our variables;
+
+Behind HashSet and SortedSet stands some kind of tree
+ 

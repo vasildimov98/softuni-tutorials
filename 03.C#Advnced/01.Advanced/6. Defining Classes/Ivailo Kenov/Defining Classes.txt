@@ -1,0 +1,40 @@
+Defining Classes
+
+Abstract Data Type(ADT) - representation hidden from the client 
+
+- you don't need to know the implemantation to use ADT
+
+Classes on the other hand is the actual implementation 
+
+to create an object simple way without object or classes 
+
+var cat = new
+{
+Name
+Age 
+};
+
+you cant have methods that way, if you want have same data type, you cant put in list, you ahve to safe it by var(), 
+
+That way is called anonymous type
+
+To solve this problem above we define classes 
+
+it has:
+Keyword - class
+Name - Cat() - PascalCase and descriptive nouns
+{
+members- field, method, proparty 
+} 
+avoid abbreviation 
+
+Class has:
+1. Field = saves information for the object and they are define as private, so nobody can see them! 
+****private means nobody exept the Cat can reach the fields 
+*** access modifer  are all this privite, public keywords that define the members-
+
+proparties are public and have get and set 
+
+Getter and Setter are fast way to create a method for GetName() and SetName()
+
+Constructor helps to be shure there are valid data 

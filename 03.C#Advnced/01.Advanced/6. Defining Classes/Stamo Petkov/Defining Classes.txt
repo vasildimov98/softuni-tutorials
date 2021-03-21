@@ -1,0 +1,82 @@
+Defining classes
+
+Abstract data type
+
+Data type whose represtations is hidden from the client 
+We don't need to know the concrete implementation to use it;
+
+Defining simple classes
+
+Class is a concrete implementation of an ADT
+
+Classes provide structure for describing and creating objects 
+
+class (class) Dice (Class name)
+{
+(class body)
+}
+
+Naming classes:
+
+1. Name classes with nouns using PascalCasing
+2. Use descriptive name
+3. Avoid abbreviations 
+
+Member is declared in the class and they have certain accessibility, which can be specified
+
+Fields are private
+class field have modifier (always private), type (Any) and name (camelCase)
+
+Modifiers define accessibility;
+
+Fields are created for us and our usage only!
+
+Properties are public 
+- used to create accessors (getters) and mutators (setters)
+
+Methods depends on the situations (Defining a Class Behaviours)
+- store executable code (an algorithm)
+
+Creating Object:
+a class can have many instances;
+
+Object Reference
+-Declaring a variable creates a reference in the stack
+
+- the new keywords allocates memory on the heap
+
+Classes vs. Objects
+
+Classes provide structure for describing and creating objects, whereas an object is a single instance of a class
+
+Constructors (Objects Initialization)
+When constructor is involked, it creates an instance of its class and usually initializes its member;
+In C# classes are instantiated with the keyword new!
+Constructors sets objects initial state;
+We can have multiple constructors in the same class;
+Constructor can call each other - its called constructor chaining;
+Always chage constructor from this with less paramt to those with more;
+
+Enumerations
+- Represent a numeric value from fixed set as a text
+- We can use them to pass arguments to methods without making code confusing;
+- By default enums start at zero;
+- Every next value is incremented by 1;
+
+Static Classes
+- Static class is declared by the static keyword;
+- It cannot be instantiated;
+- You cannot declare variables from its type;
+- You access its members by using its members;
+- Both static and non-static classes can contain static members - method, fields and property;
+- A static member is callable on a class name even if no instance is created of the class;
+- Accessed by the class' name, not the instance name;
+- Only one copy of static name exists, redardless of how many instances of the class are created;
+- Static members can be overloaded but not overridden
+- A const field is essentially static in its behavior and belogs to type not instance;
+- Static members are initialized before the static member is accessed for the first time and before the static constructor
+
+ Namespaces
+- use to organize classes;
+- the using keyword allows us not to write their names
+- Declaring your own namspaces can help you control the scope of class and method;

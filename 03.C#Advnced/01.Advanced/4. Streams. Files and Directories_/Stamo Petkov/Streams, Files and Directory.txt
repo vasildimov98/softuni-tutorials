@@ -1,0 +1,37 @@
+File Streams and Directory
+
+Streams are means for transfaring (reading and writing) data
+
+Diff types of streams are available to access diff data source: 
+
+File access, network access, memory streams and others
+
+Streams are opened before using them and closed after that and this rgulate what is stream and what is not!
+
+We usually use buffers to read files
+
+We read the buffer till the length of the streams
+
+Buffer safes n bytes of steam
+
+When we have large memory type we have to be careful what we leave open and close 
+
+Readers and Writers are classes that facilitate the work of stream
+
+We can read and write lisnes like in the Console
+
+We can use Binary too and saves the data in binary data 
+
+We can ReadInt32, ReadChar, ReadBoolean
+
+Using Statement
+
+we can use it outside the classes to say which namespace or assebly we are using, however if we use inside a method it means using it with a object and implements the interface IDisposable -> this object knows how to destroys itselfs
+
+We control the resources
+
+usefull static class Path
+
+Nikolai Kostov 
+
+Usesually use stream from data outside our computer system

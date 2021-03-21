@@ -1,0 +1,48 @@
+1. Generics
+
+Generics introduce the concept of Type Parameters
+- Parameter from Type of Type (Generic)
+- Give us the opportunity to choose the type later, but only compiletime, not runtime 
+
+Design time we don't know the type
+Compile time we know the type
+Runtime we know the type long ago and we don't have access to our code!
+
+- Allows designing classes and methods without parameter type specification
+- Generic class or a method accepts a certain type when it is instantiated by client code;
+- C# gives the opportunity not to specify the class if compiler can guest it 
+
+2. Type safety
+- add type safety for the client
+- provide a powerful way to reuse code
+
+3. Type Parameter
+- placeholder for a type - T (Type Parameter)
+- you can use it anywhere inside the generic class
+
+4. Generic classes
+- Encapsulate operations to a non particular data type
+- Defined with Type Parameters - T;
+- Most commonly used are generic collection
+- Collection with multiple type parameters
+
+5. Generic method
+- Non Generic methods take certain input and give certain output
+We can take generic input and return generic output
+
+6. Generics Constraints
+
+- Constraints are repressented in generic using where
+- restricting generic classes to reference types only;
+- restricting generic classes to non-reference types only;
+
+Why Constraints?
+
+IL generated for Equals<string> would be different to that of Equals<int>
+
+- Specifying a constructor as a constraint
+- Only a default constructor can be used in the constraints
+- Parameterized constructor will be a compilation error
+- The type argument must be or derive from the specified base class
+- We can combine generic constraints
+

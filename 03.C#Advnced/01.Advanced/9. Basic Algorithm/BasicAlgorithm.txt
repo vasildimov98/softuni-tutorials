@@ -1,0 +1,49 @@
+Basic Algorithms
+
+1. What is Recursion?
+A function or a method that calls itself one or more times until a specified condition is met.
+When the condition is met, the rest of each repetions is processed from last one called to the first one;
+
+2. How does it work?
+
+- The function or a method has a base class
+- Each step of the recursion should move towards the base case
+
+3. Recursion Pre-Action and Post-Action
+
+- Pre-Action (before calling the recursion) -> base case!!!!
+- Recursion calls (step in the stack)
+- Post-Action (after return from recursion)
+
+4. Direct and Indirect Recursion
+
+A. Direct recursion - a method directly calls itselfs
+B. Indirect recursion - method A calls B, method B calls A;
+
+5. Brute-Forse Algorithms
+
+- Trying all possible combinations
+- Picking the best solution
+- Usually slow and inefficient 
+
+6. Greedy Algorithms
+- Used for solving optimizational problems
+- Usually more efficient than the other algorithm 
+- Can produce a non optimal (incorect) result;
+- Pick the best local solution = the optimum for the current position and point of view;
+- Greedy algorithm assumes that always choosing a local optimum leads to the global optimum
+
+7. What is sorting algorithm?
+
+An algorithm that rearranges elements in a list in  non decreasing order! 
+- The elements must be comparable
+More formally
+- the input is a sequence / list of elements
+- the output is a rearrangement / permutation of the elements in non decreasing order
+
+Sorting algorithm are often classified by:
+- Computational complexity and memory usage - worst case, average best case behaviour
+- Recursive / non-recursive
+- Stability - stable / unstable
+Comparison based sort / non comparison based
+- Sorting method - insertion, exchanhe, (bubble sort and quicksort), selection (headsort), merging, serial / parallel, etc  

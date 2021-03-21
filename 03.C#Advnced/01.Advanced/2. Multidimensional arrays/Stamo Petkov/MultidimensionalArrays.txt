@@ -1,0 +1,23 @@
+Multidimensional Array
+
+multidimensional arrays are /n
+arrays with more than one dimension.
+
+most used one is 2-dimensional arrays;
+
+Creating multidimensional arrays -
+ - with key word new 
+ - must specify the size of each dimension [2,3]
+ 
+Accessing N-dimension element we put the the row and than col
+var result = arr[row, col]
+
+We could also set value;
+
+When we print matrix we need to use nested for-loop;
+
+As much deeper we go in nested loop - the loop becomes more 
+dinamic
+
+JaggedArray are dimensions with diff size 
+In other words this is array with arrays;

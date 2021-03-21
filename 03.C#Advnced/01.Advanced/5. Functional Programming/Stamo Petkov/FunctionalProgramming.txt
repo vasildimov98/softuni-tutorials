@@ -1,0 +1,40 @@
+Functional programming
+
+special relationship where each input has a single output
+
+In programming: 
+
+Functional programming is declarative
+Its main focus is on "what to solve" and not "how to solve"
+
+Type:
+Fist - Class
+Higher - Ordered Class - they either takae other func as args or return func
+
+Treat computations as evaluations of mathematicla func, avoiding state and mutable data 
+
+!!There can't be any other information access beside the input variables
+
+The output value of func depends only on the args that are passed to the functions 
+
+Lambda expressions - an anonymous func containing expressions and statements
+
+Lambda systax 
+
+(parameters) => (goes to -> lambda operator) {body}
+
+() and {} sometimes can be redundant 
+
+implicit does need to know the type and scobe ect.
+
+A delegate is a type that represents references to methods with a particular parameters list and return type
+
+Used to pass methods as arguments to other methods
+Can be used to define callback methods
+
+Generic Delegates - Func<T, V>
+
+Input and output type can be whatever we whan, however
+if we have declare the types the input and output we give must be the same as the declared one
+
+Action<T> is a void method

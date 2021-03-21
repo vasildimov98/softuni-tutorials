@@ -1,0 +1,20 @@
+Stack and Queues 
+
+stacks like list starts with zero elements and it works LIFO
+
+You can't take the first one before taking out the ones beforehand 
+
+1. Operation 
+
+A. Push - add at the top of the steck 
+B. Pop - removes the last one of the stack 
+C. Peek - see what's on top of the steck 
+
+Bonus - TryParse and TryPop(Peek) - if it is true out the result and safe it in the variable 
+
+Queues
+
+1. Operation 
+
+A.Enqueque 
+B.Dequeue

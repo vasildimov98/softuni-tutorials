@@ -1,0 +1,24 @@
+Functional Programming 
+
+What is Function?
+
+- algorithm 
+- does sequece of operation
+- it has parameters
+- type only in C#
+- name
+
+in Mathematics in fuction evry single input we have only one clear output
+
+in programming this type pf function it is called pure function 
+
+type of function 
+
+1. First class - pure function
+2. Higher - Order - returns function as result or take one as an input 
+
+Lambda Expressions 
+
+(parameters) => (goes to) {body}
+
+Delegates is a type that represents reference to methods with part parameters and returns type

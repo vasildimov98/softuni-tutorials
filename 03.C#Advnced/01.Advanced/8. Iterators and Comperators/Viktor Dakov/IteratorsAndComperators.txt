@@ -1,0 +1,41 @@
+IEnumerable<T> is the root interface of .NET, enables simple iteration over a collection 
+Contains a sigle method GetEnumerator(), which returns an IEnunerator<T>
+A class tha implements the IEnumerable<T> can be used in a foreach loop traversal
+
+IEnunerator<T> - provides the sequential, forward-only iteration over a collection of any type
+
+Methods:
+MoveNext() - advanced the enumerator to the next element of the collection
+Reset() - sets the enumerator to its initial Position (-1)
+
+Property
+Current - returns the element in the collection at the current position of the enumerator
+
+Yield Return:
+Indicates that the member, in which it appears is an iterator
+Implifies the IEnunerator<T> implementation
+Return one element upon each loop cycle
+
+Params:
+Takes a variable number of arguments
+Only one params keyword is allowed in a method declaration 
+Should alway be last
+
+Comperators
+
+IComparable<T>
+
+- Reads out as "I am Comparable"
+- provides a method for comparint two objects of a particular type - CompareTo()
+- Sets a default sort order for the particular objects type
+- Affects the original class
+
+CompareToMethod:
+
+IComparer<T>
+Reads out as "I am comparer" or "I compare"
+Provides a way to customize the sort order if a collection
+Difines a method that a type implements to compare two objects
+Doesn't affect original class
+
+

@@ -1,0 +1,15 @@
+Iterators and Comparators 
+
+I(Enumerable) is Interface
+
+In interaface everything that is implemented is public 
+
+IEnumerable - enables symple iteration throu collection 
+
+GetEnumerator that return IEnumerator
+
+Enumerator gives us the logic how to traverse collection 
+
+Enumerable becomes the collection we traverse 
+
+yield return, returns the element one by one 

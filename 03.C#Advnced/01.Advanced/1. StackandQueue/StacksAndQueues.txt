@@ -1,0 +1,6 @@
+Stack is abstr data type, because is create with array
+
+Stack and Queue gives us the opportunity to organize and
+moderate data in a specific way
+
+TrimExcess - clears the arr by creating new array
