@@ -1,0 +1,47 @@
+B-Trees / 2-3 Trees and AVL Trees
+Balanced BSTs, Operations Insertions and Rotations
+
+I. Balanced BSTs
+1. What is a balanced Binary Trees
+BST can be balanced:
+- Subtrees hold nearly equal number of nodes
+- Subtree are with nearly the same height
+
+II. B-Tree
+1. What is B-Tree
+- A b-tree of order m is every tree which:
+a. At most m children
+b. Every internal node has at least m / 2 children
+c. Root has at least two children exept when it is a leaf
+d. Every node who has k children can store at most k - 1 values 
+e. Every leaf node is in the same level and carries no information
+
+2. B-tree vs other balanced searched tree
+- Holds a range of child nodes, not single one
+- B-tres do not need re-balancing so frequently
+- B-trees are good for indexes because a single node is store in a sigle cluster of the hard drive
+- B-Trees are almost perfectly balanced
+
+II. 2-3 Trees
+A 2-3 search tree can contain 
+- Empty node (When the Root is equal to null);
+- 2 node - 1 key and 2 links (children);
+- 3 node - 2 keys and 3 links (children);
+
+As usual for BST all items to the left are smaller than, all to the right are larger than
+
+- Unlike standart BSTs, 2-3 trees grow from the bottom
+- The number of links from the root to any null node is the same
+- Transformations are local 
+- Nearly perfectly balanced 
+- Inserting 10 nodes will result with height of the tree 2 only
+- always log(N) even in the worst cases
+
+III. AVL (Adelson-Velsky Landis) Tree
+-First self balanced tree ever created
+- Height of two subtrees can differ at most with 1
+1. Balanced Factor
+- Height diff is measured by a balanced factor (BF):
+BF(Tree) = Height(RightStructure(node)) - Height(LeftStructure(node));
+- BF of any node is in the range [-1, 1];
+- If BF becomes -2 and 2 rebalance

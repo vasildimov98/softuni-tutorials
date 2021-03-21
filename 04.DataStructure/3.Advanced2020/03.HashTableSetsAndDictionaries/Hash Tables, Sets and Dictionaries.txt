@@ -1,0 +1,46 @@
+Hash Tables, Sets and Dictionaries
+Hashing amd Collisions
+
+I. Hash Tables
+1. Hash Function
+- Given a key of any type, convert it to an integer 
+- The idea of hash fucntion should be simple, fast and trustful
+
+2. Hash Table
+- A hash table is an array taht holds a set of {key, value} pairs
+- The process of mapping a key to a possition in a table is called
+hashing
+
+3. Perfect function for hashing
+- one to one mapping of each ket ot an integer in the range
+- The PHF maps each key to a distinct integer within some manageable range
+- Finding a perfect hashing function is impossible in most cases
+
+4. Good hashing function
+- This fucntion is:
+A. Consistent - equal keys must produce the same hash value
+B. Efficient - efficient to compute the hash
+C. Uniform - should uniformly distribute the keys
+
+5. Collisions in a Hash Tables
+- A collision comes when different keys have the same hash value
+ - h(k1) = h(k2) for k1 != k2
+- When there is small number of collision the hash table is sufficiently small, the hash tables work quite well (fast)
+- Resolution strategies existL
+- Chaining collided keys in a list
+- Using othe slot in the table (open addressing)
+- Cuckoo hashing
+- Many other
+
+6. Hash Table Performance
+- The hash-table performance depends on the probability of collisions
+ - Less collisions faster
+ - Collisions resolution algorithm
+ - Fill factor
+7. How big the Hash-Table Should be?
+- The load factor (fill factor) = used cells (Count) / all cells
+ - How much in procent the table is filled
+- Smaller fill factor leads to less collisions (faster average seek time)
+- Recommended fill factors
+ - When chainning is used less than 75%
+ - When open addressing is used less than 50%

@@ -1,0 +1,48 @@
+Red-Black Trees and AA Trees
+
+I. Simple Representation of a 2-3 Tree
+1. Why Yet Another Balanced BST
+- We want operation to happen at: 
+O(log(n)) not O(h) where h in worst case is n;
+- AVL vs Red-Black trees
+- The AVL trees are more balanced that causes more rotations during insertion and deletion
+- If your application involves many frequet insertions and deletion, then Red-Black trees should be preffered
+
+2. Representing 3-node with a left-leaning red nodes
+- Nodes with values between the 2 nodes values will be to the right of the red node
+
+3. Red-Black Trees Properties
+- All leaves are black
+- The root is black 
+- No node has two red links connected to it
+- Every path from a given nodes to its descendant leaf nodes contains the same number of black nodes
+- Red links lean left-leaning
+- No path from the root to the bottom contains two consecutive red links
+
+II. RB tree Insertion algorithm
+1. Steps of Insertion
+A. Locate the node position
+B. Create a new red node
+C. Add the new node to the tree
+D. Balance the tree if needed
+
+2. Insertion into 3 node
+3 cases: 
+- The element is larger than both keys
+- The element is smaller than both keys
+- The element is between the 2 keys
+
+III. AA trees
+1. Red - Black vs AA trees
+- The implementation of RB trees and number of rotation cases is complex. AA trees simplifies the algorithm
+- It eliminates half of the restructuring process by eliminating half of the rotation cases, which is easier to code
+- It simplifies the deletion process by removing multiple cases
+
+2. AA tree invariants
+ - The level of every leaf node is one;
+ - Every left child has level one less than its parent
+ - Every right child has level equal to or one less than its parent
+ - Right grandchildren have level less than their grandparent
+ - Every node of level greater than one has two children 
+ 
+ 

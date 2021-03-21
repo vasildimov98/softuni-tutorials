@@ -1,0 +1,68 @@
+Data Structures Augmentation
+Choosing a Data Structures
+
+I. Choosing the Right DS
+List vs. Hash Tables vs. Balanced Trees
+
+1. Choosing a collection
+A. Array
+- use when fixed number of elements need processing by index
+- No resize for fixed number of elements
+- Add/ Delete needs creating new array + move O(n) elements
+- Compact and lightweight;
+
+B. Array Based List
+- used when elements should be added fast and processed by index
+- Add (append to the end) has O(1) amortized complexity
+- The most-often used collection in programming
+
+C. Linked List
+- When elements should be added on both sides of the list
+- Use when you need to remove by a node reference
+- Otherwise use resizable array-based list
+
+D. Stack
+- Use to implement LIFO behavior
+- List could also work well
+
+E. Queue (Queue<T>)
+- Use to implement FIFO behavior
+- Linked List could also work well
+
+F. Dictionary
+- Fast added and search by key
+- Key have no particular order
+- Key should implement GetHashCode and Equals
+
+G. Ordered Dictionary
+- Element are ordered by key
+- Fast add key-value pairs + fast search by key + fats sub-range
+- Kyes should be IComparable
+- Balanced trees slower than hash-tables: O(logN) vs O(1)
+
+H. HashSet
+- Unique values + fast search by key 
+- Elements have no particular order
+- Key should implement GetHashCode and Equals
+
+I. SortedSet
+- unique value in sorted order
+- use balanced tree to implement
+- Fast add search and sun search
+- Element should be IComparable
+
+J. Hash Bag 
+- Allows dublicates elements with no particular order
+
+K. SortedBag use balanced tree and allows duclicate
+
+II. Data Structures Augmentation
+
+Many scenarios combine several DS
+No ideal DS choose between space and time
+For example, we can combine:
+A hash-table for fast search by key1 (e.g. name)
+A hash-table for fast search by {key2 + key3} (e.g. name + town)
+A balanced search tree for fast extract-range(start_key … end_key)
+A rope for fast access-by-index
+A balanced search tree for fast access-by-sorted-index
