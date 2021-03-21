@@ -1,0 +1,13 @@
+Binary Search Tree 
+
+binary search tree is ordered 
+
+For each node x 
+Elements of left subtree of x are <= x 
+
+Elements of right subtree of x are >= x 
+
+again two tree at most 
+
+Search() 
+Insert 

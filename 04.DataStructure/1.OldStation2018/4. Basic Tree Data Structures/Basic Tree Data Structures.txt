@@ -1,0 +1,28 @@
+Basic tree Data Structures
+
+they are Tree-like data structure 
+Consisting nodes
+
+Type of trees 
+
+Trees: binary, balanced, ordered, etc.
+Graphs: directed/ undirected, weighted...
+Networks: graphs with particular attributes
+
+Trees we Node with Edge
+
+Root - the first Node
+Parent  - the prevNode -
+Child, Siblings - The current element 
+Depth[0, 1, 2], Height(3)
+Subtree - part of the tree
+Leaf - does not have a child
+internalNode - has a child and a parent 
+Ancestor - the they have direct conection with Nodes 
+
+Tree traversal Algorithm 
+
+DFS - Deep First Search
+BFS - Breadth First Search
+
+Binary Trees - has at most 2 children

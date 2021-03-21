@@ -1,0 +1,24 @@
+Recursion
+
+I. Asymptotic Notation
+1. Algorithms Analysis - predicts the resources we need for the curr algorithm and what will const us to accomplish it
+
+2. Simplifying Step Count
+- Some parts of the equation grow much faster than others
+- We ignore the multiplicative constant and take only the higher one
+
+3. Time complexity
+- From smaller input of n we don't care much for the complexity and runtime
+- We measute time when n approaches infinity 
+- If an algorithm must ot scale it has to compute the result within a practical time
+- We're concerned about the order of an algorithm's complexity, not the actual time in terms of milliseconds
+
+II Recursion
+1. Definition - a method of solving a problem where the solution depends on the solution of smaller instance of the same problem
+- A function or a method which call itselfs until a specified condition is met;
+
+2. Direct and Indirect Recursion
+Direct is when the function calls itself and indirect call other methods that call her;
+
+3. Parts
+There are 3 parts in the live of recursion are pre action recursion call step in and post - action;

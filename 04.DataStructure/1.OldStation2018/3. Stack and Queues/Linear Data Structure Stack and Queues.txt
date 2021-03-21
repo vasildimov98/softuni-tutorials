@@ -1,0 +1,26 @@
+stack and queues
+
+LinkedList this list chained by notes 
+
+generick T(template)
+
+Big Oh cheat sheet
+
+The Stack ADT 
+
+LIFO(Last In First Out)
+
+Static Stack 
+
+Static (array based)
+limited size 
+
+Linked Stack 
+
+Dynamic (linked/pointer-based) implematation
+
+The Queue ADT 
+
+FIFO (First In First Out)
+
+We have head and TAIL so that we can add with O(1) complexity

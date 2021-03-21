@@ -1,0 +1,18 @@
+Combinatorial Problem
+Permutations, Variations, Combinations and N choose K
+
+I. Permutations
+- Permutation of set is an arrangement of its members into a sequence or linear order
+- If the set is already ordered, a rearrangement of its elements 
+
+- There are two types of permutation
+ Without repetition
+ With repetition
+ 
+II. Variations
+- Given set of elements N and K slots 
+- Order the N elements in all the possible ways inside the K slots
+
+
+III. Combinations
+- Picks two form order does not metter

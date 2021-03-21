@@ -1,0 +1,43 @@
+Algorithm Analysis
+
+We predict the resources the algorithm need 
+for example:
+
+1. computation time 
+2. Ram 
+
+The expected running time of a algorithm is 
+
+1. total number of primitive operation execute 
+
+We always look for the worst case cenerio 
+Average case 
+Best Case - lower bound
+
+higher terms dominate lower 
+
+Algorithm Complexity - rough estimation of the number of steps performed by given computation, depending on the size of the input 
+Measured with asymptotic notation 
+
+Big ho of fn
+theta of n 
+omega of n
+
+Memory Requirement should also be consider
+
+Abstract Data Type 
+
+Data structure is a particular way of storing and organizing data in a computer so that it can be used efficiently
+
+e.x. Person = first name, last name, age 
+int[]
+List<string>()
+
+Array Data Structure - there are build in and lightweight
+
+1. ordered 
+2. has fixed size - 
+
+array use a single block of memory
+
+List Data Structure 
