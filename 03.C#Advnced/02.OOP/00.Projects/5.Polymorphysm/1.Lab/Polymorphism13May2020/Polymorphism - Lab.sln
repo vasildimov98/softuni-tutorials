@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operations", "Operations\Operations.csproj", "{BEB349D6-6276-419D-AF40-54946AF7133B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animals", "02. Animals\Animals.csproj", "{B74DA5EA-6533-4455-B26B-EBA1F727222B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{00D80DC4-51DA-43E0-890C-6D98BE181801}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEB349D6-6276-419D-AF40-54946AF7133B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB349D6-6276-419D-AF40-54946AF7133B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB349D6-6276-419D-AF40-54946AF7133B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB349D6-6276-419D-AF40-54946AF7133B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B74DA5EA-6533-4455-B26B-EBA1F727222B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B74DA5EA-6533-4455-B26B-EBA1F727222B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B74DA5EA-6533-4455-B26B-EBA1F727222B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B74DA5EA-6533-4455-B26B-EBA1F727222B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D80DC4-51DA-43E0-890C-6D98BE181801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D80DC4-51DA-43E0-890C-6D98BE181801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D80DC4-51DA-43E0-890C-6D98BE181801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D80DC4-51DA-43E0-890C-6D98BE181801}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BA894B1-CDFC-4962-9E69-0A6EAB8E8C59}
+	EndGlobalSection
+EndGlobal
