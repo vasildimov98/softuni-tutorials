@@ -1,0 +1,33 @@
+Linear Data Structures
+Static and Dynamic Implementation
+
+I. Dynamic Arrays - List
+
+List is the implementation of ADS List build atop an array which is able to dynamicly grow or shrink
+
+1. Operations 
+- Constan O(1) - Count, Get and Set
+- However Add is amortizied constant - adding the n element requires O(n)
+- All other operations are O(n) like Insert, Contains, Remove and so on!
+
+II. Node - Building Block
+
+1. Node class is the build block for many data structures
+- Inside it we store the value and at least pointer for the next node!
+- However we store anything else!
+
+III. Stack - Dynamic Implementation
+
+1. Constant operations
+- Count, Push, Pop, Peek
+
+2. Liear Operations - Contains, find and etc
+
+IV. Queue - is the implementation of ADS FIFO
+
+if don't keep ref to the last element the Enque is O(n), otherwise is O(1).
+
+V. LinkedList - SinglyLinkedList
+- Linear data structures where each element is a separate object - Node!
+- The elements are not stored at contiguous memory
+- the entry point is commanly the head of the list!

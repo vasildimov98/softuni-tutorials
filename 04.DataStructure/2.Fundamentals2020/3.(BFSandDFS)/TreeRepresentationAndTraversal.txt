@@ -1,0 +1,55 @@
+Trees Representation and Traversal (BFS and DFS)
+
+I. Why Trees? Definition and Cases of Trees
+- It allows us to create a way for searching by using O(log(n)) complexity!
+
+II. Trees and related Terminology 
+
+1. Tree Definition - it is a abstract data structure that simulates hierarchical tree structure:
+A. Value
+B. Parent - null or another tree reference
+C. Children - collection of trees
+
+Recursive definition - a tree consists of value and a forest (the subtrees of its children)
+
+2. Terminology
+
+A. Node - A structure which may contain a value or condition or represent a seperate data structure
+B. Edge - the connection between one node and another
+C. Root - the top node in a tree, the prime ancestor
+D. Parent - the converse notion of a child, an immediate ancestor
+E. Child - node directly connected to another node when moving away from the root, an immediate descendant
+F. Siblings - a group of nodes with the same parent
+G. Ancestor - node reachable by repeated proceeding from child to parent
+I. Descendant - node reachable by repeated proceeding from parent to child 
+H. Leaf - A node with no children
+J. Branch - a node with at least one child 
+K. Degree - number of children for node 
+L. Path - sequence of nodes and edges connecting a node with a descendant
+M. Distance - number of edges along the shortest path between two nodes
+N. Depth - distance between a node and the root
+O. Level - depth + 1
+P. Height - the number of edges on the longest path between a node and a descendant leaf
+Q. Width - number of nodes in a level 
+R. Breath - number of leafs on the lowest level
+S. Height - the maximum level in the tree
+T. Forest - set of disjoint trees
+U. Subtree - tree T is a tree cinsisting of a node in T and all its descendants in T
+
+III. Implementing Trees - Recursive Tree Data Structure
+
+1. Recursive Tree Definition
+- A single Node is a tree
+- Nodes have zero or multiple children that are also trees
+
+IV. Traversing Tree-Like Structures
+DFS and BFS Traversal
+
+1. Definition - it means to visit each node only exacly once
+ - The order of visiting nodes may vary on the traversal algorithm
+ - Depth-First Search (DFS)
+	- Visit node's successors first
+	- Usually implemented by recursion
+ - Breadth-First Search (BFS)
+	- Nearest nodes visited first
+	- Implemented by queue!

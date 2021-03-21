@@ -1,0 +1,95 @@
+Data Stuctures and Complexity
+Memory, Data Stuctures and Complexity Notations
+
+I. Memory Storage and Hierarchy
+
+1. What do we call Memory?
+Any phisical device thar stores information temporary, using RAM, or permanetly, using ROM by utilize integrated circuits. 
+The term memory, meaming main storage is often associated with addressable semiconductor memory 
+
+- In computer science, memory usually is:
+ - a continuous, numbered – aka addressed – sequence of bytes
+ - storage for variables and functions created in programs
+ - random-access – equally fast accessing 5th and 500th byte
+ - addresses numbered in hexadecimal, prefixed with 0x
+ 
+2. Memory Hierarchy 
+- Each memory level is faster and smaller than the next memory level. We have nearly infinite memory storage which is also infinite slow
+
+II. Data Stuctures - Overview
+
+1. What is Data? 
+- Data from Latin means datum, which originally meant "something given" - 1600s.
+- Data is raw, unorganized facts that need to be processed. Data can be something simple. Seemingly something useless until its organize
+
+2. What is Information? - when data is processed, organize, structured or presented in a given context so as to make it useful, its called information
+
+3. Data in Computing?
+- Set of symbols gathered and translated for some purpose.
+- Simplified - bits of imformation in memory. If those bits remain unused, they don't do anything
+
+4. Data Stuctures - an object which takes responsibility for data organization, storage, management in effective manner
+
+5. Abstract Data Structures - the way real objects will be modulated as mathematical objects, alongside sets of operations to be executed upon them, without the implementation itself.
+
+6. Data Structures Implementation - definitive way of ADS to be presented inside the computer memory, alongside the implementationof the operations.
+
+III. Algorithmic Complexity - Asymptotic Notation
+
+1. Why should we analyze algorithms?
+ - Predict the resources the algorithm will/may need
+  - Computational time (CPU consumption)
+  - Memory space (RAM consumption) 
+  - Communication bandwith consumption
+  - Hard disk operations
+  
+2. There are three main properties we want to analyze:
+- Simplicity – this is really a matter of intuition and of course it is subjective quality
+- Accuracy – this seems easy to determine, however it may be very difficult to determine is the algorithm correct?
+- Performance – the consumption of CPU, Memory and other resources (we really care the most for the first two)
+
+3. Expected Running Time: 
+- The total number of primitive operations executed
+- Also known as algorithm complexity
+
+4. Simplifying Step Count
+
+- Some parts of the equation grow much faster than others:
+T(n) = 3(n2) + 3n + 3
+ - We can ignore some part of this equation
+ - Higher terms dominate lower terms – n > 2, n2 > n, n3 > n2
+ - Multiplicative constants can be omitted – 12n = n, 2n2 = n2
+- The solution becomes ≈ n2
+
+5. Types of Time Complexity
+
+ - Wors case
+ - Average case
+ - Best case
+ 
+6. Asymptotic Notations are descriptions that allow us to ecamine an algorithm's running time by expressing it performance as the input n of an algorithm or a fuction f increases. The three comman asymptotic notations are: 
+ - Big O
+ - Big Theta 
+ - Big Omega
+ 
+7. Algorithmic complexity
+– Rough estimation of the number of steps performed by given computation, depending on the size of the input
+- Measured with asymptotic notation:
+ - O(f(n)) –  upper bound (worst case)
+ - Θ(f(n)) –  average case
+ - Ω(f(n)) – lower bound (best case)
+- Where f(n) is a function of the size of the input data
+
+8. Memory consumption should also be considered, for example:
+- Storing elements in a matrix of size N by N
+ - Filling the matrix – Running time O(n2)
+ - Get element by index – Running time O(1)
+ - Memory requirement O(n2)
+- However in this course we won't be optimizing memory consumption we will only point it out
+
+
+
+
+
+  
+ 

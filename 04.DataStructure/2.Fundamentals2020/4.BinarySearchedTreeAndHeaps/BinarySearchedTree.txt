@@ -1,0 +1,65 @@
+Binary Trees, Heaps and BST - Terminology, Traversal and Operation
+
+I. Binary Trees and BT Traversal (Preorder, Inorder, Postorder)
+
+1. Binary Tree
+- ADS representing trees hierarchy;
+- Each node has at most two children
+	- Children are called left and right
+	- The parent is also called source
+- It is the most widespread form of tree
+- each node has at most 2 children(left and right)
+
+2. Types of Binary Trees
+
+A. Full - each node has 0 or 2 children
+B. Complete - nodes are filled top to bottom and left to right
+C. Perfect - combines complete and full - leafs are at the same level, other nodes have two children exactly!
+
+3. Binary Tree Traversal
+
+A. Pre-Order - source or parent is print pre children
+B. Post-Order - source or paren is print post children
+C. In-Order - source or parent is print in between children
+
+II. Heaps - Heap, Binary Heap
+
+1. What is heap? 
+ - Heap - Tree-based data structure
+ - Stored in an array
+Heaps holds the heap property for each node:
+ - Min Heap - parent <= children
+ - Max Heap - parent >= children
+ 
+2. Binary Heap - represents a Binary tree
+- Shape property - binary heap is a complete binary tree:
+- Every level, exept the last, is completely filled
+- Last is filled from left to right;
+
+3. Array Implementation - Binary heap can be stored in a array and with this formulas you can find:
+ - Parent(index) = (index - 1) / 2;
+ - LeftChild(i) = 2 * i + 1;
+ - RigthChild = 2 * i + 2;
+ 
+4. Heap Insertion 
+- Insert at the end
+- Heapify element up;
+
+III. Priority Queue - Dequeue Most Significant Element
+
+1. Definition 
+- ADS representing queue or stack in that metter like DS
+	- Each element is served in priority
+	- High priority is served before low ones
+	- Element with equal priority - served in order of input or undefined
+- Retains a specigic order to the elements
+- Highrt priority elements are pushed to the beginning of the queue
+- Lower priority elements are push to the end of the queue;
+- It support Add, Dequeue, Peek();
+- Elements should be IComparable so that it could be prioritize
+
+IV. Binary Searched Tree (BST)
+
+1. Definition For each node x
+- Elements in left subtree of x are < x;
+- Elements in right subtree of x are > x;
