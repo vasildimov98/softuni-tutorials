@@ -1,0 +1,5 @@
+Linked List is a collection of Nodes
+Node saves data about next node
+Node can eat all the memory and they are spread across the memory, just linked with eachother
+
+Double Linked List has node for next and node for privious

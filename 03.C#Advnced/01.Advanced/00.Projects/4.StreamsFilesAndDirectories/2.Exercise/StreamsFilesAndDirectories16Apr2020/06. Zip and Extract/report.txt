@@ -1,0 +1,16 @@
+.json
+--05. Directory Traversal.runtimeconfig.json - 0.150kb
+--05. Directory Traversal.runtimeconfig.dev.json - 0.164kb
+--05. Directory Traversal.deps.json - 2.278kb
+.txt
+--words.txt - 0.016kb
+--expectedResult.txt - 0.027kb
+--text.txt - 0.120kb
+.dll
+--05. Directory Traversal.dll - 7.500kb
+.exe
+--05. Directory Traversal.exe - 167.500kb
+.pdb
+--05. Directory Traversal.pdb - 1.676kb
+.png
+--copyMe.png - 9.136kb
