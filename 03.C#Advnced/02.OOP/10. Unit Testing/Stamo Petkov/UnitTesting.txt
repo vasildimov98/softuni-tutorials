@@ -1,0 +1,42 @@
+Unit Testing
+- Building Rock-Solid Software
+
+I. Seven Testing Principles
+
+1. Testing is context dependent
+2. Exhaustive testing is impossible
+- Risk analysis and priorities should be used to focus testing effort
+3. Early testing is always preferred
+4. Defect clustering
+- Testing effort shall be focused proportionally 20/80
+-A small number of modules usually contains most of the defects discovered
+5. Pestiside paradox - same test repeated over and over tend to lose their effectiveness 
+- Previously undetected defects remain undiscovered
+6. Testing shows presence of defects
+7. Absence of errors fallacy
+
+II. Software used to test software (Unit Tesnting)
+
+1. Manual testing 
+- Not structured
+- Not repeatable
+- Can't cover all of the test
+- Not as easy as it be
+
+2. Automated Tesnting
+- System test
+- Integration tests
+- Unit test
+
+III. SetUp and First test 
+
+1. What is AAA Tesnting Pattern
+- Organize and clarify test code by breaking it down into the following functional sections:
+
+A. Arrange - section of a unit test initializes objects and sets the value of the data that is passed to the test case
+B. Act - section invokes the test case with the arranged parameters
+C. Assert section verifies the test case behaves as expected
+
+IV. How to Write Good Tests
+
+V. Isolating Behaviors

@@ -1,0 +1,102 @@
+SOLID Principle - design patterns and approaches
+
+I. Single Responsibility - responsable only for one function of the code and that responability should be entirely encapsulated by the class
+
+1. Cohesion refers to the grouping of functionally related processes into prticular module
+
+Aim for strong cohesion:
+- Each task maps a single code unit
+- A method should do only one operation 
+- A class should represent one entity
+
+2. Coupling - the degree of dependence between modules
+- How closely connected two modules are
+- The strength of the relationship between modules
+
+Aim for loose coupling:
+- Support readability and maintainability
+- Often a sign of good system design
+
+3. Approaches for strong cohesion and loose coupling
+- Small number of instance variable
+- Each method should manipulate one or more of those variables
+- Two modules should exchange as litle information as possible
+- Creating an easily reusable subsystem
+
+II. Open/Closed Principle - software entities like classes, modules and functions should be open for extension, but close for modifications
+
+A. Extensibility - Adding a new behavior does not require chages over existing source code
+B. Reusability - subsystems are suitable for reusing in other projects - modularity
+
+1. Design smell - violations
+
+- Need to retest after changes
+ - Old part changes -> possible bugs
+- Cascading changes through modules
+- Logic depends on conditional statement ("IS - A")
+
+2. Approaches
+- Parameters
+ - Control behavior specifics via a parameter or a delegate
+- Rely on abstraction not implementation
+
+3. When to apply 
+- By experience 
+- Changes ones - modify, second time - refactor
+- No design can be saved from all changes - know who to guard
+
+III. Liskov Substitution
+- Derived types must be completely substitutable for  their base types
+
+- Derived classes: 
+ - only extend functionalities of their base classes
+ - must not removed base class behavior
+Studen is substituted for person
+
+1. Design Smells - Violations 
+- Type Checking
+- Overridden methods say - "I am not implemented" 
+- Base class depends on its subtypes 
+
+2. LSP - Approaches
+
+- Tell don't ask - if you need to check is the object type - move the behavior inside the object
+- New Base class - if two class share common behavior, but are not substitutable, create a third which both can derived from
+- There shouldn't be any virtual method in the constructor
+
+IV. Interface Segregation 
+- Segregate Interfaces
+ - Preffer small and lean interfaces (lean and focused)
+ - Divide fat interface into role interfaces
+ 
+1. Fat Interfaces - classes whose interfaces are not cohesive have fat interfaces
+
+2. Design Smells - Violations
+
+- Not implemented methods
+- A Client references a class, but only uses a small portion of it 
+
+3. Approaches
+
+- What does the client see and use?
+- The fat interfaces implement a number of small interfaces with just what you need 
+- All public members of a class divided in diff class can thought of as an interface
+- Let the client define interface
+
+V. Dependancy Inversion
+
+1. Types of Dependancy Inversion
+ A. Constructor Injection
+ Pros: Class requirment are self documenting
+       We don't have to worry about state validation
+ Cons: To many parameters and sometimes we don't need all of them
+ B. Property Injection
+ Pros: Functionality can be change at any time, therfore the code becomes very flexible
+ Cons: State can be invalid and its less intuitive to use
+ C. Parameter Injection
+ Pros: Changes are only lolcalized to the method
+ Cons: Too many parameter and breaks the method signiture
+ 
+2. DIP Violations
+ - Classic DIP Violations are using the new keyword and static methods and properties
+ 

@@ -1,0 +1,37 @@
+Encapsulation
+
+I Encapsulation - Hiding Implementation
+
+The process of wrapping code and data together into a single unit
+Flexibility and extensibility of the code
+Reduce complexity
+Structural changes remain local
+Allows validation and data binding
+
+1. Example
+Fields should be private and property should be public
+
+2. Keyword 'this'
+- reference the current object
+- refers to the current instance of the class
+- can be passed as a parameter to other methods
+- Can be returned from method
+- Can involke current class methods 
+
+II. Access Modifier
+1. Private Access Modifier 
+- Its the main way to perform encapsulation and hide data from the outside word
+- the default field and method modifier is private
+
+2. Public access Modifier 
+- The most permissive access mod
+- There are no restrictions on accessing public members
+- the access class directly from a namespace use the keyword using
+
+III Validation
+- Setters are a good place for a validaion
+- Constructors use private setters with validaion logic
+- Guarantee valid state of the object after its creation
+
+- private mutable fields are still not encapsulated
+- In this case you can access the field methods through the getter 

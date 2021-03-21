@@ -1,0 +1,57 @@
+Polymorphism - override and overloads methods
+
+I. Polymorphism
+- This is object that have different meaning depending on the context
+- Polymorphism is the third column on the OOP, after inheritence and interfaces and abstraction 
+
+1. Polymorphism in OOP - ability of and object to take on many forms
+Person IS A Person
+Person IS A Mammal
+Person IS AN Animal
+Person IS AN Object
+
+2. Reference Type and object type
+- Varianbles are saved in a reference type
+- You can use only reference methods
+- If you need an object method you need you need to cast it or override
+
+3. Keyword IS and AS
+- IS statement support pattern matching
+- Type pattern test wheater an expression can be converted to a specific type and cast it to a variable
+- Constant Pattern - test wheater an expression evaluates to a specified constant value
+- var pattern match that always succeeds and binds the value of an expression to a new local variable
+
+4. Keyword AS
+- AS works only with reference type
+
+5. Types of Polymorphism
+A. Runtime 
+B. Compile time also know as Static Polymorphism
+Argument list could differ in 
+- number of parameters
+- data type of parameters
+- Order of type parameters
+
+6. Rules for overloading a method
+- Signature should be different (number, tyoe, order of arguments)
+
+Return type is not part of the signiture
+Overloading can take place in the same class or in its sub-classes
+Constructor can be overloaded
+
+7. Runtime Polymorphism
+- Has two distinct aspects
+- At run tume, objects of a derived class may be trated as objects of a base class in places, such as method parametersand collections or arrays
+- Base classes may define and implement virtual methods 
+- Derived classes can overrider
+- they provide their own definition and implementation
+At run time, they call the write override
+
+8. Rules for overloading Methods
+-Overriding must take place in any sub-classes
+-The overriding method and the base must have the same return type and the same signature
+-Base method must have the virtual keyword
+-Overriding method must have the abstract or override keyword
+-Private and static methods cannot be overridden 
+
+

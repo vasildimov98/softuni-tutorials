@@ -1,0 +1,22 @@
+Inheritance 
+
+Superclass aka base clase and Parent class
+gives is memebers to child class
+
+Sub class class - derived class, child class
+
+Subclass is Superclass e.x. cat is animal
+
+In C# Inheritance is defined by :
+
+All members including the private are inheritated by child subclass without constructors
+
+private - only the class can use it
+protected - only the base class and its children
+internal - only the classes insede the namespace
+public - everyone can access it!
+
+There is no multible inherintance class in C#
+However there is multible interface inherintance
+
+sealed class cannot be inheritanted

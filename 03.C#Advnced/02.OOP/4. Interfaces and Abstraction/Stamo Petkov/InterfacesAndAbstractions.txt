@@ -1,0 +1,26 @@
+Interfaces and Abstraction 
+
+I. Achieving Abstraction
+1. What is Abstraction - Preserving information that is relevant in the given context and forgeting things that are irrelevant in that context!
+
+2.Abstraction in OOP - means ignoring irrelevant members and emphasizing the ones relevant to the context of the project we develop
+- Abstraction helps managing complexity
+- Abstraction lets yoyu focus on what the object does instead how it does it
+
+3. How to achieve abstraction 
+
+A. Interfaces
+B. Abstract class
+
+II. Working with Interfaces
+1. Interfaces
+- Contains only the signatures of the class members (prop, method, events or indexes)
+- Can be inherit one or more times 
+- When a base type list contains a base class and interfaces, the base class must come first in the list
+
+III. Abstract classes and methods
+- Cannot be instantiated
+- can contain abstract method and accessors
+
+1. Abstract method
+- they are must be implemented virtual method 

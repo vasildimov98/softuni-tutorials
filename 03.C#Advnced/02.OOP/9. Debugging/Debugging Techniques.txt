@@ -1,0 +1,29 @@
+Debugging
+Building Rock-Solid Software
+
+Debugging is proccess if finding and than fixing or bypassing the error
+
+Errors are logical and runtime error 
+Steps of debugging
+
+1. StartWith the problem 
+2. Isolate the source of the problem
+3. Fix it -> repair not stop func!
+
+Debugging tools help identify coding error at various stages 
+
+Debugging vs Testing 
+
+Testing a means of initial detection of errors - says smth does not work, without saying way
+Debugging - a mean of diagnosing and correcting the error and finding why does not work
+
+We should aim to write legacy code. In Other words we should be able to read the code after years
+
+Visual Studio Debugger give us:
+Adding breakpoints 
+Visualize the program flow
+Control the flow of execution
+Data tips
+Wathch variables
+Debugging multithreaded programs
+*** MultiThreading 

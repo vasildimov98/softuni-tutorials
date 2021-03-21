@@ -1,0 +1,5 @@
+Test Driven Exeption 
+
+When you test on written code you validate code only  the code thats written
+
+Refactoring

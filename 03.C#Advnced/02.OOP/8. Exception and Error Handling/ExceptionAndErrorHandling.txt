@@ -1,0 +1,17 @@
+Exception Handling
+
+1. What is Exeption?
+- Simplify code construction and maintenance
+- allow the problematic situations to be processed at multiple levels
+- Exeption objects have detailed information about the error
+
+2. The System.Exeption Class
+
+We handle exeption by using try{} -> catch{}
+
+we can catch infinity time Exeption and use finally to make sure something would happend at the end
+
+3. Throwing Exeption
+
+we use the keyword throw 
+the program stops when there is Exeption

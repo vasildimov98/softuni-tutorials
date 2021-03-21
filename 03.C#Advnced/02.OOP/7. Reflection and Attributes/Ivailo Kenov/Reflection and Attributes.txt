@@ -1,0 +1,44 @@
+Reflection and Attribute 
+
+What? Why? Where? When? - reflection
+
+1.What is Metaprogramming?
+- Programming technique,in which computer programs have the ability
+ to tread other programs as their data 
+
+Programs can be design to:
+- Read
+- Generate
+- Analyze
+- Transform
+- Modify itself
+
+2. What is reflection?
+- The ability of a programming language to be its own metalanguage?
+- Programs can examine information abount themselves
+
+3. When do we use it?
+
+- to make code ectendible
+- to reduce code length significatly
+- easier maintenance 
+- easier testing
+
+4. Where do we use it? 
+if it is possible to perform an operation without using reflection, then it is prefarable to avoid it
+
+cons of reflection: 
+1. Performance overhead
+2. Security restriction
+3. Exposure of internals
+
+By using Activator we can create instance dynamically
+
+5. Binding Flags
+- enums that specifies what kinds of data we are looking up!
+
+
+Attribute data holding class 
+
+Data Holding Class
+Descrobes parts of your code

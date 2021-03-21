@@ -1,0 +1,67 @@
+Reflection and Attributes
+
+I. What, Why, Where and When Reflection?
+
+1. What is Metaprogramming?
+- Programming technique, in which computer programs have ability to treat other programs as their data;
+
+- Programs can be designed to:
+> Read
+> Generate
+> Analyze
+> Transform
+> Modify itself while running
+
+2. What is Reflection? 
+- The ability of a programming language to be its own metalanquage 
+- Programs can examine information about themselves
+
+3. When to use it? 
+Whenever we want:
+- Code to become more extendable
+- To reduce code length significantly
+- Easier maintenance
+- Easier testing
+
+4. When not use reflection?
+If it is possible to perform an operation without using reflection, then it is preferable to avoid using it
+Cons from using Reflection
+Performance overhead
+Security restrictions
+Exposure of internals
+
+II. Reflection Class and Members - Reflection API
+
+1. Type Class
+- primary way to access metadata;
+- obtain compile time - if we know the name of the class - typeof
+- Can be obtain at runtime - Type.GetType(FullName)
+
+2. Class Name
+Obtain class name
+- Fully qualified class name - .FullName
+- Class name without namespaces - .Name 
+
+3. Base class and interfaces
+Obtain base type - .BaseType;
+Obtain Interfaces - GetInterfaces
+
+4. Creating New Instances Dynamically
+- Creates and instance of type by involking the constructor that matches the specified arguments
+
+5. Reflect Fields - By flags or not
+
+6. Binding Flags - enum specifies what kind of types we are looking up
+Can be combine with bitwise operator OR 'I'
+
+7. Obtain Constructor - GetConstructors();
+
+8. Reflect Methods
+- Obtain all public methods
+
+III. Data about data - Attributes
+
+1. Attributes
+- Data holding class
+- Describes parts of your code
+- Applied to - Classes, fields, methods 

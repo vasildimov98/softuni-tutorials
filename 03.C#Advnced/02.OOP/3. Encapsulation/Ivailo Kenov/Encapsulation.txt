@@ -1,0 +1,12 @@
+Encapsulation is process of hiding implementation
+
+unit code together in sigle unit
+reduce complexity 
+it remains logal
+allows validation and data type 
+
+This can be used alone and passed to other method 
+
+Access Modifier 
+private only the current class can access it
+public everybody can use it 

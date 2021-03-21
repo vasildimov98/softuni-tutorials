@@ -1,0 +1,16 @@
+Unit Testing
+
+1. Seven Testing Principles
+A. Testing is contest dependent
+B. Exhaustive testing is impossible
+We don't have to test everything exept trivial cases - depends on time and priority!
+C. Early testing is always preferred
+D. Defect clustering - a small number of modules usually contains most of the defects discover
+E. Pesticide Paradox- testing should be on going process
+F. Testing shows presence of defects
+G. Absence of errors fallacy
+
+Arranged Act Assert (AAA)
+
+You can test more than one cases with attribute [TestCase]
+We assert elements in collection with CollectionAssert

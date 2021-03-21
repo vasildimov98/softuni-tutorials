@@ -1,0 +1,6 @@
+S - single responsibility
+strong cohesion and loose Coupling
+O - Open/Closed
+L - Liskov Substitution
+I - Interface Segregation
+D - Dependency Inversion 

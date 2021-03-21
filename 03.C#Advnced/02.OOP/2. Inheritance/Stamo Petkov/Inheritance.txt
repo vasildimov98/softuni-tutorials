@@ -1,0 +1,47 @@
+Inheritance (Classs Hierarchies)
+
+I. Extending Classes (Inheritance)
+1. Superclass - parent class, base class
+- the class giving its members to its child class
+2. Superclass - Child class, Derived class
+- the class taking members from base class
+
+II. Class Hierarchies
+
+Inheritance leads to hierarchies of classes and/or interfaces in an application 
+
+1. Inheritance in C# is defined by the : operator 
+- Derived classses take all members from base classes
+- Using Inherited Members
+
+2. Reusing Constructor
+- Constructors are not inherited
+- They can be reused by the child classes
+- Derived class instance contains instance of its base class
+- Inheritances has a transitive relation 
+- In C# there is no multiple inheritance but we implement multiple interfaces
+
+3. Reusing Code at Class Level
+- Derived classes can only access all public and protected members
+- Internal members are accessed in the same assembly
+- Private fields are not inherited in subclasses
+- Derived classes can hide superclasses variables
+
+Virtual methods- defines a method that can be overriden
+Sealed modifier prevents other classes form inheriting from it
+-You can use the sealed modifier on a method or a property in a base class
+
+4. Inheritances benefits
+- We can extend a class that we can't otherwise change
+
+III. Types of class Reuse -Extension, Composition, Delegation
+
+1. Extension 
+- Dublicate code is a error prone
+- Reuse class through extension
+- Sometimes this the only way
+
+2. Compositition 
+Using classes to define classes
+
+3. Delegation 
