@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to DOM</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Intoroduction to DOM</h1>
+    </header>
+    <main>
+        <ul>
+            <li class="li-style">DOM methods example</li>
+            <li class="li-style">DOM properties example</li>
+        </ul>
+    </main>
+    <script>
+        let parent = document.querySelector('ul');
+        let childs = document.getElementsByClassName('li-style');
+
+        let firstChild = childs[0];
+        let secondChild = childs[1];
+
+        console.log(parent);
+        console.log(firstChild);
+        console.log(secondChild);
+
+        let thirdChild = document.createElement('li');
+        thirdChild.innerHTML += 'Creating new Element Example!'
+        parent.appendChild(thirdChild);
+
+        let newChild = document.createElement('li');
+        newChild.innerHTML += 'Replacing Child Example!'
+        parent.replaceChild(newChild, thirdChild);
+
+        document.write('Hi I am writing sth and I don\'t know why!');
+
+        newChild.remove();
+
+        parent.appendChild(newChild);
+
+        alert(window.navigator.userAgent);
+        
+    </script>
+</body>
+
+</html>

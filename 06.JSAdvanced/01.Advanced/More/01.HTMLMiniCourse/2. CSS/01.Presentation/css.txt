@@ -1,0 +1,25 @@
+Introduction to CSS
+Selectiong Elements to Apply a Style
+
+I. CSS Selector - Apply CSS Rules
+
+1. Primary Selectors Defining the Elements to which a Set of CSS Rules Apply
+
+A. Select by Tag
+- We just write the tag we want to be catch and write our rules
+
+B. Select by Id 
+We put the id inside the html tag and grab the tag by itself
+id is one and unique for everyone
+
+C. Select by class
+Almsot the same as id, however class can be use more than onces
+
+2. Nested Selectors - More than one simple selector
+A. Descendant 
+B. Adjacent Sibling
+C. Direct child
+D. Multiple Classes
+E. Attribute Selectors
+F. Multiple Selectors
+G. Combing Multiple Selectors

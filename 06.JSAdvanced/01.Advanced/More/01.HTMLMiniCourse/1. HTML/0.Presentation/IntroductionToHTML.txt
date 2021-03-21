@@ -1,0 +1,46 @@
+Introduction to HTML
+Doctype, Head, Body, Sematic Tags, HTML Entities, Tables
+
+I. Document Structure - HTML Document, Doctype, Head, Body
+
+1.Essential elements for each HTML document:
+<!DOCTYPE>, <html>, <head>, <body>
+
+- All the content of the Web page is inside the <html> tag
+
+2. Head Element
+- The <head> contains markup not visible to the user, but helps the browser render correctly the HTML document
+
+A. Title and Favicon 
+- The <title> tags gives us the document title 
+- The Favicon 
+
+3. Semantic Structural Tags Defining the different parts of a web page
+
+A. Structur of a Web Page 
+ - Navigation and Logo
+ - Header
+ - Main (content + aside)
+ - Footer
+ 
+B. Nav - holds information about the navigation bar
+C. Header = holds a document or section header
+D. Main - specifies the main content of a document
+E. Section = a group of related content
+F. Aside - defines a sidebar
+G. Footer - a document / section footer
+H. Figure + Figcaption 
+- Figure is a elements that marks up they will be a photo
+- Figcaption is a caption for a figure elements
+I. Details - tag specifies additional details;
+and Summary a visible heading for details;
+
+II.Multimedia Context
+III. HTML Tables Tags for Building Tables
+There are tree spesific parts in every table:
+1. Header - title
+2. table body(row)
+3. Table footer
+
+Each table part holds rows (<tr>)
+Rows hold cells (<td> / (<th>))

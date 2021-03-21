@@ -1,0 +1,75 @@
+Syntax, Functions and Statement - Value, Operators, Parameters, Return Value, Arrow Functions
+
+I. Introduction to JS
+
+1. Dynamic Programic Language
+
+- JS is dynamic programming language, which means stuff that are useally done compile time, here we do it runtime
+- It is possible to change the type of variable or add new properties or methods to an object while the program is running, where in static language such things are impossible
+
+2. Identifiers - sequence of characters in a code that identifies a variable - it can contain _, $ and digits (0 - 9), however it cannot start with one
+
+3. Variable Value
+- Used to store data values to a identifier
+- non primitive value are given a reference to that value
+- *Undefined - a value that has been declared with a keyword(identifier), but not given a value
+- Undeclared - a variable that has not be declare with a keyword
+
+4. Variable Value
+- let, const and var are use to declare variables
+ A. let - for reassining a variable
+ B. const - once assigned it cannot be modified
+ C. var - defines a var in the function scope
+
+5. Global scopes
+- Global scope - any var that is not inside a scope 
+- Function scope - everything inside the function
+- Blocked scope - scope inside a function scope or global scope
+
+6. Dynamic Typing - any value can be defined to a variable. However that is consider a bad practice
+
+II. Arithmetic, Assignment, Comparison, Logical Operators
+
+1. Arithmetic Operators - take numerical values(either literals or variable) as their operands
+- Return a single numerical value +, -, *, /, %, **
+
+2. Assignment Operators = assign value;
+
+3. Comparison Operators == and === are diff also != and !==
+
+4. Truthy and falsy
+ - 'truty' - a value that coerces to true when evaluated in a boolean context
+ - The following values are 'falsy'
+
+5. Logical Operators
+ - && - return the leftmost 'false' value or the last truthy value, if all are true
+ - || return the leftmost 'truthy' value or the last falsy value if all are false;
+ 
+6. Logical Not - returns false if a value can be converted to true; otherwise, returns true;
+
+7. Typeof Operators - operator returns a string indicating the type of an operand
+
+8. Instanceof Operators - operator return true if sth is instace of the specified object
+
+III. Declaring and Involking Function
+
+1. Function - named list of instructions (statement) and they can take parameters and return or not a result (correct naming is camelCase)
+
+2. Functions declarations
+A. func declarion
+B. Function expression
+C. Arrow functions
+
+3. Parameters 
+ - possible to not give a value to parameter or give more parameters than nessecerry;
+ 
+4. Defauly Parameters - its declare in the parameter section
+
+5. Fist-class Functions
+a function can be passed as an argument to other functions can be return to another function or passed as an argument
+
+6. Nested Funtions - funtion can be nested inside another functions - inner funtion can access by their parent
+
+7. Hosting 
+ - variables and funtion are put in the memory when declared but stay exactly where we put it in your code
+ - Only declarations are hoisted

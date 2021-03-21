@@ -1,0 +1,67 @@
+Function Context
+Understanding the 'this' keyword in JS
+
+I. Intorduction to 'this' / What Is 'this'?
+
+1. What is Function Context?
+- The function context is the object that owns the currently executed code;
+- function context === object;
+- The object depends on the context;
+
+2. this
+- Special keyword in JS;
+- Its value is based on the context;
+- There are diff in strict mode;
+- The object that this refers to changes every time execution context is changed;
+- When used alone the context is global / window
+
+II. Call, Apply, Bind
+1. Explicit binding
+- Occurs when call(), apply(), or bind() are used on a function
+- Forces a function call to use a particular object for this binding
+
+2. Changes the context by call
+- Calls a function with a given 'this' value and arguments provided individually
+
+3. Changes the context by apply
+- Calls a function with a given 'this' value and arguments provided as an array
+
+4. Diff between call() and apply()
+- apply() accepts a single array of arguments, while call() accepts an argument list
+- If the first argument is undefined or null a similar outcome can be achieved using the array spread syntax
+
+5. Changing the context by bind;
+- The bind() method creates a new function 
+- Has its 'this' keyword set to the provided value, with a given sequence of arguments preceding any provided when the new funtion is called
+- Calling the bound function generally results in the execution of its wrapped function;
+
+III. Internal Object Properties
+1. Properties
+- Every object field(key) has four properties and they can be acces only by Object.defineProperty():
+A. Enumerable - can access to all of them using for...in loop 
+ - Enumerable property are returned using Object.keys method
+B. Configurable - can the behavior of the property
+- You can delete only configurable properties
+C. Writable - can modify their values and update a property just assigning a new value to it
+D. Value
+
+2. Object's Non-Enumerable properties
+- They won't be in for...in iterations
+- They won't appear using Object.keys function and Object.values
+- They are not seralized when using JSON.stringify()
+
+3. Object's Non-Writable Properties
+- Once its value is defined, it is not possible to chnage it using assignments
+- if the non-writable property contains an object, the reference to the object is what is not writable, but the object itself can be modified
+
+4. Object's Non-configurable Properties
+- Once you have defined the property as non-configurable, there is only one behavior you can change
+ - if a property is writable, you can convert it to non-writable
+ - Any other try will fail
+ 
+5. Object freeze() and seal()
+Freeze() - there is nothing you can do to the object
+Seal() - you can rewrite the value to only existing fields in the object
+
+
+ 

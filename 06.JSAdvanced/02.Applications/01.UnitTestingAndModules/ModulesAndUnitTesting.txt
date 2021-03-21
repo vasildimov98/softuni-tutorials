@@ -1,0 +1,50 @@
+Unit Testing 
+Modules, Unit Testing, Assertion
+
+I. Definition, Import, Export (Modules)
+
+1. Modules
+- Group / set of functionality that are related and work together for the same goal;
+- Group related behavior
+- Resolve naming collision
+- Expose only public behavior
+ - They do not populate the global scope with unnecessary objects
+
+2. Approaches for Modules
+- Using IIFE
+- Using Nodejs require/export
+- Using ES2015 import/export
+
+3. IIFE
+- Essential for JS front end
+- Expose only needed behavior/objects to the global scope
+
+4. Node.js Modules
+- use exports and require()
+- internal modules need to be exported before being required
+- In Nodejs each file has its own scope
+
+5. ES2015 Modules
+- Browsers modules system
+- Export and import always object
+- Canno work outside of file that is not describe as module
+
+II. Unit testing
+Definition, Structure, Examples, Frameworks
+
+1. Unit testing definition
+- A unit test test is a peace of code that checks whether certain functionality works as expected
+- Allows developers to see where & why errors occur
+- Easier maintanance of the code base
+- Faster development (Test driven development)
+- Automated way to find code wrongness
+
+III. Unit Testing with Mocha and Chai
+1. What is Mocha?
+- Feature-rich JS test framework
+- Provides common testing functions including it, describe and the main function that runs tests
+- Usually used together with chai
+
+2. What is Chai?
+- a library with many assertions
+- allows the ussage of a lot of different assertions such as assert.equal

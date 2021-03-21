@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventDemo</title>
+</head>
+<body>
+    <h1 id="title">Event Demo</h1>
+    <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+   
+    <script>
+        let titleElement = document.getElementById('title');
+
+        titleElement.addEventListener('mouseover', onMouseOverChangeColor);
+        titleElement.addEventListener('click', onMouseClickChangeBackground);
+        titleElement.addEventListener('mouseout', onMouseOutChangeColor);
+
+        function onMouseClickChangeBackground(e) {
+            if (e.isTrusted) {
+                e.target.style.backgroundColor = 'red';
+            }
+        }
+
+        function onMouseOverChangeColor(e) {
+            console.log(e);
+            e.target.style.color = 'green';
+
+            e.target.click();
+        }
+
+        function onMouseOutChangeColor(e) {
+            e.target.style.color = 'black';
+        }
+    </script>
+</body>
+</html>

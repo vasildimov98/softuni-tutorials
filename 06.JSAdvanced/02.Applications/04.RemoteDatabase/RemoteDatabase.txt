@@ -1,0 +1,53 @@
+Remote Databases
+
+I. Relational Databases
+- Represent and store data in tables and rows
+- Use Structures Querying Language (SQL)
+- Allows you to link information from different tables through the use of foreigh keys(or indexes)
+
+II. Non-Relational Databases
+- No-SQL databases
+- More flexibility and adaptability
+- Allows us to store unstructured data in a single document
+- Additional processing effort and more storage as the document sizes grow
+
+Relational and Non-Relational Pros
+A. Relational
+- Work with structured data
+- They support ACID transactional consistency and support 'joins'
+- Buil in data integrity and a large eco system
+- Relationships in this system have constraints
+- Limitless indexing
+
+B. Non-Relational
+- They scale out horizontally
+- Work with unstructured and semi-structured data
+- Schema-free or Schema-on-read options
+- High availability
+- Many are open source and so freee;
+
+III. Backend As a Service
+- Solutions that provide pre-built, cloud hosted component for developing application backends
+- Reduce the time and complexity required
+- Allow developers to focus on core features instead of low-level task
+- Types:
+ Cloud BaaS
+ Opensource Baas
+ 
+IV. Real-Time Cloud DB and App Platform by Google
+1. Firebase
+Mobile and web development platform. It provides: 
+Realtime database
+Backend as a service
+JSON-based data structure
+
+2. Authentication vs. Authorization
+A. Authentication
+- The process of verifying the indentity of a user or computer
+- Qustions: 'Who are you?', 'How you prove it?'
+- Credentials can be password, smart card, external token, etc.
+B. Authorization
+- The process of determining what a user is permitted to do on a computer network
+- Questions: 'What are you allowed to do?', 'Can you see this page?'
+
+

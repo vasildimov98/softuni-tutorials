@@ -1,0 +1,42 @@
+Templating 
+Creating UI Elements
+
+I. Templating
+1. What is Templating
+- Templates allow similar content to be replicated in a web page, without repeating the corresponding markup everywhere
+
+2. Templating Concepts
+- Templates are a method of separating HTML structure from the content contained within
+- Templating systems generally introduce some new sntax bu are usually very simple to work within
+- Typically token replacement is used to indicate part, which must be replaced
+- Templates should be as simple as possible
+ - Do not write business logic in the templates
+- Follow the principle of functional programming
+ - Templates are basically pure function;
+- The static parts of a webpage are stored as templates
+- The dynamic content is kept separately (e.g. in a database)
+- A templating engine combines the two
+- Benefits:
+ - Productivity - avoid writing the same markup over and over
+ - Save bandwidth - send the HTML once, fill in any content
+ - Composability - a single element can be used on multiple pages
+ 
+3. When should we use JS Templating
+- As soon as we fing ourselves including HTML inside JavaScrip strings
+- Separation of concerns is of utmost importance when building a maintainable codebase
+- Separation of concerns is of utmost importance when building a maintainable codebase
+
+II.Overview of Popular JS Libraries
+1. Templating Engines
+- React 
+- Vue
+- Angular
+- Web Components
+- Mustache
+- Handlebars
+
+III. Handlebars
+1. Overview
+- Based on the Mustache specification;
+- Adds helpers function and nested context paths;
+- Useds double curl brace notation {{ }};

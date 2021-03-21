@@ -1,0 +1,26 @@
+{{> header}}
+
+<!-- Details  -->
+<section id="viewdestinationDetails">
+    <div class="destination-area">
+        <div class="destination-area-left">
+            <img src="{{dest.imgUrl}}"
+                alt="">
+        </div>
+        <div class="destination-area-right">
+            <h3>{{dest.city}}</h3>
+            <div>to {{dest.destination}}</div>
+            <div class="data-and-time">
+                {{dest.day}} {{dest.month}} {{dest.year}}
+                {{#if isCreator}}
+                <a href="/edit/{{dest._id}}" class="edit-destination-detail"></a>
+                {{/if}}
+            </div>
+            <div>
+                {{dest.duration}} days
+            </div>
+        </div>
+    </div>
+</section>
+
+{{>footer}}

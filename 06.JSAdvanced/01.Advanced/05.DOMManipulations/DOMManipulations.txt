@@ -1,0 +1,85 @@
+DOM Manipulation 
+Create / Delete DOM Elements, Handle Browser Events
+
+I.Event Loop 
+- JS is single threaded language
+- Blocking thread requests
+- Register a callback
+- Handle multiple concurrent operations on one thread
+
+II.Handling DOM Events 
+1. Event Propagation - three stages:
+A. Capure
+B. Target
+C. Bubbling
+
+2. Event Types in DOM API
+A. Mouse Event 
+- click
+- mouseover
+- mouseout
+- mousedown
+- mouseup
+
+B. Keyboard events
+- keydown
+- keypress
+- keyup
+
+C. Touch events
+- touchstart
+- touchend
+- touchmove
+- touchcancel
+
+D. Focus
+- focus
+- blur
+
+C. DOM / UI
+- load 
+- unload
+- resize
+- dragstart / drop
+
+D. Form events
+- input
+- change
+- submit
+- reset
+
+3. Event Object
+- Calls its associated function
+- Passes a single argument to the function - a reference to the event object
+- Contains a number of properties that describe the event that occured
+
+III. Event Handling
+
+1. Event registration
+- It is done by callback function and we have three ways of doing it: 
+- HTML Attribute
+- Using DOM element properties
+- using event handler
+
+2. Event Listener
+- addEventListener('event', funciton);
+- removeEventListener('event', function);
+
+3. Multiple Events - using event listener we can add mult events
+
+4. SetInterval and ClearIInteval()
+- In JS we can set and remove intervlas;
+
+IV. Event Delegation
+1. DOM Even Delegation
+- Allows you to avoid adding event listeners to specific nodes
+- Event listener is assigned to a single ancestor
+
+2. Pros and Cons 
+A. Benefits 
+- Simplifies initialization
+- Save memory
+- Less code
+B. Limitations
+- Event must be bubbling
+- May add CPU load 

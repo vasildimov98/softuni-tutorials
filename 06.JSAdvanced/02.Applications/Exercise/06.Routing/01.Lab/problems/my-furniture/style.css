@@ -1,0 +1,93 @@
+#furnitures .row {
+    display: inline;
+    width: 60%;
+    height: 50px;
+}
+
+img {
+    width: 80%;
+}
+
+button {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d9534f;
+    font-size: .765625rem;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: .75rem 1.5rem;
+    font-size: .875rem;
+    line-height: 1.5rem;
+    border-radius: 0;
+    transition: color .15s
+}
+
+.error {
+    text-align: center;
+    font-style: oblique;
+    display: none;
+}
+
+.container {
+    display: none;
+}
+
+.topnav {
+    background-color: #333333;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #0e1769;
+    color: white;
+}
+
+#notifications {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    margin: 1em;
+}
+
+.notification {
+    font-size: 1.5em;
+    color: #ffffff;
+    display: none;
+    text-align: right;
+}
+
+.notification>span {
+    display: inline-block;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 10px;
+}
+
+#loadingBox>span {
+    background: #7CB3E9;
+}
+
+#infoBox>span {
+    background: #393;
+}
+
+#errorBox>span {
+    background: #F50;
+}

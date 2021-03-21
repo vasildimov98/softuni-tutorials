@@ -1,0 +1,60 @@
+Rest Services and AJAX
+HTTP, RESTful Web Services, AJAX Concepts, XMLHttpRequest
+
+I. HTTP Protocol
+1. HTTP Basics
+- HTTP (Hyper Text Transfer Protocol)
+ - Text-based client server protocol for the internet
+ - For transferring Web resources 
+ - Request-response based
+ 
+2. HTTP Request Methods
+- HTTP defines methods to indicate the desired action to be performed on the identified resource (GET/POST/PUT/DELETE)
+
+II. Chrome Dev Tools, Fiddler, Postman
+III. REST and RESTful Services
+- Representational State Transfer
+ - Architecture for client-server communication over HTTP
+ - Resources have URI (address)
+ - Can be created/retrieved/modified/deleted
+- RESTful API/RESTful Service
+ - Provides access to server-side resources via HTTP and REST
+ 
+III. AJAX Asynchronous JavaScript and XML
+1. What is AJAX
+- Asynchronous JavaScript and XML
+ - Background loading of dynamic content/data
+ - Load data from the Web server and render it
+- Two types of AJAX
+ - Partial page rendering
+  - Load HTML fragment + show it in the div
+ JSON service = Loads JSON object and displays it 
+
+2. What is a Promise
+- A promise is a asynchronous function that my happen or produce a value at some point
+
+- State:
+ - Pending: operation still running
+ - Fulfilled - operation finished
+ - Failed - operation failed
+ 
+3. What is Fetch
+- The fetch() method allows making network requests
+- It is simmilar to XMLHttpRequest(XHR). The main difference is that the Fetch API:
+ - Use Promises
+ - Enables simpler and cleaner API
+ - Makes code more readable and maintainable
+ 
+4. Basic Fetch Request
+- The response of a fetch() request is a Stream object
+- The reading of the stream happens asynchronously
+- When the json() method is called, a Promise is returned
+ - The response status is checked before the parsing the response as JSON
+ 
+5. Chaining Promises
+- When working with a JSON API, you can
+ - Define the status and JSON parsing in separate functions
+ - the function returns promises which can be chained
+ 
+6. Get Request
+- Fetch Api uses GET method, but we can change that to thee other requests methods

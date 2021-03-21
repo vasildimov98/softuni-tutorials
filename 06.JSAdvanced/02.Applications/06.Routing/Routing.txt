@@ -1,0 +1,88 @@
+Routing
+Browser Routing
+
+I.Type of Web Applications
+1. Multi Page Applications 
+- Reloads the entire page
+- Displays the new page when a user interacts with the web app
+- When a data is exchanged, a new page is requested from the server to display in the web browser
+
+2. Pros of Multi Page Applications
+- Performs well on the search engine
+- Provides a visual map of the web app to the user;
+
+3. Cons of Multi Page Applications
+- Comparatively complex development
+- Coupled backend and frontend
+
+4. Single Page Applications (SPA)
+- A next evoluation from multi-page website
+- Web apps that load a single HTML file
+- SPAs use AJAX and HTML5 to create fluid and responsive Web apps
+- No constant page reloads
+- Re-renders its content in response to navigation actions, without reloading of the page
+- Can use state from external source or track state internally
+- Internal state SPAs are limited - only one "entry":
+ - With location-based SPAs, the location is always updating
+ - Location-based SPAs need a special object "Router"
+ 
+5. SPA Pros and Cons
+Pros:
+- Load all scrips only once
+- Maintain state across multiple pages
+- Browser history can be used
+- Better UX
+
+Cons:
+- Performs poor on the search engine
+ - Server-side rendering helps
+- Provide single sharing link;
+- Less secure
+
+6. Query Parameters
+- Allows for additional application state to be serialized into the URL
+- Common use:
+ - Representing the current page number in a paginated collection
+ - Filter criteria
+ - Sorting criteria
+
+II. Navigation for SPA
+1. How does Rounters works 
+- A Rounter loads the appropriate content when the location changes
+	- When the user manually enters an address
+Conversely, a change in content is reflected in the address bar
+	- When the user clicks on a link
+2. Hash-based Routing
+- Using the #hash part of the URL to simulate different content
+- The routing is possible because changes in the the hash don't trigger page reload
+
+3. Push-Based Routing
+- You can actualy surface real server-data to support tjings like SEO and Facebook Open Graph
+- It helps with analytics
+- It helps fix hash tag issues 
+- You can actually use hash tag for what it was meat for, deep linking to sections of long pages
+
+4. History API
+- Provides accesss to the browser's history through the history object
+- HTML5 introduce the history.pushState() and history.replaceState()
+ - They allow you to add and modify history entries
+ - These methods work in conjunction with the popstate event
+ 
+5. The PushState() method
+- Adds new object to the history of the browser 
+- Takes three parameters
+ - State: Object which is associated with the new history entry
+ - Title: Browsers currently ignore this parameter
+ - URL: The new history entry's URL is given by this parameter and it must be of the same origin as the current URL
+ 
+6. ReplaceState() method
+- Modifies the current history entry instead of creating a new one
+- It is particularly useful when you want to update the state object or URL of the current history entry
+
+7. PopState Event
+- Dispatched to the window every time the active history entry chnages
+- If the history entry being activated was created by a call of either pushstate or effected by a call of replaceState, the popstate event's state property contains a copy of the history entry;s state onject
+- You can read the state if the current history entry without waiting for a popstate event using the history object's state property
+
+
+

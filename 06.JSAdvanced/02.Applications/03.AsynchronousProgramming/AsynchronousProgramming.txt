@@ -1,0 +1,45 @@
+Asynchronous Programming
+
+I. Synchronous vs Asynchronous Programming
+1. Definition
+- Not the same thing as concurent or multi-threaded
+- There can be asynchronous code, but it is generally single-treaded
+- Structured using callback function
+- In current versions of JS there are:
+- Callbacks
+- Promises
+- Async Function
+
+- Asynchronous programming runs several task in parallel, at the same time
+
+2. Callback
+- Function passed into another function as an argument
+- Then involked inside the outer function to complete some kind of routine or action
+
+II. Objects Holding Asynchronous Operations / Promises
+1. What is promise
+- a promise upon asynchronous action which MAY complete at some point and produce a value
+- State:
+ - Pending - operation still running
+ - Fulfilled - operation finish
+ - Failed - operation failed
+- Promise use promise object
+
+2. Chaining Promises
+- When working with a JSON API, you can:
+ - Define the status and JSON parsing in seperate function
+ - The function return promises which can be chained
+ 
+III. Simplified Promises
+1. Async Function
+- Returns a promise, that can await other promises in a way tha looks synchronous
+- Operates asynchronously via the event loop
+- Contains an await expression that: 
+ - Is only valid inside async functions 
+ - Pauses the execution of that function
+ - Waits for the promises resolution
+- Do not confuse await with Promise.then() 
+ - await is always used for a single promise
+ - To await two or more promises in parallel, use Promise.then()
+- if a promise resolves normally, then await promise returns the result
+- In case of a rejection, it throws error

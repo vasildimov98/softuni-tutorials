@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <input type="text" id="num1" />
+    <input type="text" id="num2" />
+    <input type="text" id="result" readonly />
+    <br>
+    <button id="sumButton">Sum</button>
+    <button id="subtractButton">Subtract</button>
+
+    <script>
+        function getDOMModifier() {
+            let num1, num2, result;
+            return {
+                init(selector1, selector2, resultSelector) {
+                    num1 = $(selector1);
+                    num2 = $(selector2);
+                    result = $(resultSelector);
+                },
+                add() {
+                    action((a, b) => a + b);
+                },
+                subtract() {
+                    action((a, b) => a - b);
+                },
+            }
+
+            function action(operation) {
+                let value1 = Number(num1.val());
+                let value2 = Number(num2.val());
+                result.val(operation(value1, value2));
+            }
+        }
+    </script>
+</body>
+
+</html>

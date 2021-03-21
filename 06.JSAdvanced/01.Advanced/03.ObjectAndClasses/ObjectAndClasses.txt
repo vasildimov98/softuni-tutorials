@@ -1,0 +1,86 @@
+Object and Classes
+
+I. Objects
+
+1. Definition
+- collection of fields(property!), which has association between name (or key) and value
+- Reference type
+- define it with {};
+
+2. Variables holding references
+- The in-memory value of a reference type is the reference itself (memory address)
+
+3. Object properties
+- A property of an object is a value attached to the object
+
+4. Assigning and Accessing Properties 
+A. Dot notation person.name
+B. Bracket notation person['name'];
+C. Unassigned properties of an objects are undefined
+
+5. Object Methods 
+- Methods are actions that can be performed on objects
+- Methods are stored in properties as functions definitions
+
+6. Deleting Properties of an Objects
+
+- You can do that by puting the key word delete before the property
+
+7. Comparing Objects
+- Two variables, two distinct objects with the same properties will have false outcome, because it compares the references attached to them
+
+II. Looping through Objects
+
+1. Keys and Values object
+- one way to loop through objects 
+- You can take keys and values bu static method Object.keys and Object.Values
+- * object.hasOwnProperty() is a method you see if a person has a specified key
+
+2. For in 
+- It also works for object except for arrays 
+
+3. For of works only if we take the values and keys
+
+III. JSON 
+1. Definition
+- It's data interchange format
+- It's language independent 
+- It's self describing and easy to understand
+
+2. Syntax Rules
+- Data is name(key)/value pairs
+- Data is separated by commas
+- Curly braces hold objects
+- Square brackets hold arrays
+- JSON only takes double quotes "";
+
+3. Parcing from string - you can do that by JSON.parse() function
+4. Converting to string - you can do that by JSON.stringify()
+
+IV. Classes
+1. Definition
+- Structure for objects
+- Classes define Data and Actions
+- One class may have many instances (object)
+- The class syntax has two components (declaration and expression)
+
+2. Defining Classes
+with Class Declaration and class expression
+
+3. Hoisting
+- Class declarations are not hoisted
+- Fist we declare the class than we called it or access it;
+- Its the same for class expression;
+
+4. Class Body
+- The part of the class that is in curly brackets {};
+- Here you define class members, such as methods
+- The constructor is a special method for creating and initializing an object created with class;
+
+5. Accessing Properties with get and set;
+
+6. Private Properties
+- Private instance fields are declared with # sign;
+- It is a syntax error to refer to # from out of scope;
+- Only the class which defines the private static field can access the field;
+- To make a private properties readable/writable from any function it common to declare getters and setters 

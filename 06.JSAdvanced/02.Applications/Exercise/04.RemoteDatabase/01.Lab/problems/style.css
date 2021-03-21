@@ -1,0 +1,11 @@
+.movie {
+    cursor: pointer;
+}
+
+.movie:hover {
+    background-color: teal;
+}
+
+.editBtn:hover {
+    background-color: green;
+}

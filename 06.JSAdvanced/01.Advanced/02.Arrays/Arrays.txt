@@ -1,0 +1,60 @@
+Arrays and Nested Arrays Definition and Manipulation
+
+I. Working with Arrays of Elements - Arrays in JavaScript
+
+1. What is Array?
+- they are list-like object and there are reference type, the var points to an address in memory
+- the elements are numbered from 0 to length - 1;
+- Neither the length of JS array nopr the types of its elements are fixed;
+- length can be change at any time;
+- data can be stored at non-contigous locations in the arr;
+- JavaScript arrays are not guaranteed to be dense
+
+2. Array Indextion - Setting or accessing a non-integer using bracket notation(or float index) will not set or retrieve an element from the array itself
+
+II. Acceissing Array Elements
+
+- Access them by there designated index
+- Index that do not exists return 'undefined'
+
+1. Rest Operation - expression that unpack all the rest elements from one arr to the other
+
+III. Modify the Array - Mutator Methods
+
+1. Pop 
+- Removes the last element from the arr and returns that element
+- changes the length of the arr;
+
+2. Push - puts a new element to the end of the collection and returns the new length;
+
+3. Shift 
+- Removes the first element from the arr and returns that element
+- changes the length of the arr;
+
+4. Unshift - adds an element to the beginning of an arr and returns the new length
+
+5. Splice - changes the contents of an arr by removing or replacing existing elements and/or adding new elements;
+
+6. Fill - fills all element from start to end with static value;
+
+7. Reverse - reverse the arr;
+
+8. Sort - sorts the element by converting them in string and compares their UTF-8;
+
+IV. Accessor Methods
+
+1. Join - joins them by specified separator;
+2. indexof - returns the indec of the element or -1;
+3. Concat - use to concat arrays without changes, just returns a new one
+4. Includes - Determines whether an arr contains a certain element, returning true or false as appropriate
+5. Slice - returns a new copy of an arr from start to end postion without end included
+
+V. Iteration Methods
+1. ForEach - execute a function to each element in the arr;
+2. Filters the arr by criteria
+3. Find - finds and element and returns a value if the criteria is met given by the function 
+4. Any - sees if at least one element in the arr passes the criteria given by the function;
+5. Maps - creates an new arr by involking a function to every element in the arr;
+6. Reducer - reduce an arr to one el, by executing reducing function to every element in the arr!
+
+VI. Array of Arrays - nested Array - declare arr with arrays inside it;

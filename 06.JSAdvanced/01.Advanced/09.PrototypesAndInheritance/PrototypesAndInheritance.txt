@@ -1,0 +1,62 @@
+Prototypes and Inheritance
+Class Inheritance, Prototypes, Prototype;
+
+I. Inheritance
+Type Of Inheritance
+- Simple 
+- Multilevel
+- Hierarchal
+- Multiple
+- Hybrid
+
+II. Classical Inheritance
+ Inheriting Data and Methods 
+1. Traditional Classes
+- Classes are a design pattern
+- Classes means creating copies (instantianted, inherited)
+
+2. Class Inheritance
+- Classes can inherit other classes
+- Child class inherits data + methods from its parent
+- To create inheritance use extend keyword
+- Child class can 
+ - Add properties
+ - Add / replace methods
+ - Add / replace accessor properties
+ 
+3. Classes in JS 
+- Prototypal Inheritance instead of classical inheritance
+- Does not automatically create copies
+- Common keys and values are shared by referance
+- Delegates not blueprints!
+
+III. The Prototype Chain
+How does it work? 
+1. Object.create()
+- Creates a new object using an existing object as prototype;
+
+2. What is prototype? 
+- Just an object
+- Internal property
+ - Used to implement prototype - based inheritance and shared properties
+- Reference to another object
+ - Objects are not seperate or disconnected, but linked
+ 
+3. Prototype
+- Object inherit properties and methods from a prototype;
+- The Prototype Property allows you to add new properties
+ to object constructor;
+
+4. Object Creation
+- Litral creation
+- Constructor creation
+ - Have an implicit reference (prototype) to the value of their constructor's  
+ - Gets an iternal __proto__ link to the object
+ 
+5. __proto__ vs prototype property
+A. __proto__
+ - Property of an object that points at the prototype that has been set;
+ - Using __proto__ directly is deprecated!
+B. Prototype
+ - Property of a function set if your object is created by a constructor  
+ - Object do not have prototype property 

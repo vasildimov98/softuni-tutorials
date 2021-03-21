@@ -1,0 +1,11 @@
+{{> header}}
+<!-- Home -->
+<div class="container home wrapper  my-md-5 pl-md-5">
+    {{#if user}}
+        {{>dashboard}}
+    {{else}}
+        {{>guest}}
+    {{/if}}
+</div>
+
+{{>footer}}

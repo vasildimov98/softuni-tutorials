@@ -1,0 +1,21 @@
+Object Composition Destructoring, Aggregation, Concatenation, Delegation
+
+I. Object Composition
+
+1. Definition - combining simple objects or data types into more complex one
+
+II. Destructoring 
+- The ability to 'dive into' an array or object and reference something inside of it more directly
+- Destructoring can work beyond the top level
+
+III. Forms of Object Composition
+1. Aggregation
+- Object is formed from an enumerable collection of subobjects;
+- An aggregate is an object ehich contains other object;
+
+2. Concatenation 
+- adding new property to existing object
+
+3. Delegation
+- Delegation is commonly use to imitate class iheritance in JS
+- Composses objects by linking together an object delegation chain

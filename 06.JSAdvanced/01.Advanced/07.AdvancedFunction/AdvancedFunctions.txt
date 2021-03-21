@@ -1,0 +1,3 @@
+Advanced Functions
+First Class Function, Function Expression, Predicates, Currying, IIFE, Closure
+

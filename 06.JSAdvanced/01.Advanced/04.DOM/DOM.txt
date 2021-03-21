@@ -1,0 +1,79 @@
+DOM
+Document Object Model
+
+I. Document with a Logical Tree
+
+1. Document Object Model (DOM)
+
+- DOM represents the document as nodes and objects
+ - That way, the programming languages can connect to the page
+- DOM is a standard of how to 
+ - Get HTML element
+ - Change HTML element
+ - Add HTML element
+ - Delete HTML element
+ 
+2. HTML DOM
+
+- This is an Object Model for HTML, which defines
+ - HTML elemens as objects
+ - properties
+ - methods
+ - events
+ 
+II. Changing the HTML
+
+1. DOM methods
+
+- DOM Methods - actions you can perform on HTML elements
+- DOM Properties - values of HTML elemens that you can set or change
+
+III. Modify the DOM Tree (DOM Manipulations)
+
+1. Selection of Elements
+- The most common ways to find a element in HTML document is by;
+ - id - getElementById
+ - tagName - getElementsByTagName
+ - className - getElementByClassName
+ - CSS selector - querySelector();
+ 
+2. DOM Manipulations
+- innerHTML
+- attributes
+- setAttribute()
+- style.property
+
+3. DOM Manipulations Prt2
+- removeChild()
+- appendChild()
+- replaceChild()
+- document.write()
+
+IV. DOM Properties and HTML Attributes
+
+1. Properties vs. Attributes
+- Attributes are define by HTML
+- Properties are define by DOM 
+
+- Attributes initialize DOM properties
+ * Property values can change;
+ * Attribute values can't;
+ 
+- The HTML attribute and DOM property are not the same thing, even when they have the same name
+
+V. Parents and Child Elements
+
+1. Parent Element
+Every DOM elemens has a perent, exept the root and can be access by .parent
+2. Child Element - Also a parent can have a child and if so it can be accessed by .children
+
+VI. DOM Events
+- Events are actions or occurrences
+- They allow JS to register different event handlers on elements
+- Events are normally used  in combination with function 
+- The function will not be executed before the event occur
+
+VII. The Build-In Browser Object Model
+expose some object like window, screen, navigator, history, location and so on and so on
+
+

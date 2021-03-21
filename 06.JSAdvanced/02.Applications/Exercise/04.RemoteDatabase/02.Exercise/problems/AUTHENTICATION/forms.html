@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTHENTICATION FORMS</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+</head>
+
+<body>
+    <form style="border:1px solid #ccc">
+        <div class="signUpContainer">
+            <h1>Sign Up</h1>
+            <p class="infoArea">Please fill in this form to create an account.</p>
+            <hr>
+
+            <label for="email"><b>Email</b></label>
+            <input class="email" type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input class="psw" type="password" placeholder="Enter Password" name="psw" required>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="button" class="alreadybtn">Already have account</button>
+            </div>
+        </div>
+
+        <div class="signInContainer" style="display: none;">
+            <h1>Sign In</h1>
+            <p class="infoArea">Successfully sign up, please sign in. Fot test: mytestaccount@abv.com and 123456</p>
+            <hr>
+
+            <label for="email"><b>Email</b></label>
+            <input class="email" type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input class="psw" type="password" placeholder="Enter Password" name="psw" required>
+
+            <div class="clearfix">
+                <button type="submit" class="signinbtn">Sign In</button>
+                <button type="button" class="gobackbtn">Go back to sign up</button>
+            </div>
+        </div>
+
+        <div class="signOutContainer" style="display: none;">
+            <h1>Welcome to myBook.com</h1>
+            <p class="infoArea">Successfully sign in</p>
+            <hr>
+
+            <div class="clearfix">
+                <button type="submout" class="signoutbtn">Sign Out</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="configurations.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

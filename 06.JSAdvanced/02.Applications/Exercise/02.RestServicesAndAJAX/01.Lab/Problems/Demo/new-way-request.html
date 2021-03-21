@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars</title>
+</head>
+
+<body>
+    <h1>Star Wars</h1>
+    <ul id="list">
+
+    </ul>
+    <button id="CharacterBtn">Load Star Wars Characters</button>
+
+    <script>
+        const URL = 'https://swapi.dev/api/people/';
+        let characterBtn = document
+            .querySelector('#CharacterBtn');
+
+        characterBtn.addEventListener('click', sendHTTPRequest);
+
+        function sendHTTPRequest(e) {
+            fetch(URL)
+                .then((response) => {
+                    if (response.status == 200)
+                        return response.json();
+                })
+                .then((response) => {
+                    let characters = response.results;
+                    
+                    let listElements = document.querySelector('#list');
+                    characters
+                        .forEach(character => {
+                            let newList = document.createElement('li');
+
+                            let textNode = document.createTextNode(`${character.name}`);
+
+                            newList.appendChild(textNode);
+                            listElements.appendChild(newList);
+                        });
+                });
+        }
+
+        // function addCharacters(e) {
+        //     let responseText = JSON.parse(this.responseText);
+
+        //     let characters = responseText.results;
+
+        //     let listElements = document.querySelector('#list');
+        //     characters
+        //         .forEach(character => {
+        //             let newList = document.createElement('li');
+
+        //             let textNode = document.createTextNode(`${character.name}`);
+
+        //             newList.appendChild(textNode);
+        //             listElements.appendChild(newList);
+        //         });
+        // }
+
+    </script>
+</body>
+
+</html>

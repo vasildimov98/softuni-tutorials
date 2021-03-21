@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event</title>
+</head>
+<body>
+    <h1>Just click the button!</h1>
+    <input id="button" style="block-size: 20px;width: 20em inherit;width: 5em;height: 2em;font-size: 50px;" type="button" value="0">
+    <script>
+        let button = document.getElementById('button');
+
+        button.addEventListener('click', onClickIncrementCount);
+        button.addEventListener('mouseover', onMouseOverChangeColor);
+        button.addEventListener('mouseout',  onMouseOutChangeColor);
+        
+        let count = 0;
+        let intervalId = setInterval(() => {
+            button.click();
+            count++;
+            if (count == 5) {
+                clearInterval(intervalId);
+            }
+        }, 1000)
+
+        function onMouseOverChangeColor(e) {
+            e.target.style.backgroundColor = 'black';
+            e.target.style.color = 'white';
+        }
+
+        function onMouseOutChangeColor(e) {
+            e.target.style.backgroundColor = 'white';
+            e.target.style.color = 'black';
+        }
+
+        function onClickIncrementCount(e) {
+            let buttonValue = e.target.value;
+
+            let count = Number(buttonValue);
+
+            e.target.value = ++count;
+        }
+    </script>
+</body>
+</html>
