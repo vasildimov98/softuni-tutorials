@@ -10,5 +10,4 @@
 
         public abstract HttpMethod Method { get; }
     }
-
 }

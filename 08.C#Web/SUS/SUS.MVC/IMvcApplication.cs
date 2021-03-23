@@ -8,6 +8,6 @@
     {
         void ConfigureServices();
 
-        void Configure(List<Route> routeTable);
+        void Configure();
     }
 }

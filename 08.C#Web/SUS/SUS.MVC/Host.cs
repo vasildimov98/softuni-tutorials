@@ -6,6 +6,8 @@
     using System.Collections.Generic;
 
     using HTTP;
+    using System.Linq;
+    using System.Reflection;
 
     public static class Host
     {
@@ -18,24 +20,69 @@
 
             var routeTable = new List<Route>();
 
+            LoadStaticFileRoute(routeTable);
+            LoadPageRoutes(mvcApplication, routeTable);
+
             mvcApplication.ConfigureServices();
-            mvcApplication.Configure(routeTable);
-            LoadStaticFiles(routeTable);
-
-            Console.WriteLine("All register files");
-            foreach (var registerRoute in routeTable)
-            {
-                Console.WriteLine(registerRoute.Path + " " + registerRoute.Method);
-            }
-
-            Console.WriteLine(new string('=', 100));
+            mvcApplication.Configure();
 
             var server = new HttpServer(routeTable);
 
             await server.StartAsync(port);
         }
 
-        private static void LoadStaticFiles(List<Route> routeTable)
+        private static void LoadPageRoutes(IMvcApplication mvcApplication, List<Route> routeTable)
+        {
+            var controllerTypes = mvcApplication
+                            .GetType().Assembly
+                            .GetTypes()
+                            .Where(x => x.IsClass
+                                && !x.IsAbstract
+                                && x.IsSubclassOf(typeof(Controller)));
+
+            foreach (var controllerType in controllerTypes)
+            {
+                var controllerMethods = controllerType
+                    .GetMethods()
+                    .Where(x => x.DeclaringType == controllerType
+                        && x.IsPublic
+                        && !x.IsStatic
+                        && !x.IsConstructor
+                        && !x.IsAbstract
+                        && !x.IsSpecialName);
+
+                foreach (var methodType in controllerMethods)
+                {
+                    var url = '/'
+                         + controllerType.Name
+                                .Replace("Controller", string.Empty)
+                         + '/'
+                         + methodType.Name;
+
+                    var customAttribute = methodType
+                        .GetCustomAttribute(typeof(HttpBaseAttribute)) as HttpBaseAttribute;
+
+                    var method = HttpMethod.GET;
+
+                    if (!string.IsNullOrWhiteSpace(customAttribute?.Url))
+                    {
+                        url = customAttribute.Url;
+                        method = customAttribute.Method;
+                    }
+
+                    routeTable.Add(new Route(url, method, (request) =>
+                    {
+                        var controller = Activator.CreateInstance(controllerType);
+
+                        var response = methodType.Invoke(controller, new[] { request }) as HttpResponse;
+
+                        return response;
+                    }));
+                }
+            }
+        }
+
+        private static void LoadStaticFileRoute(List<Route> routeTable)
         {
             var staticFiles = Directory.GetFiles(StaticFileFolderName, "*", SearchOption.AllDirectories);
 

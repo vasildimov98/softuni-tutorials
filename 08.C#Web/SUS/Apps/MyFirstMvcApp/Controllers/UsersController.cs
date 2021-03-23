@@ -15,6 +15,7 @@
             return this.View();
         }
 
+        [HttpPost]
         internal HttpResponse DoLogin(HttpRequest arg)
         {
             // Read Data
