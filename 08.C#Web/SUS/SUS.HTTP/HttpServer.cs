@@ -57,7 +57,7 @@
 
                 await networkStream.WriteAsync(responseHeaderBytes, 0, responseHeaderBytes.Length);
                 
-                if (request.Body != null)
+                if (response.Body != null)
                 {
                     await networkStream.WriteAsync(response.Body, 0, response.Body.Length);
                 }
