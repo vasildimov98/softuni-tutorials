@@ -47,8 +47,7 @@
                 Console.WriteLine($"{request.Method} {request.Path} => {request.Headers.Count - request.Cookies.Count} headers, {request.Cookies.Count} cookies");
                 Console.WriteLine(new string('=', 100));
 
-                HttpResponse response;
-                response = GetResponseByPath(request);
+                var  response = this.GetResponseByPath(request);
 
                 response.Headers.Add(new Header("Server", "SUS Server 1.0"));
                 response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())

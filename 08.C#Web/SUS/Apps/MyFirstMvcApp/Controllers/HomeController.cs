@@ -10,7 +10,7 @@
     public class HomeController : Controller
     {
         [HttpGet("/")]
-        public HttpResponse Index(HttpRequest request)
+        public HttpResponse Index()
         {
             return this.View();
         }

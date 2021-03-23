@@ -72,9 +72,11 @@
 
                     routeTable.Add(new Route(url, method, (request) =>
                     {
-                        var controller = Activator.CreateInstance(controllerType);
+                        var controller = Activator.CreateInstance(controllerType) as Controller;
 
-                        var response = methodType.Invoke(controller, new[] { request }) as HttpResponse;
+                        controller.Request = request;
+
+                        var response = methodType.Invoke(controller, new object[] { }) as HttpResponse;
 
                         return response;
                     }));
