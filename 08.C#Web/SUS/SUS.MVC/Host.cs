@@ -20,7 +20,23 @@
 
             mvcApplication.ConfigureServices();
             mvcApplication.Configure(routeTable);
+            LoadStaticFiles(routeTable);
 
+            Console.WriteLine("All register files");
+            foreach (var registerRoute in routeTable)
+            {
+                Console.WriteLine(registerRoute.Path + " " + registerRoute.Method);
+            }
+
+            Console.WriteLine(new string('=', 100));
+
+            var server = new HttpServer(routeTable);
+
+            await server.StartAsync(port);
+        }
+
+        private static void LoadStaticFiles(List<Route> routeTable)
+        {
             var staticFiles = Directory.GetFiles(StaticFileFolderName, "*", SearchOption.AllDirectories);
 
             foreach (var staticFile in staticFiles)
@@ -29,7 +45,7 @@
                    .Replace(StaticFileFolderName, string.Empty)
                    .Replace("\\", "/");
 
-                routeTable.Add(new Route(filePath, HttpMethod.GET, (request) => 
+                routeTable.Add(new Route(filePath, HttpMethod.GET, (request) =>
                 {
                     var fileInfo = new FileInfo(staticFile);
 
@@ -53,18 +69,6 @@
                     return response;
                 }));
             }
-
-            Console.WriteLine("All register files");
-            foreach (var registerRoute in routeTable)
-            {
-                Console.WriteLine(registerRoute.Path + " " + registerRoute.Method);
-            }
-
-            Console.WriteLine(new string('=', 100));
-
-            var server = new HttpServer(routeTable);
-
-            await server.StartAsync(port);
         }
     }
 }
