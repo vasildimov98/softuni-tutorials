@@ -21,6 +21,7 @@
             routeTable.Add(new Route("/cards/add", HttpMethod.GET, new CardsController().Add));
             routeTable.Add(new Route("/cards/all", HttpMethod.GET, new CardsController().All));
             routeTable.Add(new Route("/cards/collection", HttpMethod.GET, new CardsController().Collection));
+
             routeTable.Add(new Route("/favicon.ico", HttpMethod.GET, new StaticFileController().Favicon));
             routeTable.Add(new Route("/css/custom.css", HttpMethod.GET, new StaticFileController().CustomCss));
             routeTable.Add(new Route("/css/bootstrap.min.css", HttpMethod.GET, new StaticFileController().BootstrapMin));

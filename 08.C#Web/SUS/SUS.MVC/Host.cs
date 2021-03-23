@@ -1,14 +1,17 @@
 ﻿namespace SUS.MVC
 {
     using HTTP;
-
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public class Host
     {
-        public static async Task CreateHostAsync(IMvcApplication mvcApplication, int port)
+        public static async Task CreateHostAsync<T>(int port)
+            where T : IMvcApplication
         {
+            var mvcApplication = Activator.CreateInstance(typeof(T)) as IMvcApplication;
+
             var routeTable = new List<Route>();
 
             mvcApplication.ConfigureServices();

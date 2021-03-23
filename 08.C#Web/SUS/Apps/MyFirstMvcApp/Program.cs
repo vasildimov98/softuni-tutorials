@@ -12,7 +12,7 @@
     {
         public static async Task Main()
         {
-            await Host.CreateHostAsync(new Startup(), 8080);
+            await Host.CreateHostAsync<Startup>(8080);
         }
     }
 }
