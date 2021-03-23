@@ -57,7 +57,12 @@
                 var responseHeaderBytes = Encoding.UTF8.GetBytes(response.ToString());
 
                 await networkStream.WriteAsync(responseHeaderBytes, 0, responseHeaderBytes.Length);
-                await networkStream.WriteAsync(response.Body, 0, response.Body.Length);
+                
+                if (request.Body != null)
+                {
+                    await networkStream.WriteAsync(response.Body, 0, response.Body.Length);
+                }
+
             }
             catch (Exception ex)
             {
