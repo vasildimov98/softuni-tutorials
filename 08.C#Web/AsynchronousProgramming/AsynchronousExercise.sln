@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01.Chronometer", "P01.Chronometer\P01.Chronometer.csproj", "{BDB6D27F-E182-4861-9A2A-D642F741EBCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02.ParallerMergeSort", "P02.ParallerMergeSort\P02.ParallerMergeSort.csproj", "{AEF04403-818A-43F4-987A-CD014441C9E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDB6D27F-E182-4861-9A2A-D642F741EBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB6D27F-E182-4861-9A2A-D642F741EBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB6D27F-E182-4861-9A2A-D642F741EBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB6D27F-E182-4861-9A2A-D642F741EBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEF04403-818A-43F4-987A-CD014441C9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF04403-818A-43F4-987A-CD014441C9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF04403-818A-43F4-987A-CD014441C9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF04403-818A-43F4-987A-CD014441C9E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2E77A0D-25D7-4963-8C89-7228563ABCAE}
+	EndGlobalSection
+EndGlobal
