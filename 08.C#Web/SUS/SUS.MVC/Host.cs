@@ -7,9 +7,14 @@
 
     public class Host
     {
-        public static async Task CreateHostAsync(List<Route> routes, int port)
+        public static async Task CreateHostAsync(IMvcApplication mvcApplication, int port)
         {
-            var server = new HttpServer(routes);
+            var routeTable = new List<Route>();
+
+            mvcApplication.ConfigureServices();
+            mvcApplication.Configure(routeTable);
+
+            var server = new HttpServer(routeTable);
 
             await server.StartAsync(port);
         }
