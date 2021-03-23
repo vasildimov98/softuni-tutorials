@@ -1,18 +1,14 @@
-﻿namespace MyFirstMvcApp.Controllers
+﻿namespace BattleCards.Controllers
 {
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-
-    using SUS.HTTP;
     using SUS.MVC;
+    using SUS.HTTP;
 
     public class HomeController : Controller
     {
         [HttpGet("/")]
         public HttpResponse Index()
         {
-            return this.View();
+            return View();
         }
     }
 }

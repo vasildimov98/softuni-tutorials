@@ -4,17 +4,21 @@
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using System.Net;
 
     public class HttpRequest
     {
         public HttpRequest(string requestAsString)
         {
+            this.FormData = new Dictionary<string, string>();
             this.Headers = new List<Header>();
             this.Cookies = new List<Cookie>();
             this.HttpRequestParser(requestAsString);
         }
 
         public string Path { get; set; }
+
+        public Dictionary<string, string> FormData { get; set; }
 
         public string Body { get; set; }
 
@@ -47,6 +51,28 @@
             this.ProcessCookieHeader();
 
             this.Body = bodyBuilder.ToString();
+            this.WriteFormData();
+        }
+
+        private void WriteFormData()
+        {
+            var parameters = this.Body
+                .Split('&', StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var parameter in parameters)
+            {
+                var kvpArgs = parameter
+                    .Split('=', StringSplitOptions.RemoveEmptyEntries)
+                    .ToArray();
+
+                var key = WebUtility.UrlDecode(kvpArgs[0]);
+                var value = WebUtility.UrlDecode(kvpArgs[1]);
+
+                if (!this.FormData.ContainsKey(key))
+                {
+                    this.FormData[key] = value;
+                }
+            }
         }
 
         private void ProcessRquestLines(string[] requestLines, StringBuilder bodyBuilder)

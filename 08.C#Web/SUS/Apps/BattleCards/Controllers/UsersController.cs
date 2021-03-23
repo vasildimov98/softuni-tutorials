@@ -1,4 +1,4 @@
-﻿namespace MyFirstMvcApp.Controllers
+﻿namespace BattleCards.Controllers
 {
     using SUS.MVC;
     using SUS.HTTP;
@@ -7,12 +7,12 @@
     {
         public HttpResponse Login()
         {
-            return this.View();
+            return View();
         }
 
         public HttpResponse Register()
         {
-            return this.View();
+            return View();
         }
 
         [HttpPost]
@@ -21,7 +21,7 @@
             // Read Data
             // Validate Data
             // Save Data
-            return this.Redirect("/");
+            return Redirect("/");
         }
     }
 }

@@ -1,10 +1,6 @@
-﻿namespace MyFirstMvcApp
+﻿namespace BattleCards
 {
-    using System.Collections.Generic;
-
     using SUS.MVC;
-    using SUS.HTTP;
-    using Controllers;
 
     public class Startup : IMvcApplication
     {
