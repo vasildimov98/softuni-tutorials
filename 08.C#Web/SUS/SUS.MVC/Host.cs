@@ -1,12 +1,16 @@
 ﻿namespace SUS.MVC
 {
-    using HTTP;
     using System;
-    using System.Collections.Generic;
+    using System.IO;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
 
-    public class Host
+    using HTTP;
+
+    public static class Host
     {
+        private const string StaticFileFolderName = "wwwroot";
+
         public static async Task CreateHostAsync<T>(int port)
             where T : IMvcApplication
         {
@@ -16,6 +20,47 @@
 
             mvcApplication.ConfigureServices();
             mvcApplication.Configure(routeTable);
+
+            var staticFiles = Directory.GetFiles(StaticFileFolderName, "*", SearchOption.AllDirectories);
+
+            foreach (var staticFile in staticFiles)
+            {
+                var filePath = staticFile
+                   .Replace(StaticFileFolderName, string.Empty)
+                   .Replace("\\", "/");
+
+                routeTable.Add(new Route(filePath, HttpMethod.GET, (request) => 
+                {
+                    var fileInfo = new FileInfo(staticFile);
+
+                    var contentType = fileInfo.Extension switch
+                    {
+                        ".ico" => "image/vnd.microsoft.icon",
+                        ".css" => "text/css",
+                        ".js" => "text/javascript",
+                        ".jpg" => "image/jpg",
+                        ".jpeg" => "image/jpg",
+                        ".png" => "image/png",
+                        ".gif" => "image/gif",
+                        ".html" => "text/html",
+                        _ => "text/plain"
+                    };
+
+                    var fileBytes = File.ReadAllBytes(staticFile);
+
+                    var response = new HttpResponse(contentType, fileBytes);
+
+                    return response;
+                }));
+            }
+
+            Console.WriteLine("All register files");
+            foreach (var registerRoute in routeTable)
+            {
+                Console.WriteLine(registerRoute.Path + " " + registerRoute.Method);
+            }
+
+            Console.WriteLine(new string('=', 100));
 
             var server = new HttpServer(routeTable);
 

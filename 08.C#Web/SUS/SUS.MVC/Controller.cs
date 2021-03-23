@@ -1,4 +1,4 @@
-﻿namespace SUS.MVC 
+﻿namespace SUS.MVC
 {
     using System.Text;
     using System.Runtime.CompilerServices;
@@ -23,7 +23,7 @@
         }
 
         public HttpResponse View(object viewModel = null,
-            [CallerMemberName]string viewPath = null)
+            [CallerMemberName] string viewPath = null)
         {
             if (!viewPath.Contains("/"))
             {
@@ -50,15 +50,6 @@
             var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
 
             var response = new HttpResponse("text/html", responseBodyBytes);
-
-            return response;
-        }
-
-        public HttpResponse File(string contentType, string viewPath)
-        {
-            var faviconBytes = System.IO.File.ReadAllBytes(@"wwwroot\" + viewPath);
-
-            var response = new HttpResponse(contentType, faviconBytes);
 
             return response;
         }

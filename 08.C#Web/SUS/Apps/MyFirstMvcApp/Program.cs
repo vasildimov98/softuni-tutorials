@@ -1,12 +1,8 @@
 ﻿namespace MyFirstMvcApp
 {
     using System.Threading.Tasks;
-    using System.Collections.Generic;
 
     using SUS.MVC;
-    using SUS.HTTP;
-
-    using Controllers;
 
     public class Program
     {
