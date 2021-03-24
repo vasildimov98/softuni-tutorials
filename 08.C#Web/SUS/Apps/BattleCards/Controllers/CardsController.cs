@@ -1,17 +1,32 @@
 ﻿namespace BattleCards.Controllers
 {
+    using System.Linq;
+
     using SUS.MVC;
     using SUS.HTTP;
 
     using Models;
-    using BattleCards.Models.Data;
-    using System.Threading.Tasks;
+    using ViewModels;
+    using Models.Data;
 
     public class CardsController : Controller
     {
         public HttpResponse All()
         {
-            return View();
+            var context = new BattleCardsDbContext();
+
+            var cards = context.Cards
+                .Select(x => new CarViewModel
+                {
+                    Name = x.Name,
+                    ImageUrl = x.ImageUrl,
+                    Attack = x.Attack,
+                    Health = x.Health,
+                    Description = x.Description,
+                    Type = x.Keyword
+                }).ToList();
+
+            return View(new AllCarViewModel {Cards = cards });
         }
 
         public HttpResponse Add()

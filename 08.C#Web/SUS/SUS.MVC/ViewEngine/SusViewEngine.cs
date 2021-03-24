@@ -113,13 +113,13 @@ namespace ViewNamespace
                         var atSignLocation = line.IndexOf(atSign);
                         var htmlBeforeAtSign = line.Substring(0, atSignLocation);
 
-                        sb.Append($"{htmlBeforeAtSign}\" + ");
+                        sb.Append($"{htmlBeforeAtSign.Replace("\"", "\"\"")}\" + ");
 
                         var lineAfterTheAtSign = line.Substring(atSignLocation + 1);
 
                         var code = csharpCodeRegex.Match(lineAfterTheAtSign).Value;
 
-                        sb.Append($"{code} + \"");
+                        sb.Append($"{code} + @\"");
 
                         line = lineAfterTheAtSign.Substring(code.Length);
                     }
