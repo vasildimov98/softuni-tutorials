@@ -1,4 +1,4 @@
-﻿namespace SUS.MVC.Tests
+﻿namespace SUS.MVCFramework.Tests
 {
     using System;
 

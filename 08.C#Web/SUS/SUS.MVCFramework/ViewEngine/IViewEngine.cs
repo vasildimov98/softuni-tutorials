@@ -1,4 +1,4 @@
-﻿namespace SUS.MVC.ViewEngine
+﻿namespace SUS.MVCFramework.ViewEngine
 {
     public interface IViewEngine
     {

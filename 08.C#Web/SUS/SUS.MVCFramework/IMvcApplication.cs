@@ -1,9 +1,5 @@
-﻿namespace SUS.MVC
+﻿namespace SUS.MVCFramework
 {
-    using System.Collections.Generic;
-
-    using SUS.HTTP;
-
     public interface IMvcApplication
     {
         void ConfigureServices();

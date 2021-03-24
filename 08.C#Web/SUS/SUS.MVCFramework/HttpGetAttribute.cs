@@ -1,4 +1,4 @@
-﻿namespace SUS.MVC
+﻿namespace SUS.MVCFramework
 {
 
     using SUS.HTTP;
@@ -11,7 +11,7 @@
 
         public HttpGetAttribute(string url)
         {
-            this.Url = url;
+            Url = url;
         }
 
         public override HttpMethod Method => HttpMethod.GET;

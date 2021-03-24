@@ -1,7 +1,7 @@
 ﻿namespace BattleCards.Controllers
 {
-    using SUS.MVC;
     using SUS.HTTP;
+    using SUS.MVCFramework;
 
     public class UsersController : Controller
     {

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SUS.MVC\SUS.MVC.csproj" />
+    <ProjectReference Include="..\SUS.MVCFramework\SUS.MVCFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,12 +1,11 @@
-namespace SUS.MVC.Tests
+namespace SUS.MVCFramework.Tests
 {
     using Xunit;
 
     using System;
     using System.IO;
-
-    using ViewEngine;
     using System.Collections.Generic;
+    using SUS.MVCFramework.ViewEngine;
 
     public class ViewEngineTests
     {

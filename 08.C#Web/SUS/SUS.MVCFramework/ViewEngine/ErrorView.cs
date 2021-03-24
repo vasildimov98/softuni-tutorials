@@ -1,4 +1,4 @@
-﻿namespace SUS.MVC.ViewEngine
+﻿namespace SUS.MVCFramework.ViewEngine
 {
     using System.Text;
     using System.Linq;
@@ -19,14 +19,14 @@
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine($"<h1>You have {this.errors.Count()} errors during compilation</h1><ul>");
+            sb.AppendLine($"<h1>You have {errors.Count()} errors during compilation</h1><ul>");
 
-            foreach (var error in this.errors)
+            foreach (var error in errors)
             {
                 sb.AppendLine($"<li>{error}</li>");
             }
 
-            sb.AppendLine($"</ul><pre>{this.csharpCode}</pre>");
+            sb.AppendLine($"</ul><pre>{csharpCode}</pre>");
 
             return sb.ToString().TrimEnd();
         }

@@ -1,4 +1,4 @@
-﻿namespace SUS.MVC.ViewEngine
+﻿namespace SUS.MVCFramework.ViewEngine
 {
     using System;
     using System.IO;
@@ -54,7 +54,7 @@ using System;
 using System.Text;               
 using System.Linq;               
 using System.Collections.Generic;  
-using SUS.MVC.ViewEngine;
+using SUS.MVCFramework.ViewEngine;
 
 namespace ViewNamespace
 {
@@ -84,7 +84,7 @@ namespace ViewNamespace
             const string closeScope = "}";
 
             var csharpCodeRegex = new Regex(@"[^\""\s&\'\<]+");
-            var suportedOperators = new List<string> { "@if", "@else", "@foreach", "@for", "@while"};
+            var suportedOperators = new List<string> { "@if", "@else", "@foreach", "@for", "@while" };
 
             var stringReader = new StringReader(template);
 

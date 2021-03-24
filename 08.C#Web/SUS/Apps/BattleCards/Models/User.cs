@@ -2,11 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
-    using SUS.MVC;
+    using SUS.MVCFramework;
 
-    public class User : IdentityUser
+    public class User : IdentityUser<string>
     {
         public User()
         {

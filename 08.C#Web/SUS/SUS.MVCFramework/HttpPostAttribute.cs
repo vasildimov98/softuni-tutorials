@@ -1,6 +1,5 @@
-﻿namespace SUS.MVC
+﻿namespace SUS.MVCFramework
 {
-
     using SUS.HTTP;
 
     public class HttpPostAttribute : HttpBaseAttribute

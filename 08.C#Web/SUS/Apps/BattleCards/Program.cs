@@ -2,7 +2,7 @@
 {
     using System.Threading.Tasks;
 
-    using SUS.MVC;
+    using SUS.MVCFramework;
 
     public class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace SUS.MVC
+﻿namespace SUS.MVCFramework
 {
     using System;
     using System.IO;

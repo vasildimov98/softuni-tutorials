@@ -1,10 +1,11 @@
-﻿namespace SUS.MVC
+﻿namespace SUS.MVCFramework
 {
     using System.Text;
     using System.Runtime.CompilerServices;
 
     using HTTP;
     using ViewEngine;
+    using SUS.MVCFramework.ViewEngine;
 
     public abstract class Controller
     {
@@ -19,7 +20,7 @@
 
         public Controller()
         {
-            this.viewEngine = new SusViewEngine();
+            viewEngine = new SusViewEngine();
         }
 
         public HttpRequest Request { get; set; }
@@ -30,7 +31,7 @@
             if (!viewPath.Contains("/"))
             {
                 viewPath = ViewDirectoryName +
-                this.GetType().Name.Replace(nameof(Controller), Slash) +
+                GetType().Name.Replace(nameof(Controller), Slash) +
                 $"{viewPath}" +
                 ViewExtensionName;
             }
@@ -38,7 +39,7 @@
             var viewContent = System.IO.File
                 .ReadAllText(viewPath);
 
-            viewContent = this.viewEngine.GetHtml(viewContent, viewModel);
+            viewContent = viewEngine.GetHtml(viewContent, viewModel);
 
             var response = GetResponseWithLayout(viewContent, viewModel);
 
@@ -55,7 +56,7 @@
         public HttpResponse RedirectError(string message)
         {
             var alertHTML = $"<div class=\"alert alert-danger\" role=\"alert\">{message}</div>";
-            return this.GetResponseWithLayout(alertHTML);
+            return GetResponseWithLayout(alertHTML);
         }
 
         private HttpResponse GetResponseWithLayout(string viewContent, object viewModel = null)
@@ -65,7 +66,7 @@
 
             layout = layout.Replace(LayoutPlaceholder, NewLayoutPlaceholder);
 
-            layout = this.viewEngine.GetHtml(layout, viewModel);
+            layout = viewEngine.GetHtml(layout, viewModel);
 
             var responseHtml = layout.Replace(NewLayoutPlaceholder, viewContent);
 

@@ -2,8 +2,8 @@
 {
     using Microsoft.EntityFrameworkCore;
 
-    using SUS.MVC;
     using Models.Data;
+    using SUS.MVCFramework;
 
     public class Startup : IMvcApplication
     {

@@ -1,9 +1,9 @@
-﻿namespace SUS.MVC
+﻿namespace SUS.MVCFramework
 {
     using System.ComponentModel.DataAnnotations;
-    public abstract class IdentityUser
+    public abstract class IdentityUser<T>
     {
-        public string Id { get; set; }
+        public T Id { get; set; }
 
         [Required]
         [MaxLength(20)]
