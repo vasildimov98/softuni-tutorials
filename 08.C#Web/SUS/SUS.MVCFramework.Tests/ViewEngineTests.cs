@@ -28,7 +28,7 @@ namespace SUS.MVCFramework.Tests
 
             var viewEngine = new SusViewEngine();
 
-            var actual = viewEngine.GetHtml(template, viewModel);
+            var actual = viewEngine.GetHtml(template, viewModel, null);
 
             Assert.Equal(expected, actual);
         }
@@ -43,7 +43,7 @@ namespace SUS.MVCFramework.Tests
 
             var viewEngine = new SusViewEngine();
 
-            var actual = viewEngine.GetHtml(template, viewModel);
+            var actual = viewEngine.GetHtml(template, viewModel, null);
 
             Assert.Equal(expected, actual);
         }

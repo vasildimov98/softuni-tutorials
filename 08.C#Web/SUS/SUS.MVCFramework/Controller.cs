@@ -69,7 +69,7 @@
             this.Request.Session[UserIdSessionName] = null;
         }
 
-        protected bool IsUserLoggedIn()
+        protected bool IsUserSignIn()
             => this.Request.Session.ContainsKey(UserIdSessionName)
             && this.Request.Session[UserIdSessionName] != null;
 

@@ -10,7 +10,7 @@
         [HttpGet("/")]
         public HttpResponse Index()
         {
-            if (this.IsUserLoggedIn())
+            if (this.IsUserSignIn())
             {
                 return this.Redirect("/cards/all");
             }

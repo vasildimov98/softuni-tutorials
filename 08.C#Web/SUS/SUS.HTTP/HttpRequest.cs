@@ -55,6 +55,14 @@
             this.ProcessRquestLines(requestLines, bodyBuilder);
             this.ProcessCookieHeader();
 
+            this.LookForSessionCookie();
+
+            this.Body = bodyBuilder.ToString().TrimEnd('\n', '\r');
+            this.WriteFormData();
+        }
+
+        private void LookForSessionCookie()
+        {
             var sessionCookie = this.Cookies
                 .FirstOrDefault(x => x.Name == HttpConstant.SessionCookieName);
 
@@ -74,9 +82,6 @@
             {
                 this.Session = Sessions[sessionCookie.Value];
             }
-
-            this.Body = bodyBuilder.ToString();
-            this.WriteFormData();
         }
 
         private void WriteFormData()
@@ -90,7 +95,15 @@
                     .Split('=', 2, StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
 
+
                 var key = WebUtility.UrlDecode(kvpArgs[0]);
+
+                if (kvpArgs.Length != 2)
+                {
+                    this.FormData[key] = null;
+                    continue;
+                }
+
                 var value = WebUtility.UrlDecode(kvpArgs[1]);
 
                 if (!this.FormData.ContainsKey(key))

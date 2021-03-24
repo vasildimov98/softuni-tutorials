@@ -16,7 +16,7 @@
             this.context = new BattleCardsDbContext();
         }
 
-        public string CreateService(string username, string email, string password)
+        public void CreateUser(string username, string email, string password)
         {
             var user = new User
             {
@@ -28,8 +28,6 @@
             context.Users.Add(user);
 
             context.SaveChanges();
-
-            return user.Id;
         }
 
         public string GetUserId(string username, string password)
@@ -37,7 +35,10 @@
             var user = this.context.Users
                 .FirstOrDefault(x => x.Username == username);
 
-            if (user?.Password != ConvertToHash())
+            if (user?.Password != ConvertToHash(password))
+                return null;
+
+            return user.Id;
         }
 
         public bool IsEmailAvailable(string email)
