@@ -27,7 +27,7 @@
                     Type = x.Keyword
                 }).ToList();
 
-            return View(new AllCarViewModel {Cards = cards });
+            return View(cards);
         }
 
         public HttpResponse Add()

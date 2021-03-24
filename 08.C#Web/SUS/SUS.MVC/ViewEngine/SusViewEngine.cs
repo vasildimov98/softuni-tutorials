@@ -145,10 +145,23 @@ namespace ViewNamespace
             // Checks if csharpCode has view model and if yes add reference to it
             if (viewModel != null)
             {
+                var viewModelType = viewModel.GetType();
+                if (viewModelType.IsGenericType)
+                {
+                    var genericArguments = viewModelType
+                        .GetGenericArguments();
+
+                    foreach (var genericArgument in genericArguments)
+                    {
+                        compileResult = compileResult
+                            .AddReferences(MetadataReference
+                                .CreateFromFile(genericArgument.Assembly.Location));
+                    }
+                }
+
                 compileResult = compileResult
                     .AddReferences(MetadataReference
-                        .CreateFromFile(viewModel
-                            .GetType().Assembly.Location));
+                        .CreateFromFile(viewModelType.Assembly.Location));
             }
 
             // Gets all netstandard libraries 
