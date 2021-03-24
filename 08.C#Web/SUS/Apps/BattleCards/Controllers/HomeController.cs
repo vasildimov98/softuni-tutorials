@@ -17,12 +17,5 @@
 
             return this.View();
         }
-
-        public HttpResponse About()
-        {
-            this.SingInUser("about");
-
-            return View();
-        }
     }
 }

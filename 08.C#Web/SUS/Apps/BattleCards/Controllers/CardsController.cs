@@ -11,11 +11,16 @@
 
     public class CardsController : Controller
     {
+        private readonly BattleCardsDbContext context;
+
+        public CardsController(BattleCardsDbContext context)
+        {
+            this.context = context;
+        }
+
         public HttpResponse All()
         {
-            var context = new BattleCardsDbContext();
-
-            var cards = context.Cards
+            var cards = this.context.Cards
                 .Select(x => new CarViewModel
                 {
                     Name = x.Name,
@@ -52,11 +57,9 @@
                 Description = this.Request.FormData["description"],
             };
 
-            var context = new BattleCardsDbContext();
+            this.context.Cards.Add(card);
 
-            context.Cards.Add(card);
-
-            context.SaveChanges();
+            this.context.SaveChanges();
 
             return this.Redirect("/cards/all");
         }

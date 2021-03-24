@@ -1,9 +1,13 @@
 ﻿namespace SUS.MVCFramework
 {
+    using System.Collections.Generic;
+
+    using HTTP;
+
     public interface IMvcApplication
     {
-        void ConfigureServices();
+        void ConfigureServices(IServiceCollection serviceCollection);
 
-        void Configure();
+        void Configure(ICollection<Route> routes);
     }
 }

@@ -18,20 +18,22 @@
         {
             var mvcApplication = Activator.CreateInstance(typeof(T)) as IMvcApplication;
 
+            var serviceCollection = new ServiceCollection();
+
             var routeTable = new List<Route>();
 
-            LoadStaticFileRoute(routeTable);
-            LoadPageRoutes(mvcApplication, routeTable);
+            mvcApplication.ConfigureServices(serviceCollection);
+            mvcApplication.Configure(routeTable);
 
-            mvcApplication.ConfigureServices();
-            mvcApplication.Configure();
+            LoadStaticFileRoute(routeTable);
+            LoadPageRoutes(mvcApplication, routeTable, serviceCollection);
 
             var server = new HttpServer(routeTable);
 
             await server.StartAsync(port);
         }
 
-        private static void LoadPageRoutes(IMvcApplication mvcApplication, List<Route> routeTable)
+        private static void LoadPageRoutes(IMvcApplication mvcApplication, List<Route> routeTable, IServiceCollection serviceCollection)
         {
             var controllerTypes = mvcApplication
                             .GetType().Assembly
@@ -72,7 +74,7 @@
 
                     routeTable.Add(new Route(url, method, (request) =>
                     {
-                        var controller = Activator.CreateInstance(controllerType) as Controller;
+                        var controller = serviceCollection.CreateInstance(controllerType) as Controller;
 
                         controller.Request = request;
 
