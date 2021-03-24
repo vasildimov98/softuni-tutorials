@@ -13,11 +13,11 @@
 
     public class SusViewEngine : IViewEngine
     {
-        public string GetHtml(string template, object viewModel)
+        public string GetHtml(string template, object viewModel, string user)
         {
             var csharpCode = GenerateCsharpCode(template, viewModel);
             var executableObject = GetObjectFromCsharpCode(csharpCode, viewModel);
-            var html = executableObject.GetCleanHtml(viewModel);
+            var html = executableObject.GetCleanHtml(viewModel, user);
             return html;
         }
 
@@ -60,8 +60,9 @@ namespace ViewNamespace
 {
     public class ViewClass : IView
     {
-        public string GetCleanHtml(object viewModel)
+        public string GetCleanHtml(object viewModel, string user)
         {
+            var User = user;
             var Model = viewModel as " + typeofModel + @";
             var html = new StringBuilder();
 

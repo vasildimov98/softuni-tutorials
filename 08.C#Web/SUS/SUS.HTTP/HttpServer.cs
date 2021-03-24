@@ -59,7 +59,6 @@
                 {
                     await networkStream.WriteAsync(response.Body, 0, response.Body.Length);
                 }
-
             }
             catch (Exception ex)
             {

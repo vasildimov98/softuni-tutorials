@@ -15,7 +15,7 @@
             this.csharpCode = csharpCode;
         }
 
-        public string GetCleanHtml(object viewModel)
+        public string GetCleanHtml(object viewModel, string user = null)
         {
             var sb = new StringBuilder();
 

@@ -8,7 +8,7 @@
 
     public class HttpRequest
     {
-        private readonly Dictionary<string, Dictionary<string, string>> Sessions
+        private readonly static Dictionary<string, Dictionary<string, string>> Sessions
             = new Dictionary<string, Dictionary<string, string>>();
 
         public HttpRequest(string requestAsString)
@@ -62,17 +62,17 @@
             {
                 var sessionId = Guid.NewGuid().ToString();
                 this.Session = new Dictionary<string, string>();
-                this.Sessions[sessionId] = this.Session;
+                Sessions[sessionId] = this.Session;
                 this.Cookies.Add(new Cookie(HttpConstant.SessionCookieName, sessionId));
             }
-            else if (!this.Sessions.ContainsKey(sessionCookie.Value))
+            else if (!Sessions.ContainsKey(sessionCookie.Value))
             {
                 this.Session = new Dictionary<string, string>();
-                this.Sessions[sessionCookie.Value] = this.Session;
+                Sessions[sessionCookie.Value] = this.Session;
             }
             else
             {
-                this.Session = this.Sessions[sessionCookie.Value];
+                this.Session = Sessions[sessionCookie.Value];
             }
 
             this.Body = bodyBuilder.ToString();

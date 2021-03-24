@@ -10,6 +10,12 @@
             return View();
         }
 
+        public HttpResponse Logout()
+        {
+            this.SingOutUser();
+            return this.Redirect("/");
+        }
+
         public HttpResponse Register()
         {
             return View();

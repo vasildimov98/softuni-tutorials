@@ -3,14 +3,16 @@ using BattleCards.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BattleCards.Migrations
 {
     [DbContext(typeof(BattleCardsDbContext))]
-    partial class BattleCardsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210324140651_AddIdentityRole")]
+    partial class AddIdentityRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
