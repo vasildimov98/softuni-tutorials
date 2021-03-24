@@ -1,13 +1,16 @@
 ﻿namespace SUS.HTTP
 {
     using System;
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
     using System.Net;
+    using System.Text;
+    using System.Linq;
+    using System.Collections.Generic;
 
     public class HttpRequest
     {
+        private readonly Dictionary<string, Dictionary<string, string>> Sessions
+            = new Dictionary<string, Dictionary<string, string>>();
+
         public HttpRequest(string requestAsString)
         {
             this.FormData = new Dictionary<string, string>();
@@ -18,9 +21,11 @@
 
         public string Path { get; set; }
 
-        public Dictionary<string, string> FormData { get; set; }
-
         public string Body { get; set; }
+
+        public Dictionary<string, string> Session { get; set; }
+
+        public Dictionary<string, string> FormData { get; set; }
 
         public HttpMethod Method { get; set; }
 
@@ -50,6 +55,26 @@
             this.ProcessRquestLines(requestLines, bodyBuilder);
             this.ProcessCookieHeader();
 
+            var sessionCookie = this.Cookies
+                .FirstOrDefault(x => x.Name == HttpConstant.SessionCookieName);
+
+            if (sessionCookie == null)
+            {
+                var sessionId = Guid.NewGuid().ToString();
+                this.Session = new Dictionary<string, string>();
+                this.Sessions[sessionId] = this.Session;
+                this.Cookies.Add(new Cookie(HttpConstant.SessionCookieName, sessionId));
+            }
+            else if (!this.Sessions.ContainsKey(sessionCookie.Value))
+            {
+                this.Session = new Dictionary<string, string>();
+                this.Sessions[sessionCookie.Value] = this.Session;
+            }
+            else
+            {
+                this.Session = this.Sessions[sessionCookie.Value];
+            }
+
             this.Body = bodyBuilder.ToString();
             this.WriteFormData();
         }
@@ -62,7 +87,7 @@
             foreach (var parameter in parameters)
             {
                 var kvpArgs = parameter
-                    .Split('=', StringSplitOptions.RemoveEmptyEntries)
+                    .Split('=', 2, StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
 
                 var key = WebUtility.UrlDecode(kvpArgs[0]);

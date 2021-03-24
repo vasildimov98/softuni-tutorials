@@ -8,6 +8,7 @@
     using Models;
     using ViewModels;
     using Models.Data;
+    using System;
 
     public class CardsController : Controller
     {
@@ -37,6 +38,11 @@
         [HttpPost("/Cards/Add")]
         public HttpResponse DoAdd()
         {
+            if (this.Request.FormData["name"].Length < 5)
+            {
+                return this.RedirectError("Name should be at least 5 length and max 15 length");
+            }
+
             var card = new Card
             {
                 Name = this.Request.FormData["name"],

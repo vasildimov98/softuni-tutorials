@@ -47,16 +47,14 @@
                 Console.WriteLine($"{request.Method} {request.Path} => {request.Headers.Count - request.Cookies.Count} headers, {request.Cookies.Count} cookies");
                 Console.WriteLine(new string('=', 100));
 
-                var  response = this.GetResponseByPath(request);
+                var response = this.GetResponseByPath(request);
 
-                response.Headers.Add(new Header("Server", "SUS Server 1.0"));
-                response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
-                        { HttpOnly = true, MaxAge = 60 * 24 * 60 * 60 });
+                AddHeadersToResponse(request, response);
 
                 var responseHeaderBytes = Encoding.UTF8.GetBytes(response.ToString());
 
                 await networkStream.WriteAsync(responseHeaderBytes, 0, responseHeaderBytes.Length);
-                
+
                 if (response.Body != null)
                 {
                     await networkStream.WriteAsync(response.Body, 0, response.Body.Length);
@@ -66,6 +64,21 @@
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+            }
+        }
+
+        private static void AddHeadersToResponse(HttpRequest request, HttpResponse response)
+        {
+            response.Headers.Add(new Header("Server", "SUS Server 1.0"));
+
+            var sessionCookie = request.Cookies
+                                .FirstOrDefault(x => x.Name == HttpConstant.SessionCookieName);
+
+            if (sessionCookie != null)
+            {
+                var responseSessionCookie = new ResponseCookie(sessionCookie.Name, sessionCookie.Value);
+                responseSessionCookie.Path = "/";
+                response.Cookies.Add(responseSessionCookie);
             }
         }
 

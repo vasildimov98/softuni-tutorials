@@ -35,23 +35,12 @@
                 ViewExtensionName;
             }
 
-            var layout = System.IO.File
-                .ReadAllText(PageLayoutPath);
-
-            layout = layout.Replace(LayoutPlaceholder, NewLayoutPlaceholder);
-
-            layout = this.viewEngine.GetHtml(layout, viewModel);
-
             var viewContent = System.IO.File
                 .ReadAllText(viewPath);
 
             viewContent = this.viewEngine.GetHtml(viewContent, viewModel);
 
-            var responseHtml = layout.Replace(NewLayoutPlaceholder, viewContent);
-
-            var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
-
-            var response = new HttpResponse("text/html", responseBodyBytes);
+            var response = GetResponseWithLayout(viewContent, viewModel);
 
             return response;
         }
@@ -61,6 +50,30 @@
             var httpResponse = new HttpResponse(HttpStatusCode.Found);
             httpResponse.Headers.Add(new Header("Location", url));
             return httpResponse;
+        }
+
+        public HttpResponse RedirectError(string message)
+        {
+            var alertHTML = $"<div class=\"alert alert-danger\" role=\"alert\">{message}</div>";
+            return this.GetResponseWithLayout(alertHTML);
+        }
+
+        private HttpResponse GetResponseWithLayout(string viewContent, object viewModel = null)
+        {
+            var layout = System.IO.File
+                .ReadAllText(PageLayoutPath);
+
+            layout = layout.Replace(LayoutPlaceholder, NewLayoutPlaceholder);
+
+            layout = this.viewEngine.GetHtml(layout, viewModel);
+
+            var responseHtml = layout.Replace(NewLayoutPlaceholder, viewContent);
+
+            var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+
+            var response = new HttpResponse("text/html", responseBodyBytes);
+
+            return response;
         }
     }
 }

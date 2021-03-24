@@ -21,7 +21,7 @@ namespace SUS.HTTP
         {
             var cookieBuilder = new StringBuilder();
 
-            cookieBuilder.Append($"Set-Cookie: {base.ToString()};");
+            cookieBuilder.Append($"Set-Cookie: {base.ToString()}; Path={this.Path};");
 
             if (this.MaxAge != 0)
             {

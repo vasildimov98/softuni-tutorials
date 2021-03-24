@@ -7,5 +7,6 @@
         public const string RequestCookieHeader = "Cookie";
         public const string ContentTypeHeader = "Content-Type";
         public const string ContentLengthHeader = "Content-Length";
+        public const string SessionCookieName = "SUS_SID";
     }
 }
