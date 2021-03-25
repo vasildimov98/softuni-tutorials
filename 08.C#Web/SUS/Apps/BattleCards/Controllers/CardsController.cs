@@ -6,16 +6,17 @@
     using SUS.MVCFramework;
 
     using Models;
+    using Services;
     using Models.Data;
     using ViewModels.Card;
 
     public class CardsController : Controller
     {
-        private readonly BattleCardsDbContext context;
+        private readonly ICardService service;
 
-        public CardsController(BattleCardsDbContext context)
+        public CardsController(ICardService service)
         {
-            this.context = context;
+            this.service = service;
         }
 
         public HttpResponse All()
@@ -25,16 +26,7 @@
                 return this.Redirect("/Users/Login");
             }
 
-            var cards = this.context.Cards
-                .Select(x => new CarViewModel
-                {
-                    Name = x.Name,
-                    ImageUrl = x.ImageUrl,
-                    Attack = x.Attack,
-                    Health = x.Health,
-                    Description = x.Description,
-                    Type = x.Keyword
-                }).ToList();
+            var cards = service.GetAll();
 
             return View(cards);
         }
@@ -44,7 +36,7 @@
             return View();
         }
 
-        [HttpPost("/Cards/Add")]
+        [HttpPost]
         public HttpResponse Add(AddCarInputViewModel model)
         {
             if (!this.IsUserSignIn())
@@ -85,21 +77,40 @@
                 return this.RedirectError("Invalid description!");
             }
 
-            var card = new Card
-            {
-                Name = model.Name,
-                ImageUrl = model.Image,
-                Keyword = model.Keyword,
-                Attack = model.Attack,
-                Health = model.Health,
-                Description = model.Description,
-            };
+            var cardId = service.AddCard(model);
 
-            this.context.Cards.Add(card);
-
-            this.context.SaveChanges();
+            var userId = this.GetUserId();
+            service.AddToCollection(userId, cardId);
 
             return this.Redirect("/cards/all");
+        }
+
+        public HttpResponse AddToCollection(int cardId)
+        {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
+            var userId = this.GetUserId();
+
+            service.AddToCollection(userId, cardId);
+
+            return this.Redirect("/Cards/All");
+        }
+
+        public HttpResponse RemoveFromCollection(int cardId)
+        {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
+            var userId = this.GetUserId();
+
+            service.RemoveFromCollection(userId, cardId);
+
+            return this.Redirect("/Cards/Collection");
         }
 
         public HttpResponse Collection()
@@ -109,7 +120,10 @@
                 return this.Redirect("/Users/Login");
             }
 
-            return View();
+            var userId = this.GetUserId();
+            var collection = service.GetMyCollection(userId);
+
+            return View(collection);
         }
 
     }

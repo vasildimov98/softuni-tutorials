@@ -11,9 +11,9 @@
     {
         private BattleCardsDbContext context;
 
-        public UserService()
+        public UserService(BattleCardsDbContext context)
         {
-            this.context = new BattleCardsDbContext();
+            this.context = context;
         }
 
         public void CreateUser(string username, string email, string password)
@@ -25,9 +25,9 @@
                 Password = ConvertToHash(password),
             };
 
-            context.Users.Add(user);
+            this.context.Users.Add(user);
 
-            context.SaveChanges();
+            this.context.SaveChanges();
         }
 
         public string GetUserId(string username, string password)

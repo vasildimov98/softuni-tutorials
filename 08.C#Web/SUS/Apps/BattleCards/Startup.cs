@@ -15,6 +15,7 @@
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
             serviceCollection.Add<IUserService, UserService>();
+            serviceCollection.Add<ICardService, CardService>();
         }
 
         public void Configure(ICollection<Route> routes)

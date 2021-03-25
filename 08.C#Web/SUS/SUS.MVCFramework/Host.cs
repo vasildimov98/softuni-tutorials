@@ -28,6 +28,17 @@
             LoadStaticFileRoute(routeTable);
             LoadPageRoutes(mvcApplication, routeTable, serviceCollection);
 
+            Console.WriteLine("Register routes:");
+
+            foreach (var route in routeTable)
+            {
+                Console.WriteLine($"{route.Method} => {route.Path}");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Request:");
+
             var server = new HttpServer(routeTable);
 
             await server.StartAsync(port);
@@ -66,10 +77,14 @@
 
                     var method = HttpMethod.GET;
 
+                    if (customAttribute != null)
+                    {
+                        method = customAttribute.Method;
+                    }
+
                     if (!string.IsNullOrWhiteSpace(customAttribute?.Url))
                     {
                         url = customAttribute.Url;
-                        method = customAttribute.Method;
                     }
 
                     routeTable.Add(new Route(url, method, RegisterAction(serviceCollection, controllerType, methodType)));
