@@ -72,18 +72,66 @@
                         method = customAttribute.Method;
                     }
 
-                    routeTable.Add(new Route(url, method, (request) =>
-                    {
-                        var controller = serviceCollection.CreateInstance(controllerType) as Controller;
-
-                        controller.Request = request;
-
-                        var response = methodType.Invoke(controller, new object[] { }) as HttpResponse;
-
-                        return response;
-                    }));
+                    routeTable.Add(new Route(url, method, RegisterAction(serviceCollection, controllerType, methodType)));
                 }
             }
+        }
+
+        private static Func<HttpRequest, HttpResponse> RegisterAction(IServiceCollection serviceCollection, Type controllerType, MethodInfo methodType)
+        {
+            return (request) =>
+            {
+                var controller = serviceCollection.CreateInstance(controllerType) as Controller;
+
+                controller.Request = request;
+
+                var parameters = new List<object>();
+
+                foreach (var parameter in methodType.GetParameters())
+                {
+                    var parameterValueAsString = GetParameterValue(request, parameter.Name);
+                    var parameterValue = Convert.ChangeType(parameterValueAsString, parameter.ParameterType);
+
+                    if (parameterValue == null 
+                    && parameter.ParameterType != typeof(string))
+                    {
+                        parameterValue = Activator.CreateInstance(parameter.ParameterType);
+
+                        var properties = parameter.ParameterType.GetProperties();
+
+                        foreach (var property in properties)
+                        {
+                            var propertyValueAsString = GetParameterValue(request, property.Name);
+                            var propertyValue = Convert.ChangeType(propertyValueAsString, property.PropertyType);
+                            property.SetValue(parameterValue, propertyValue);
+                        }
+                    }
+
+                    parameters.Add(parameterValue);
+                }
+
+                var response = methodType.Invoke(controller, parameters.ToArray()) as HttpResponse;
+
+                return response;
+            };
+        }
+
+        private static object GetParameterValue(HttpRequest request, string parameterName)
+        {
+            parameterName = parameterName.ToLower();
+            if (request.FormData.Any(x => x.Key.ToLower() == parameterName))
+            {
+                return request.FormData
+                    .FirstOrDefault(x => x.Key.ToLower() == parameterName).Value;
+            }
+
+            if (request.QueryStringData.Any(x => x.Key.ToLower() == parameterName))
+            {
+                return request.QueryStringData
+                    .FirstOrDefault(x => x.Key.ToLower() == parameterName).Value;
+            }
+
+            return null;
         }
 
         private static void LoadStaticFileRoute(List<Route> routeTable)

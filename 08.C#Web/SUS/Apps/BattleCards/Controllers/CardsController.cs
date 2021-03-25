@@ -6,8 +6,8 @@
     using SUS.MVCFramework;
 
     using Models;
-    using ViewModels;
     using Models.Data;
+    using ViewModels.Card;
 
     public class CardsController : Controller
     {
@@ -20,6 +20,11 @@
 
         public HttpResponse All()
         {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
             var cards = this.context.Cards
                 .Select(x => new CarViewModel
                 {
@@ -40,21 +45,54 @@
         }
 
         [HttpPost("/Cards/Add")]
-        public HttpResponse DoAdd()
+        public HttpResponse Add(AddCarInputViewModel model)
         {
-            if (this.Request.FormData["name"].Length < 5)
+            if (!this.IsUserSignIn())
             {
-                return this.RedirectError("Name should be at least 5 length and max 15 length");
+                return this.Redirect("/Users/Login");
+            }
+
+            if (model.Name == null
+                || model.Name.Length < 5
+                || model.Name.Length > 15)
+            {
+                return this.RedirectError("Invalid Name! Name should be at least 5 length and max 15 length");
+            }
+
+            if (model.Image == null)
+            {
+                return this.RedirectError("Image is required!");
+            }
+
+            if (model.Keyword == null)
+            {
+                return this.RedirectError("Keyword is required!");
+            }
+
+            if (model.Attack < 0)
+            {
+                return this.RedirectError("Attack cannot be negative!");
+            }
+
+            if (model.Health < 0)
+            {
+                return this.RedirectError("Attack cannot be negative!");
+            }
+
+            if (model.Description == null
+                || model.Description.Length > 200)
+            {
+                return this.RedirectError("Invalid description!");
             }
 
             var card = new Card
             {
-                Name = this.Request.FormData["name"],
-                ImageUrl = this.Request.FormData["image"],
-                Keyword = this.Request.FormData["keyword"],
-                Attack = int.Parse(this.Request.FormData["attack"]),
-                Health = int.Parse(this.Request.FormData["health"]),
-                Description = this.Request.FormData["description"],
+                Name = model.Name,
+                ImageUrl = model.Image,
+                Keyword = model.Keyword,
+                Attack = model.Attack,
+                Health = model.Health,
+                Description = model.Description,
             };
 
             this.context.Cards.Add(card);
@@ -66,6 +104,11 @@
 
         public HttpResponse Collection()
         {
+            if (!this.IsUserSignIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
             return View();
         }
 

@@ -28,17 +28,12 @@
         }
 
         [HttpPost("/Users/Register")]
-        public HttpResponse DoRegister()
+        public HttpResponse Register(string username, string email, string password, string confirmPassword)
         {
             if (this.IsUserSignIn())
             {
                 this.Redirect("/Cards/All");
             }
-
-            var username = this.Request.FormData["username"];
-            var email = this.Request.FormData["email"];
-            var password = this.Request.FormData["password"];
-            var confirmPassword = this.Request.FormData["confirmPassword"];
 
             if (username == null
                 || username.Length < 5
@@ -96,15 +91,12 @@
         }
 
         [HttpPost("/Users/Login")]
-        public HttpResponse DoLogin()
+        public HttpResponse DoLogin(string username, string password)
         {
             if (this.IsUserSignIn())
             {
                 this.Redirect("/Cards/All");
             }
-
-            var username = this.Request.FormData["username"];
-            var password = this.Request.FormData["password"];
 
             var userId = this.userService.GetUserId(username, password);
 

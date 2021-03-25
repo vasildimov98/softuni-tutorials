@@ -1,12 +1,13 @@
-﻿namespace BattleCards.ViewModels
+﻿
+namespace BattleCards.ViewModels.Card
 {
-    public class CarViewModel
+    public class AddCarInputViewModel
     {
         public string Name { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string Image { get; set; }
 
-        public string Type { get; set; }
+        public string Keyword { get; set; }
 
         public int Attack { get; set; }
 

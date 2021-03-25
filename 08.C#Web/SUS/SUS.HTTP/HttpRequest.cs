@@ -14,6 +14,7 @@
         public HttpRequest(string requestAsString)
         {
             this.FormData = new Dictionary<string, string>();
+            this.QueryStringData = new Dictionary<string, string>();
             this.Headers = new List<Header>();
             this.Cookies = new List<Cookie>();
             this.HttpRequestParser(requestAsString);
@@ -23,7 +24,11 @@
 
         public string Body { get; set; }
 
+        public string QueryString { get; set; }
+
         public Dictionary<string, string> Session { get; set; }
+
+        public Dictionary<string, string> QueryStringData { get; set; }
 
         public Dictionary<string, string> FormData { get; set; }
 
@@ -49,7 +54,8 @@
             var path = startLineArgs[1];
 
             this.Method = (HttpMethod)Enum.Parse(typeof(HttpMethod), method);
-            this.Path = path;
+
+            this.LookForQueryString(path);
 
             var bodyBuilder = new StringBuilder();
             this.ProcessRquestLines(requestLines, bodyBuilder);
@@ -58,7 +64,25 @@
             this.LookForSessionCookie();
 
             this.Body = bodyBuilder.ToString().TrimEnd('\n', '\r');
-            this.WriteFormData();
+            this.GetParametersData(this.Body, this.FormData);
+            this.GetParametersData(this.QueryString, this.QueryStringData);
+        }
+
+        private void LookForQueryString(string path)
+        {
+            if (path.Contains("?"))
+            {
+                var pathArgs = path
+                    .Split("?", 2, StringSplitOptions.RemoveEmptyEntries);
+
+                this.Path = pathArgs[0];
+                this.QueryString = pathArgs[1];
+            }
+            else
+            {
+                this.Path = path;
+                this.QueryString = string.Empty;
+            }
         }
 
         private void LookForSessionCookie()
@@ -84,31 +108,30 @@
             }
         }
 
-        private void WriteFormData()
+        private void GetParametersData(string parametersAsString, Dictionary<string, string> data)
         {
-            var parameters = this.Body
+            var parametersArgs = parametersAsString
                 .Split('&', StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (var parameter in parameters)
+            foreach (var parameter in parametersArgs)
             {
                 var kvpArgs = parameter
                     .Split('=', 2, StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
 
-
                 var key = WebUtility.UrlDecode(kvpArgs[0]);
 
                 if (kvpArgs.Length != 2)
                 {
-                    this.FormData[key] = null;
+                    data[key] = null;
                     continue;
                 }
 
                 var value = WebUtility.UrlDecode(kvpArgs[1]);
 
-                if (!this.FormData.ContainsKey(key))
+                if (!data.ContainsKey(key))
                 {
-                    this.FormData[key] = value;
+                    data[key] = value;
                 }
             }
         }
