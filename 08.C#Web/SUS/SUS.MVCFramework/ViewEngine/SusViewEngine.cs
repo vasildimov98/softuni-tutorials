@@ -25,27 +25,7 @@
         {
             var typeofModel = "object";
 
-            if (viewModel != null)
-            {
-                if (viewModel.GetType().IsGenericType)
-                {
-                    var genericTypes = viewModel
-                            .GetType()
-                            .GetGenericArguments()
-                            .Select(x => x.FullName);
-
-                    typeofModel = viewModel.GetType().FullName;
-                    var commaLocation = typeofModel.IndexOf("`");
-
-                    typeofModel = typeofModel.Substring(0, commaLocation);
-
-                    typeofModel += $"<{string.Join(", ", genericTypes)}>";
-                }
-                else
-                {
-                    typeofModel = viewModel.GetType().FullName;
-                }
-            }
+            typeofModel = GetTypeOfViewModel(viewModel, typeofModel);
 
             var methodBody = GenerateMethodBody(template);
 
@@ -73,8 +53,34 @@ namespace ViewNamespace
     }       
 }
 ";
-
             return csharpCode;
+        }
+
+        private static string GetTypeOfViewModel(object viewModel, string typeofModel)
+        {
+            if (viewModel != null)
+            {
+                if (viewModel.GetType().IsGenericType)
+                {
+                    var genericTypes = viewModel
+                            .GetType()
+                            .GetGenericArguments()
+                            .Select(x => x.FullName);
+
+                    typeofModel = viewModel.GetType().FullName;
+                    var commaLocation = typeofModel.IndexOf("`");
+
+                    typeofModel = typeofModel.Substring(0, commaLocation);
+
+                    typeofModel += $"<{string.Join(", ", genericTypes)}>";
+                }
+                else
+                {
+                    typeofModel = viewModel.GetType().FullName;
+                }
+            }
+
+            return typeofModel;
         }
 
         private string GenerateMethodBody(string template)
@@ -122,7 +128,7 @@ namespace ViewNamespace
 
                         sb.Append($"{code} + @\"");
 
-                        line = lineAfterTheAtSign.Substring(code.Length);
+                        line = lineAfterTheAtSign[code.Length..];
                     }
 
                     sb.AppendLine($"{line.Replace("\"", "\"\"")}\");");
