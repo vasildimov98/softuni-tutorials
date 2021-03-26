@@ -1,0 +1,28 @@
+﻿@model RazorViewModel
+@inject ISimpleViewService service
+
+@if (Model.Products.Count == 0)
+{
+    <h1>@Model.SomeText</h1>
+}
+else
+{
+    <h1>List of all products:</h1>
+    <br />
+
+    foreach (var product in Model.Products)
+    {
+        <h2>@product.Name is @product.Price$</h2>
+        <br />
+    }
+
+    <h3>Total Price of all products: @Model.Products.Sum(x => x.Price)</h3>
+    <h3 class="alert-danger">Average Price of all products: (wrong way) @Model.Products.Sum(x => x.Price) / @Model.Products.Count</h3>
+    <h3>Average Price of all products: (right way) @(Model.Products.Sum(x => x.Price) / Model.Products.Count)</h3>
+
+    <br />
+
+    <h3 class="alert-danger">spam_me@Model.SomeText (wrong way)</h3>
+    <h3>spam_me@(service.GetShortText(Model.SomeText, 5)) (right way)</h3>
+    <br />
+}

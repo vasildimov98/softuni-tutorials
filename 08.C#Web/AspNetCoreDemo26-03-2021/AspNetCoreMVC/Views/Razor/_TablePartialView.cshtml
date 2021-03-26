@@ -1,0 +1,20 @@
+﻿<table bootstrap-table="">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Number Multiply by 2</th>
+            <th>Number Square</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 2; i <= 100; i *= 2)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@(i * 2)</td>
+                <td>@Math.Sqrt(i)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

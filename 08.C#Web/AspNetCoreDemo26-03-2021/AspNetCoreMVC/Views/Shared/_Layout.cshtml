@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AspNetCoreMVC</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -25,6 +25,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @RenderSection("GoogleLink", false)
+                        @RenderSection("BingLink", false)
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Razor" asp-action="RazorDemo">RazorDemo</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -39,6 +47,8 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - AspNetCoreMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <vc:register-users text="Register Users" />
+            @await this.Component.InvokeAsync("RegisterUsers", new { Text = "Register Users Second Time" })
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,0 +1,40 @@
+﻿@{
+    this.ViewData["Title"] = "RazorDemo Page";
+}
+
+@model RazorViewModel
+<div>
+    @if (DateTime.Now.Hour < 12)
+    {
+        //Some C# comment;
+        /*
+            Multy
+        line C#
+            comment
+        */
+        @:Current time is: @(DateTime.Now)am!
+    }
+    else
+    {
+        @:Current time is: @(DateTime.Now)pm!
+    }
+
+    <!--HTML COMMENT!!!!! DO YOU SEE ME NOW!-->
+    @*
+        Some Razor comment;
+        Its also
+            multy line
+                Razor comment;
+    *@
+
+    @await this.Html.PartialAsync("_ProductPartial", Model)
+
+    <br />
+
+    <partial name="_ProductPartial" , model="Model" />
+
+    <span>I want to write sime at signs: @@@@@@@@@@@@@@@@@@@@@@</span>
+    <span>Hello please write us on some-email@mail.bg</span>
+</div>
+
+<partial name="_TablePartialView">
