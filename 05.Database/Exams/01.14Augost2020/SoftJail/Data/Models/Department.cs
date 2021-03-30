@@ -19,6 +19,3 @@
         public virtual ICollection<Cell> Cells { get; set; }
     }
 }
-/*
-•	Name – text with min length 3 and max length 25
-*/

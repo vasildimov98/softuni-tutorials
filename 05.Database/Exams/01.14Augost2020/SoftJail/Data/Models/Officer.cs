@@ -31,12 +31,3 @@
         public ICollection<OfficerPrisoner> OfficerPrisoners { get; set; }
     }
 }
-
-/*
-•	FullName – text with min length 3 and max length 30 (required)
-•	Salary – decimal (non-negative, minimum value: 0) (required)
-•	Position - Position enumeration with possible values: “” (required)
-•	Weapon - Weapon enumeration with possible values: “” (required)
-•	Department – the officer's department (required)
-•	OfficerPrisoners - collection of type OfficerPrisoner
-*/

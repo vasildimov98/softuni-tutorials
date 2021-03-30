@@ -20,6 +20,3 @@
         public virtual Prisoner Prisoner { get; set; }
     }
 }
-/*
-•	Address – text, consisting only of letters, spaces and numbers, which ends with “ str.”(Example: “62 Muir Hill str.“)
-*/

@@ -22,8 +22,3 @@
         public virtual ICollection<Prisoner> Prisoners { get; set; }
     }
 }
-
-/*
-•	CellNumber – integer in the range [1, 1000] (required)
-•	Department – the cell's department (required)
-*/
