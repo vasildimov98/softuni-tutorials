@@ -1,10 +1,12 @@
 ﻿namespace SoftJail
 {
     using System;
-    using Data;
+    using System.IO;
+
     using AutoMapper;
     using Microsoft.EntityFrameworkCore;
-    using System.IO;
+
+    using Data;
 
     public class StartUp
     {

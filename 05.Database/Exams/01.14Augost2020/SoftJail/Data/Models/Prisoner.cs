@@ -27,7 +27,7 @@
 
         public DateTime? ReleaseDate { get; set; }
 
-        public decimal Bail { get; set; }
+        public decimal? Bail { get; set; }
 
         public int? CellId { get; set; }
 
