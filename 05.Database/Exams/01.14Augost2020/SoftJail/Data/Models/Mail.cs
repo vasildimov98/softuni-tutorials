@@ -1,0 +1,25 @@
+﻿namespace SoftJail.Data.Models
+{
+    using System.ComponentModel.DataAnnotations;
+
+    public class Mail
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        [Required]
+        public string Sender { get; set; }
+
+        [Required]
+        public string Address { get; set; }
+
+        public int PrisonerId { get; set; }
+
+        public virtual Prisoner Prisoner { get; set; }
+    }
+}
+/*
+•	Address – text, consisting only of letters, spaces and numbers, which ends with “ str.”(Example: “62 Muir Hill str.“)
+*/

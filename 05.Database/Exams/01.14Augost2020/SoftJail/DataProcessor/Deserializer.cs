@@ -1,6 +1,5 @@
 ﻿namespace SoftJail.DataProcessor
 {
-
     using Data;
     using System;
     using System.Collections.Generic;
@@ -25,7 +24,7 @@
 
         private static bool IsValid(object obj)
         {
-            var validationContext = new System.ComponentModel.DataAnnotations.ValidationContext(obj);
+            var validationContext = new ValidationContext(obj);
             var validationResult = new List<ValidationResult>();
 
             bool isValid = Validator.TryValidateObject(obj, validationContext, validationResult, true);
