@@ -10,7 +10,7 @@
 
     public class StartUp
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             var context = new SoftJailDbContext();
 
@@ -68,18 +68,18 @@
             }
 
             var disableIntegrityChecksQuery = "EXEC sp_MSforeachtable @command1='ALTER TABLE ? NOCHECK CONSTRAINT ALL'";
-            context.Database.ExecuteSqlCommand(disableIntegrityChecksQuery);
+            context.Database.ExecuteSqlRaw(disableIntegrityChecksQuery);
 
             var deleteRowsQuery = "EXEC sp_MSforeachtable @command1='SET QUOTED_IDENTIFIER ON;DELETE FROM ?'";
-            context.Database.ExecuteSqlCommand(deleteRowsQuery);
+            context.Database.ExecuteSqlRaw(deleteRowsQuery);
 
             var enableIntegrityChecksQuery =
                 "EXEC sp_MSforeachtable @command1='ALTER TABLE ? WITH CHECK CHECK CONSTRAINT ALL'";
-            context.Database.ExecuteSqlCommand(enableIntegrityChecksQuery);
+            context.Database.ExecuteSqlRaw(enableIntegrityChecksQuery);
 
             var reseedQuery =
                 "EXEC sp_MSforeachtable @command1='IF OBJECT_ID(''?'') IN (SELECT OBJECT_ID FROM SYS.IDENTITY_COLUMNS) DBCC CHECKIDENT(''?'', RESEED, 0)'";
-            context.Database.ExecuteSqlCommand(reseedQuery);
+            context.Database.ExecuteSqlRaw(reseedQuery);
         }
 
         private static void PrintAndExportEntityToFile(string entityOutput, string outputPath)
