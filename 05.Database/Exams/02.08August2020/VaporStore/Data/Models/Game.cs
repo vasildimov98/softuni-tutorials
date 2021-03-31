@@ -35,14 +35,3 @@
     }
 }
 
-/*•	Id – integer, Primary Key
-•	Name – text (required)
-•	Price – decimal (non-negative, minimum value: 0) (required)
-•	ReleaseDate – Date (required)
-•	DeveloperId – integer, foreign key (required)
-•	Developer – the game’s developer (required)
-•	GenreId – integer, foreign key (required)
-•	Genre – the game’s genre (required)
-•	Purchases - collection of type Purchase
-•	GameTags - collection of type GameTag. Each game must have at least one tag.
-*/

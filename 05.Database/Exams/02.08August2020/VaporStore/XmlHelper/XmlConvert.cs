@@ -1,4 +1,4 @@
-﻿namespace {WriteCorrectNamespace}.XmlHelper
+﻿namespace VaporStore.XmlHelper
 {
     using System.IO;
     using System.Text;

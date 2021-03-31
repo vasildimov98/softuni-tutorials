@@ -18,8 +18,3 @@
         public virtual ICollection<GameTag> GameTags { get; set; }
     }
 }
-
-/*•	Id – integer, Primary Key
-•	Name – text (required)
-•	GameTags - collection of type GameTag
-*/

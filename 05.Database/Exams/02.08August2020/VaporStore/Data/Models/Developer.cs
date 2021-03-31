@@ -18,8 +18,3 @@
         public virtual ICollection<Game> Games { get; set; }
     }
 }
-
-/*•	Id – integer, Primary Key
-•	Name – text (required)
-•	Games - collection of type Game
-*/
