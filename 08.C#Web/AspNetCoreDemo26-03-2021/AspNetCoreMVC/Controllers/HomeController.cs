@@ -1,7 +1,8 @@
 ﻿namespace AspNetCoreMVC.Controllers
 {
+    using System;
     using System.Diagnostics;
-    using AspNetCoreMVC.Data;
+    using AspNetCoreMVC.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
 
@@ -12,14 +13,19 @@
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger) 
+        public HomeController(ILogger<HomeController> logger, IInstaceService instaceService) 
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return this.View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return this.View();
+        }
+
+        public IActionResult Exeption()
+        {
+            throw new Exception("This method is throwing unhandle exeption!!!!");
         }
 
         public IActionResult Privacy()

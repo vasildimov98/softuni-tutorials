@@ -1,9 +1,15 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment AppEnviroment
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+@inject AspNetCoreMVC.Services.IInstaceService InstanceService;
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">@this.Configuration["Hello_World"]</h1>
+    <h1 class="display-4">InstanceService was initialize @this.InstanceService.CountOfInstances time\s</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 

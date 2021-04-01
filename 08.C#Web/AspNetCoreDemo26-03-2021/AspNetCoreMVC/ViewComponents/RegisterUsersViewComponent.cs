@@ -5,7 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
 
     using Data;
-    using AspNetCoreMVC.ViewModels.ViewComponents;
+    using ViewModels.ViewComponents;
 
     [ViewComponent(Name = "RegisterUsers")]
     public class RegisterUsersViewComponent : ViewComponent
