@@ -1,18 +1,16 @@
 ﻿namespace BookShop
 {
     using System;
-    using System.Globalization;
     using System.IO;
-    using System.Linq;
+    using System.Globalization;
 
     using Microsoft.EntityFrameworkCore;
-    using Newtonsoft.Json;
 
     using Data;
 
     public class StartUp
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             var context = new BookShopContext();
 

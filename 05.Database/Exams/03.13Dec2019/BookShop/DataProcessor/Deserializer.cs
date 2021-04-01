@@ -1,15 +1,10 @@
 ﻿namespace BookShop.DataProcessor
 {
+    using Data;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Xml.Serialization;
-    using Data;
-    using Newtonsoft.Json;
+
     using ValidationContext = System.ComponentModel.DataAnnotations.ValidationContext;
 
     public class Deserializer
@@ -24,12 +19,12 @@
 
         public static string ImportBooks(BookShopContext context, string xmlString)
         {
-           throw new NotImplementedException();
+            return "TODO";
         }
 
         public static string ImportAuthors(BookShopContext context, string jsonString)
         {
-            throw new NotImplementedException();
+            return "TODO";
         }
 
         private static bool IsValid(object dto)
