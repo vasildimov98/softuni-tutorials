@@ -14,7 +14,7 @@
         {
             var context = new BookShopContext();
 
-            ResetDatabase(context, shouldDropDatabase: true);
+            ResetDatabase(context, shouldDropDatabase: false);
 
             var projectDir = GetProjectDirectory();
 

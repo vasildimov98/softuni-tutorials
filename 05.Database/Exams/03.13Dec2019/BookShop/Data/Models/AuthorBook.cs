@@ -11,9 +11,3 @@
         public Book Book { get; set; }
     }
 }
-
-/*•	AuthorId - integer, Primary Key, Foreign key (required)
-•	Author -  Author
-•	BookId - integer, Primary Key, Foreign key (required)
-•	Book - Book
-*/

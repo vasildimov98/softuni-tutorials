@@ -1,4 +1,4 @@
-﻿namespace {WriteCorrectNamespace}.XmlHelper
+﻿namespace BookShop.XmlHelper
 {
     using System.IO;
     using System.Text;
@@ -12,10 +12,12 @@
             var xmlRoot = new XmlRootAttribute(root);
             var serializer = new XmlSerializer(typeof(T), xmlRoot);
 
-            using var stringReader = new StringReader(xmlString);
-            var result = serializer.Deserialize(stringReader) as T;
+            using (var stringReader = new StringReader(xmlString))
+            {
+                var result = serializer.Deserialize(stringReader) as T;
 
-            return result;
+                return result;
+            }
         }
 
         public static string Serialize<T>(string xmlRootName, T dto)
@@ -26,12 +28,14 @@
             var serializer = new XmlSerializer(dto.GetType(), xmlRoot);
 
             var sb = new StringBuilder();
-            using var stringWriter = new StringWriter(sb);
-            serializer.Serialize(stringWriter, dto, GetEmptyNamespace());
+            using (var stringWriter = new StringWriter(sb))
+            {
+                serializer.Serialize(stringWriter, dto, GetEmptyNamespace());
 
-            var xmlOutput = sb.ToString();
+                var xmlOutput = sb.ToString();
 
-            return xmlOutput;
+                return xmlOutput;
+            }
         }
 
         private static XmlSerializerNamespaces GetEmptyNamespace()
