@@ -47,8 +47,8 @@
 		public static string ExportUserPurchasesByType(VaporStoreDbContext context, string storeType)
 		{
 			var usersToExport = context.Users
-				.ToList()
 				.Where(x => x.Cards.Any(x => x.Purchases.Any()))
+				.ToList()
 				.Select(x => new UserXmlExportDto
 				{
 					Username = x.Username,
