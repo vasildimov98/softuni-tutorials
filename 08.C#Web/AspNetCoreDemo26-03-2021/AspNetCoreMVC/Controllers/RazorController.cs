@@ -1,13 +1,14 @@
 ﻿namespace AspNetCoreMVC.Controllers
 {
     using System.Collections.Generic;
-
     using Microsoft.AspNetCore.Mvc;
 
+    using Filters;
     using ViewModels;
 
     public class RazorController : Controller
     {
+        [ServiceFilter(typeof(SampleActionFilter))]
         public IActionResult RazorDemo()
         {
             var products = new List<Product>

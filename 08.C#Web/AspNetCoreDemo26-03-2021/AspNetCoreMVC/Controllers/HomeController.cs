@@ -2,11 +2,12 @@
 {
     using System;
     using System.Diagnostics;
-    using AspNetCoreMVC.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
 
     using Models;
+    using Filters;
+    using Services;
     using ViewModels;
 
     public class HomeController : Controller
@@ -18,6 +19,7 @@
             _logger = logger;
         }
 
+        [AddHeader("test", "test@abv.bg")]
         public IActionResult Index()
         {
             return this.View();
@@ -34,6 +36,7 @@
         }
 
         [HttpGet]
+        [TypeFilter(typeof(AuthorizationFilter))]
         public IActionResult About(int year, int month, int day)
         {
             this.ViewBag.Year = year;
