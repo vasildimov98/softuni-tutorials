@@ -5,6 +5,7 @@
 
     using Filters;
     using ViewModels;
+    using AspNetCoreMVC.ViewModels.Razor;
 
     public class RazorController : Controller
     {

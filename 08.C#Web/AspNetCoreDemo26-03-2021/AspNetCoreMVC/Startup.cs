@@ -11,6 +11,7 @@ namespace AspNetCoreMVC
     using Services;
     using Data;
     using Filters;
+    using AspNetCoreMVC.ModelBinders;
 
     public class Startup
     {
@@ -29,7 +30,10 @@ namespace AspNetCoreMVC
                     this.Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(options => 
+            {
+                options.ModelBinderProviders.Insert(0, new YearEntittyBinderProvider());
+            });
             services.AddRazorPages();
 
             services.AddSingleton<ISimpleViewService, SimpleViewService>();

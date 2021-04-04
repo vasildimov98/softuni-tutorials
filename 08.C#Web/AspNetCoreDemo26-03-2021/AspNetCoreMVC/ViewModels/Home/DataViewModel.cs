@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreMVC.ViewModels
+﻿namespace AspNetCoreMVC.ViewModels.Home
 {
     public class DataViewModel
     {

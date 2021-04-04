@@ -8,7 +8,7 @@
     using Models;
     using Filters;
     using Services;
-    using ViewModels;
+    using ViewModels.Home;
 
     public class HomeController : Controller
     {

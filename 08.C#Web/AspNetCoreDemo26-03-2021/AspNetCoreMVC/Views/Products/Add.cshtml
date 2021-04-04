@@ -1,0 +1,69 @@
+﻿@using AspNetCoreMVC.ViewModels.Products
+@model AddProductInputModel
+
+<h1 class="text-center">Add your product here</h1>
+<form method="post" enctype="multipart/form-data" class="form-group col-md=6 text-center">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span class="text-danger" asp-validation-for="Price"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <select class="form-control" asp-items="@Html.GetEnumSelectList<AspNetCoreMVC.Data.Enum.ProductType>()">
+        </select>
+        <span class="text-danger" asp-validation-for="Type"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ArrivedOn"></label>
+        <input asp-for="ArrivedOn" class="form-control" />
+        <span class="text-danger" asp-validation-for="ArrivedOn"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IsAvailable"></label>
+        <input asp-for="IsAvailable" class="form-control" />
+        <span class="text-danger" asp-validation-for="IsAvailable"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Vendor.Name"></label>
+        <input asp-for="Vendor.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Vendor.Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Vendor.Mark"></label>
+        <input asp-for="Vendor.Mark" class="form-control" />
+        <span class="text-danger" asp-validation-for="Vendor.Mark"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Image"></span>
+    </div>
+
+    <input type="submit" value="CREATE PRODUCT" class="btn btn-primary" />
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
