@@ -24,8 +24,3 @@
         public virtual ICollection<Task> Tasks { get; set; }
     }
 }
-//•	Id - integer, Primary Key
-//•	Name - text with length [2, 40] (required)
-//•	OpenDate - date and time(required)
-//•	DueDate - date and time(can be null)
-//•	Tasks - collection of type Task
