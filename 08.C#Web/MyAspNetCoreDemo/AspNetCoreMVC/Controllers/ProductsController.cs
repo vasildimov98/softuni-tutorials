@@ -8,6 +8,7 @@
     using Microsoft.AspNetCore.Hosting;
 
     using ViewModels.Products;
+    using AspNetCoreMVC.Data.Models.Enum;
 
     public class ProductsController : Controller
     {
@@ -27,7 +28,7 @@
                 IsAvailable = true,
                 ArrivedOn = DateTime.UtcNow,
                 Description = "Some random description",
-                Type = Data.Enum.ProductType.Unknown
+                Type = ProductType.Unknown
             };
 
             return this.View(model);

@@ -4,10 +4,10 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using Data.Enum;
-
-    using AspNetCoreMVC.ValidationAttributes;
     using Microsoft.AspNetCore.Http;
+
+    using Data.Models.Enum;
+    using ValidationAttributes;
 
     public class AddProductInputModel
     {

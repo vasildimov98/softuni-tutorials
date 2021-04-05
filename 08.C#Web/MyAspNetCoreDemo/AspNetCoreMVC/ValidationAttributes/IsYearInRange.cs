@@ -22,6 +22,14 @@
                     return ValidationResult.Success;
                 }
             }
+            else if (value is DateTime yearAsDateTime)
+            {
+                if (yearAsDateTime.Year >= minYear
+                    && yearAsDateTime.Year <= DateTime.Now.Year)
+                {
+                    return ValidationResult.Success;
+                }
+            }
 
             this.ErrorMessage = $"{value} is invalid year! Year value should be between {minYear} and {DateTime.Now.Year}";
 

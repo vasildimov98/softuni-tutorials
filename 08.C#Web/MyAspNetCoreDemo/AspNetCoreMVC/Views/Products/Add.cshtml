@@ -26,7 +26,7 @@
 
     <div class="form-group">
         <label asp-for="Type"></label>
-        <select class="form-control" asp-items="@Html.GetEnumSelectList<AspNetCoreMVC.Data.Enum.ProductType>()">
+        <select class="form-control" asp-items="@Html.GetEnumSelectList<AspNetCoreMVC.Data.Models.Enum.ProductType>()">
         </select>
         <span class="text-danger" asp-validation-for="Type"></span>
     </div>
