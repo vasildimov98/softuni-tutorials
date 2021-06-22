@@ -1,25 +1,32 @@
-﻿using CarShop.Data;
-using CarShop.Services;
-
-using Microsoft.EntityFrameworkCore;
-
-using SUS.HTTP;
-using SUS.MvcFramework;
-
-using System.Collections.Generic;
-
-namespace CarShop
+﻿namespace CarShop
 {
-    public class Startup : IMvcApplication
-    {
-        public void Configure(List<Route> routeTable)
-        {
-            new ApplicationDbContext().Database.Migrate();
-        }
+    using System.Threading.Tasks;
 
-        public void ConfigureServices(IServiceCollection serviceCollection)
-        {
-            serviceCollection.Add<IUsersService, UsersService>();
-        }
+    using MyWebServer;
+    using MyWebServer.Controllers;
+    using Microsoft.EntityFrameworkCore;
+
+    using CarShop.Data;
+    using MyWebServer.Results.Views;
+    using CarShop.Services;
+
+    public class StartUp
+    {
+        public static async Task Main()
+            => await HttpServer
+                .WithRoutes(routes => routes
+                    .MapStaticFiles()
+                    .MapControllers())
+                .WithServices(services => services
+                    .Add<ApplicationDbContext>()
+                    .Add<IViewEngine, CompilationViewEngine>()
+                    .Add<IValidator,Validator>()
+                    .Add<IUsersService, UsersService>()
+                    .Add<ICarsService, CarsService>()
+                    .Add<IIssuesService, IssuesService>())
+                .WithConfiguration<ApplicationDbContext>(context => context
+                    .Database
+                        .Migrate())
+                .Start();
     }
 }

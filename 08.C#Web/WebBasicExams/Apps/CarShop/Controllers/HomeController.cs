@@ -1,14 +1,14 @@
-﻿using SUS.HTTP;
-using SUS.MvcFramework;
-
-namespace CarShop.Controllers
+﻿namespace CarShop.Controllers
 {
+    using MyWebServer.Controllers;
+    using MyWebServer.Http;
+
     public class HomeController : Controller
     {
-        [HttpGet("/")]
+        [HttpGet]
         public HttpResponse Index()
         {
-            if (this.IsUserSignedIn())
+            if (this.User.IsAuthenticated)
             {
                 return this.Redirect("/Cars/All");
             }
