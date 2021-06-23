@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebServer", "MyWebServer\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarShop", "Apps\CarShop\CarShop.csproj", "{C4FB0734-BEF9-4190-A828-90F7B89002C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Git", "Git\Git.csproj", "{3C231A89-48B5-4D51-A5C1-A44CC6B1DF2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{C4FB0734-BEF9-4190-A828-90F7B89002C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4FB0734-BEF9-4190-A828-90F7B89002C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4FB0734-BEF9-4190-A828-90F7B89002C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C231A89-48B5-4D51-A5C1-A44CC6B1DF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C231A89-48B5-4D51-A5C1-A44CC6B1DF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C231A89-48B5-4D51-A5C1-A44CC6B1DF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C231A89-48B5-4D51-A5C1-A44CC6B1DF2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C4FB0734-BEF9-4190-A828-90F7B89002C0} = {D058481A-B479-499D-ADB8-9108A526A334}
+		{3C231A89-48B5-4D51-A5C1-A44CC6B1DF2A} = {D058481A-B479-499D-ADB8-9108A526A334}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DE8A1FE-A195-4206-8DF0-E23F1C7707C8}

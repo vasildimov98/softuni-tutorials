@@ -25,8 +25,3 @@
         public bool IsMechanic { get; set; }
     }
 }
-
-/*
-•	Has a Username – a string with min length 4 
-•	Has a Password – a string with min length 5 and max length 20  - hashed in the database (required)
-*/
