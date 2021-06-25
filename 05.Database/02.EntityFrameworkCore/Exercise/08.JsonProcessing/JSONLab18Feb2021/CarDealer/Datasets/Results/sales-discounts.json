@@ -1,0 +1,112 @@
+[
+  {
+    "car": {
+      "Make": "Renault",
+      "Model": "Captur",
+      "TravelledDistance": 515034479
+    },
+    "customerName": "Ann Mcenaney",
+    "Discount": 30.00,
+    "price": "1108,97",
+    "priceWithDiscount": "776,28"
+  },
+  {
+    "car": {
+      "Make": "Ferrari",
+      "Model": "250 GTO",
+      "TravelledDistance": 455536599
+    },
+    "customerName": "Taina Achenbach",
+    "Discount": 10.00,
+    "price": "565,97",
+    "priceWithDiscount": "509,37"
+  },
+  {
+    "car": {
+      "Make": "Nissan",
+      "Model": "GT-R",
+      "TravelledDistance": 118192217
+    },
+    "customerName": "Francis Mckim",
+    "Discount": 30.00,
+    "price": "2076,70",
+    "priceWithDiscount": "1453,69"
+  },
+  {
+    "car": {
+      "Make": "Opel",
+      "Model": "Vectra",
+      "TravelledDistance": 238042093
+    },
+    "customerName": "Donnetta Soliz",
+    "Discount": 15.00,
+    "price": "604,38",
+    "priceWithDiscount": "513,72"
+  },
+  {
+    "car": {
+      "Make": "Skoda",
+      "Model": "Fabia",
+      "TravelledDistance": 57662452
+    },
+    "customerName": "Hipolito Lamoreaux",
+    "Discount": 15.00,
+    "price": "3086,73",
+    "priceWithDiscount": "2623,72"
+  },
+  {
+    "car": {
+      "Make": "Opel",
+      "Model": "Astra",
+      "TravelledDistance": 156191509
+    },
+    "customerName": "Johnette Derryberry",
+    "Discount": 0.00,
+    "price": "465,97",
+    "priceWithDiscount": "465,97"
+  },
+  {
+    "car": {
+      "Make": "Seat",
+      "Model": "Mii",
+      "TravelledDistance": 20379344
+    },
+    "customerName": "Brett Brickley",
+    "Discount": 30.00,
+    "price": "1204,52",
+    "priceWithDiscount": "843,16"
+  },
+  {
+    "car": {
+      "Make": "Rolls-Royce",
+      "Model": "Phantom Drophead Coupé",
+      "TravelledDistance": 483029198
+    },
+    "customerName": "Nisha Markwell",
+    "Discount": 30.00,
+    "price": "1187,04",
+    "priceWithDiscount": "830,93"
+  },
+  {
+    "car": {
+      "Make": "Seat",
+      "Model": "Mii",
+      "TravelledDistance": 508783407
+    },
+    "customerName": "Brett Brickley",
+    "Discount": 30.00,
+    "price": "1662,32",
+    "priceWithDiscount": "1163,62"
+  },
+  {
+    "car": {
+      "Make": "Mercedes",
+      "Model": "W212",
+      "TravelledDistance": 437173024
+    },
+    "customerName": "Emmitt Benally",
+    "Discount": 10.00,
+    "price": "3013,85",
+    "priceWithDiscount": "2712,47"
+  }
+]

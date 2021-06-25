@@ -1,0 +1,362 @@
+[
+  {
+    "Id": 409,
+    "Make": "Toyota",
+    "Model": "Camry Hybrid",
+    "TravelledDistance": 486872832,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 338,
+    "Make": "Toyota",
+    "Model": "Camry Hybrid",
+    "TravelledDistance": 397831570,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 405,
+    "Make": "Toyota",
+    "Model": "Camry Hybrid",
+    "TravelledDistance": 217630531,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 364,
+    "Make": "Toyota",
+    "Model": "Camry Hybrid",
+    "TravelledDistance": 193362513,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 388,
+    "Make": "Toyota",
+    "Model": "Camry Hybrid",
+    "TravelledDistance": 151868293,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 402,
+    "Make": "Toyota",
+    "Model": "Corolla",
+    "TravelledDistance": 485584239,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 368,
+    "Make": "Toyota",
+    "Model": "Corolla",
+    "TravelledDistance": 356361379,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 398,
+    "Make": "Toyota",
+    "Model": "Corolla",
+    "TravelledDistance": 333412512,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 389,
+    "Make": "Toyota",
+    "Model": "Corolla",
+    "TravelledDistance": 230556000,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 400,
+    "Make": "Toyota",
+    "Model": "Corolla",
+    "TravelledDistance": 196587490,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 407,
+    "Make": "Toyota",
+    "Model": "Corolla",
+    "TravelledDistance": 172436753,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 373,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 508864707,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 392,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 424624116,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 390,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 332788407,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 404,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 280666484,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 397,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 208912076,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 340,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 191675886,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 369,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 142914233,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 387,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 141313729,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 366,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 126607020,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 401,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 78228066,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 408,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 65891391,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 371,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 64266329,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 394,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "TravelledDistance": 8676482,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 372,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 431663130,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 370,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 426059006,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 393,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 425742267,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 406,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 328571532,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 396,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 174113404,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 339,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 157810668,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 403,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 147379564,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 367,
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "TravelledDistance": 89596390,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 399,
+    "Make": "Toyota",
+    "Model": "Yaris",
+    "TravelledDistance": 439493520,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 376,
+    "Make": "Toyota",
+    "Model": "Yaris",
+    "TravelledDistance": 285031257,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 395,
+    "Make": "Toyota",
+    "Model": "Yaris",
+    "TravelledDistance": 18776234,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  },
+  {
+    "Id": 391,
+    "Make": "Toyota",
+    "Model": "Yaris",
+    "TravelledDistance": 17169781,
+    "Sales": [
+    ],
+    "PartCars": [
+    ]
+  }
+]
