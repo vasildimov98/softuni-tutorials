@@ -1,0 +1,70 @@
+Triggers and Transactions - Database Programmability
+
+I. Trigger and Transactions
+(Definition, Usage, ACID Model)
+
+1. Definition
+
+- A Transaction is a sequence of actions (database operations) executed as a whole
+ - Either all of them complete successfully or none of them do
+ 
+2. Transactions Behavior
+
+- Transactions guarantee the consitency and the integrety of the database
+- All changes in a transaction are temporary
+- Changes are persisted when a COMMIT is executed
+- At any time, all changes can be canceled by ROLLBACK
+
+- All changes are persisted at once
+- As long as COMMIT is called
+
+3. What Can Go Wrong?
+- Some actions fail to complete
+ - The application software or database server crashes 
+ - The user cancels the action while it's in progres
+- Interference from another transaction
+ - What happens if several transfers run for the same account at the same time
+ 
+II. ACID Models - Solving Problems Before They Arise
+
+1. Transaction Properties
+- ACID means:
+ - Atomicity
+ - Consistency
+ - Isolation
+ - Durability
+ 
+2. Atomicity
+ - It means that transactions execute as a whole
+ - DBMS guarantees that either all of the operations are performed or none of them
+ 
+3. Consistency
+ - The database has a legal state in both the transaction's beginning and its end
+ - Only valid data will be written to the DBMS
+ - Transaction cannot break the rules of the database (primary key, foreign key)
+ 
+4. Isolation
+ - Multiple transactions running at the same time do not impact each other's execution
+ - Transactions don't see other transactions uncommited changes
+ - Isolation level defines how deep transactions isolate from one another
+
+5. Durability
+ - If a tansactions is commited it becomes persistent 
+ - cannot be lost or undone
+ - Ensured by the use of database transaction logs
+ 
+III. Triggers
+
+1. Definition - triggers are very much like stored procedures
+- called in case of a spesific event
+- don't call trigger explicity
+- triggers are attached to a table
+- triggers are fired when a certain SQL statement is executed against the contents of the table
+
+2. After trigger - defined by the keyword FOR
+3. Instead of Triggers - defined by using INSTEAD OF 
+
+IV. Database security 
+ 
+ 
+

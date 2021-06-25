@@ -1,0 +1,69 @@
+Table Relations
+
+I. Database Design
+
+1. Steps in the database design process
+- Identify entities
+- Identify table columns
+- Define a primary key for each table
+- Identify and model relationships 
+- Define other constraints by type, 
+- Fill tables with test data 
+
+Entity tables represent object from the real world
+- Most often they are nouns in the specification
+
+Nouns from text are tables, whereas columns sometimes are given in the text
+
+Choosing a primary key
+- Always define an additional columns for the primary key 
+- Don't use existing columns 
+- good idea is to be number! (int, BigInt, GUID)
+- Define it as IDENITY to imp auto-increment
+- Put the primary key as the first column
+
+EXCEPTION - well know ID, e.g. countries (BG, DE, US) and currency (USD, EUR, BGN)
+
+II Database Normalization
+
+- It is a technique of organizing the data in the database
+- Normalization is a systematic approach of decomposing tables to eliminate data redundancy (repetition) and undesirable characteristics like inserion, update and deletion enomalies
+- It is a multi-step process that puts data into tabular form removing dublicated data from the relation tables;
+
+
+- When we update we have to always write correctly the name
+inserion, update and delete anomalies
+- there diff steps in normalization
+
+1. First Normal Form
+- table should only have one value
+- Values stored in a column in a table should in same type 
+- All the colums in a table should have identity number
+
+2. Second Normal Form 
+- we should escape parcial dependancy!
+
+3. Third Normal Form
+- no transitive dependancy! 
+
+Table Relations <3
+
+Relationships between tables are based on interconnections primary key -> foreign key;
+
+Custom colum properties
+
+PRIMARY KEY, UNIQUE, IDENITY
+
+Foreign Key ia an identifier of a record located in another table
+Using relationship we refer to data instead od repeating data 
+
+One to many - one town has one country but one country has many towns
+
+Many to many one student has many courses
+one courses has many students
+
+One to one - one driver has one driver license
+One license has one owner
+
+Cascading - allows when a chnage is made to certain entity, this change to applay to all related  entities1
+ 

@@ -1,0 +1,72 @@
+--Section 1. DDL 
+
+CREATE DATABASE Bakery;
+GO
+
+USE Bakery;
+GO
+								 
+--1.Database design				 
+CREATE TABLE Countries  		  
+(
+	Id INT NOT NULL PRIMARY KEY IDENTITY,
+	[Name] NVARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Customers  		  
+(
+	Id INT NOT NULL PRIMARY KEY IDENTITY,
+	FirstName NVARCHAR(25) NOT NULL,
+	LastName NVARCHAR(25) NOT NULL,
+	Gender CHAR(1) NOT NULL,
+	Age INT NOT NULL,
+	PhoneNumber CHAR(10) NOT NULL,
+	CountryId INT NOT NULL REFERENCES Countries(Id),
+	CHECK(Gender IN('M', 'F')),
+	CHECK(LEN(PhoneNumber) = 10)
+);
+
+CREATE TABLE Products 			  
+(
+	Id INT NOT NULL PRIMARY KEY IDENTITY,
+	[Name] NVARCHAR(25) NOT NULL UNIQUE,
+	[Description] NVARCHAR(250) NOT NULL,
+	Recipe NVARCHAR(MAX) NOT NULL,
+	Price DECIMAL(18, 2) NOT NULL,
+	CHECK(Price > 0)
+);
+
+CREATE TABLE Feedbacks 			  
+(
+	Id INT NOT NULL PRIMARY KEY IDENTITY,
+	[Description] NVARCHAR(255),
+	Rate DECIMAL(4, 2) NOT NULL,
+	ProductId INT NOT NULL REFERENCES Products(Id),
+	CustomerId INT NOT NULL REFERENCES Customers(Id),
+	CHECK(Rate BETWEEN 0 AND 10)
+);
+
+CREATE TABLE Distributors		  
+(
+	Id INT NOT NULL PRIMARY KEY IDENTITY,
+	[Name] NVARCHAR(25) NOT NULL UNIQUE,
+	AddressText NVARCHAR(30) NOT NULL,
+	Summary NVARCHAR(200) NOT NULL,
+	CountryId INT NOT NULL REFERENCES Countries(Id)
+);
+
+CREATE TABLE Ingredients		  
+(
+	Id INT NOT NULL PRIMARY KEY IDENTITY,
+	[Name] NVARCHAR(30) NOT NULL,
+	[Description] NVARCHAR(200) NOT NULL,
+	OriginCountryId INT NOT NULL REFERENCES Countries(Id),
+	DistributorId INT NOT NULL REFERENCES Distributors(Id)
+);
+
+CREATE TABLE ProductsIngredients  
+(
+	ProductId INT NOT NULL REFERENCES Products(Id),
+	IngredientId INT NOT NULL REFERENCES Ingredients(Id),
+	PRIMARY KEY(ProductId, IngredientId)
+);

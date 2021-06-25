@@ -1,0 +1,11 @@
+CRUD SQL Server
+
+Create Read Update and Delete
+
+Query Basic
+
+Stuctured Query Language
+Declarative language
+Close to regular English
+Supports definition, manipulation and access control of record
+Transact-SQL TSQL  - Supports control flow (if statements, loops)

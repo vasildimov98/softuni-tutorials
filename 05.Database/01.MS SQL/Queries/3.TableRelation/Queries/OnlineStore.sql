@@ -1,0 +1,53 @@
+--05. Online Store Database
+CREATE DATABASE OnlineStore;
+GO
+
+USE OnlineStore;
+GO
+
+CREATE TABLE Cities
+(
+	CityID INT IDENTITY PRIMARY KEY,
+	[Name] VARCHAR(50) NOT NULL
+);
+GO
+
+CREATE TABLE Customers 
+(
+	CustomerID INT IDENTITY PRIMARY KEY,
+	[Name] VARCHAR(50) NOT NULL,
+	Birthday DATE,
+	CityID INT REFERENCES Cities(CityID)
+);
+GO
+
+CREATE TABLE Orders 
+(
+	OrderID INT IDENTITY PRIMARY KEY,
+	CustomerID INT REFERENCES Customers(CustomerID) NOT NULL
+);
+GO
+
+CREATE Table ItemTypes 
+(
+	ItemTypeID INT IDENTITY PRIMARY KEY,
+	[Name] VARCHAR(50) NOT NULL
+);
+GO
+
+CREATE TABLE Items 
+(
+	ItemID INT IDENTITY PRIMARY KEY,
+	[Name] VARCHAR(50) NOT NULL,
+	ItemTypeID INT REFERENCES ItemTypes(ItemTypeID)
+);
+GO
+
+CREATE TABLE OrderItems 
+(
+	OrderID INT REFERENCES Orders(OrderID),
+	ItemID INT REFERENCES Items(ItemID)
+	CONSTRAINT PK_OrderItems
+	PRIMARY KEY (OrderID, ItemID)
+);
+GO

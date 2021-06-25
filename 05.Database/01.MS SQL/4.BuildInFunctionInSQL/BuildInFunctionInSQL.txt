@@ -1,0 +1,39 @@
+Function In SQL 
+
+I. SQL Function
+
+1. Aggregate functions
+- It perform a calculation on a set of values and return a sigle value
+2. Analytic functions
+3. Ranking Function return a ranking value for each row in a partion
+4. Rowset function 
+- Returns an object that can be used as a references in a statement
+5. Scalar function - operate on a single value. Scalar functions can be used whereever an expression is valid
+
+II. String Functions
+
+1. Concatenation (CONCAT)
+2. Substring (SUBSTRING)
+3. Replace
+4. LTRIM & RTRIM and both - TRIM
+5. LEN - the length of symbols
+6. DATALEN - how many bytes we use
+7. LEFT AND RIGHT - close to substring
+8. LOWER AND UPPER 
+9. REVERSE string
+10. REPLICATE - takes string and concats it a number of time
+11. FORMAT ()
+12. CHARINDEX
+13. STUFF
+
+III. Math Function
+1. PI
+2. ABS
+3. SQRT
+4. SQUARE
+5. POWER
+6. FLOOR AND CEILING
+7. SIGN
+8. RAND
+
+IV. Date Functions

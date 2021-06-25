@@ -1,0 +1,42 @@
+CREATE Table Users 
+(
+	Id INT PRIMARY KEY IDENTITY,
+	Username VARCHAR(30) NOT NULL,
+	[Password] VARCHAR(26) NOT NULL,
+	ProfilePicture VARBINARY(900),
+	LastLoginTime DATETIME,
+	IsDeleted BIT
+)
+
+INSERT INTO Users (Username, [Password]) VALUES
+('pesho123', 'qd231231'),
+('pesho233', 'qd231231'),
+('pesho1123', 'qd231231'),
+('pesho12123', 'qd231231'),
+('pesho123123', 'qd2231231231')
+
+
+ALTER TABLE Users
+DROP CONSTRAINT PK__Users__3214EC07DC2EB741;
+
+ALTER TABLE Users
+ADD PRIMARY KEY (Id, Username);
+
+ALTER TABLE Users
+ADD CONSTRAINT CH_Password_Is_Five_Symbol_Long CHECK (Len([Password]) > 5)
+
+ALTER TABLE Users
+ADD CONSTRAINT df_LoginTime DEFAULT GETDATE()
+FOR LastLoginTime;
+
+ALTER TABLE Users
+DROP [PK__Users__7722245920EDC10A];
+
+ALTER TABLE Users
+ADD PRIMARY KEY (Id);
+
+ALTER TABLE Users
+ADD CONSTRAINT UQ_Username UNIQUE(Username);
+
+ALTER TABLE Users
+ADD CONSTRAINT CH_Username CHECK (LEN(Username) > 2)

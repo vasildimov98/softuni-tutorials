@@ -1,0 +1,26 @@
+Joins and subqueries and CTEs
+
+I. Joins - they are used to take data from diff table
+
+1. Type of joins 
+	a. INNER JOIN - returning only rows matching the condition
+	b. LEFT/RIGHT JOIN 
+	c. FULL OUTHER JOIN 
+	d. CROSS JOIN
+	
+2. INNER vs. OUTER
+
+	A. INNER joins of two tables only rows that are matching a certain condition
+	B. LEFT/RIGHT returns the result of the inner join as well as unmatched rows from the left (or right) table
+	C. Full outer join returns the result of the inner join along with all unmatched rows
+	D. CROSS JOIN is a Cartesian product which is form when: 
+		A join condition is omitted
+		A join condition is invalid
+		All rows in the first table are join to the all rows in the second table
+	To avoid a Cartesian product, always include a valid join condition
+
+II. Subqueries - query manipulation on multiple levels
+Use a query's result as data for onother query
+
+III. Common table Expressions
+- CTE can be consider as named subqueries

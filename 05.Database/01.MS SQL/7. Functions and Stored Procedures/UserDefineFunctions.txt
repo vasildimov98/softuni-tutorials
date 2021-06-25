@@ -1,0 +1,52 @@
+Functions and Stored Procedures
+
+I. User-Defined Functions
+
+1. Baic Definition - at its core a function receives a input and produces an output 
+
+2. Types of User-Defined Functions
+A. Scalar functions
+- Similar to the built-in functions
+- Returns a single value
+B. Table-valued functions
+- Similar to a view with parameters
+- Returns a table as a result of  single SELECT statement
+
+3. Limitations
+- User-Defined functions cannot be used to perform actions that modify the database table state
+- User-defined functions cannot return multiple result sets 
+- UDF cannot make use of dynamic SQL or temp tables. Table var are allowed 
+- UDF can be nested up to 32 Levels
+- Erro handling Is Restricted in UDF (no try catch or raiserror)
+
+4. Execute Functions
+- Functions are called by their schemaName.functionName
+
+II. Stored Procedures
+
+1. What are stored Procedures?
+- Stored procedures are named sequences of T-SQL statements
+ - Encapsulated repetitive program logic
+ - Can accept input parameters
+ - Can return output results
+- Benefits of stored procedures
+ - Share application logic 
+ - Improved performance
+ - Reduced network traffic
+ - They can be used as a security
+ 
+2. Types of Stored Procedures
+- User-defined
+ - Can be created in a user-defined database or in all system databases except the Resource database
+ - Can be developed in either Transact-SQL or as a reference to a Microsoft .NET Framework method
+- Temporary
+ - A form of user-defined procedures stored in tempdb
+ 
+III. Stored Procedures Using Parameters
+IV. Error Handling
+1. Error throwing 
+- Raises an exception and transfers execution to a CATCH block
+- Arguments:
+	- error_number - INT (between 50000 and 2147483647))
+	- message NVARCHAR(2048) 
+	- state - TINYINT (between 0 and 255)

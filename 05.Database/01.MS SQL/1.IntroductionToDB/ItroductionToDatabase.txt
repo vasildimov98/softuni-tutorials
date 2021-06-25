@@ -1,0 +1,58 @@
+Dabase Introduction
+
+type of Database: 
+MongoDB
+Graph DB 
+MySQL
+SQL Server
+
+Data Management
+When do we need a Database?
+
+Storage vs Management
+
+Everything in relation database is based on tables
+Flat storage eventually runs into issues in 
+Size
+Ease of updating 
+Searching
+Concurrency 
+Security
+Consistency
+
+A database is organize collection of information
+- It improves rules on the contained data
+
+SQL Server saves the data, however SQL Management is the client we use to make queries! 
+
+First propose by Edgar Codd
+
+RDBDS is the sofware 
+
+SQL Server Archiecture
+Logical Storage
+Instance
+Database
+Scheme (folders, files and etc)
+- the default scheme is dbo(database object)
+- PascalCase is the way we right name
+Every scheme has Tables
+Every tables has rows, cols, constraints
+
+Rules we write time in UTC format
+
+Phisical storage
+we save two files and log files
+
+Structured Query Language
+To communicate with the Engine we use SQL 
+-Declarative language - what we want not how 
+Logically divided in four section 
+
+Data Definition - describe the structure / Create/ Drop
+Data Manipulation - store and retrive data
+Data Control - define who can access the data
+Transaction control   
+
+Good practise is to organize data, use new collom
+Key words we write in capital letters

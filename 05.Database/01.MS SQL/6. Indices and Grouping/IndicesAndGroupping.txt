@@ -1,0 +1,43 @@
+Indices and Data Aggregation
+
+I. Indices - Cluster and Non cluster indexes
+
+1.Indices
+
+Indices speed up the searching of values in a certain column oe group of columns
+- Usually implement by B-tree
+- Indices can be build In the table (cluster) or stored externally (non cluster)
+- Adding and deleting records in indexed table is slower!
+Indices should be used for big tables only
+
+2. Cluster index 
+- Ususally the data itself
+- Only one per table 
+- Very useful for Group By, Join 
+- If a table doesn't have a cluster key i is sorted in a heap
+
+3. Non Cluster Index
+- Useful for fast retrieving of a single record or a range of records
+- Maintained in a separate structure in the DB
+- Tend to be much narrower than the base table
+- can locate the exacrr record(s) with less I/O
+- Has at least one more intermediate level than the clusterd index
+- Much less valuable if the table doesn't have clustered index
+
+II. Grouping 
+- allows receiving data into separate groups based on a common property
+- Group by allows you to get each separate group and use an "aggregate" function over it(Average, Min or Max)
+- DISTINCT allows you to get all unique values
+
+III. Aggregate Function
+
+1. Aggregate Functions
+- Operate over (non-empty) groups
+- Perform data analysis on each one
+- MIN, MAX, AVG, COUNT, etc
+
+IV. Having
+1. Having Clause
+- The Having clause is used to filter data based on aggregate values
+- We cannot use it without grouping first
+Aggregate function are used only once
