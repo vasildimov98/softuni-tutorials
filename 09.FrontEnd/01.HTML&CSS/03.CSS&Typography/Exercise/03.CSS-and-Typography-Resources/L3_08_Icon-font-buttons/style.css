@@ -1,0 +1,33 @@
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    margin: 100px;
+}
+
+.button.star-btn {
+    background: #008000;
+    border-color: #008000;
+    color: white;
+}
+
+.button.envelope-btn {
+    background: #FF8C00;
+    border-color: #FF8C00;
+    color: white;
+}
+
+.btn-paragraph {
+    margin: 30px 0;
+}
+
+.button {
+    text-decoration: none;
+    outline: none;
+    border: 3px solid;
+    border-radius: 5px;
+    padding: 7px;
+}
