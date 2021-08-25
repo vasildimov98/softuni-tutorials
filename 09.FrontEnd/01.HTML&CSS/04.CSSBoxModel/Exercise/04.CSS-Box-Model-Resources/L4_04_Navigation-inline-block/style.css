@@ -1,0 +1,31 @@
+html {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 2px solid black;
+}
+
+header h1,
+header nav {
+    display: inline-block;
+}
+
+header h1 {
+    margin-right: 150px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: #57A110;
+    padding-right: 30px;
+    text-decoration: none;
+}

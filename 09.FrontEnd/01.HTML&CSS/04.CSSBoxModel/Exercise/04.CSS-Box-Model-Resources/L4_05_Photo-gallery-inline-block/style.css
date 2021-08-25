@@ -1,0 +1,26 @@
+body {
+    background-color: #EEEEEE;
+}
+
+div.photos {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+ul.gallery {
+    padding: 0;
+    list-style-type: none;
+    margin: auto;
+}
+
+ul.gallery li {
+    display: inline-block;
+    border: 0.4rem solid black;
+    vertical-align: middle;
+    margin: 10px;
+    padding: 20px;
+}
+
+ul.gallery li img {
+    max-width: 300px;
+}
