@@ -1,0 +1,48 @@
+body {
+    background: rgb(238, 238, 238);
+    font-family: Georgia, serif;
+}
+
+h2 {
+    font-family: Georgia, serif;
+}
+
+.card {
+    width: 500px;
+    height: 500px;
+    margin: 100px auto;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-radius: 6px;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.card div:nth-child(2) {
+    position: absolute;
+    bottom: 0px;
+    margin: 30px;
+}
+
+.card div:nth-child(2) p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+button {
+    text-align: right;
+    position: absolute;
+    right: -10px;
+    bottom: -35px;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 7px;
+    background: rgb(0, 153, 0);
+    border-color: rgb(0, 153, 0);
+    color: white;
+}
